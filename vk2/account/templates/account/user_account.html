@@ -1,0 +1,113 @@
+{% extends 'base_page.html' %}
+{% load static %}
+
+    {%block title%}
+    {{user.get_full_name}}
+    {% endblock %}
+
+{% block content %}
+
+    <div class="narrow_column_wrap">
+        <div class="column_left">
+            <div class="block-content main-photo">
+                <img class="photo" src="{{user.main_photo.url}}" width="200" height="200">
+                {% if not user.is_another_user %}
+                    <form action="{% url 'edit'%}" method="get">
+                        <button type="submit" class="vk-button btn">Редактировать</button>
+                    </form>
+                {% else %}
+                    {% if request_is_send and not accept_request %}
+                        <button type="submit" class="vk-button btn">Запрос отправлен</button>
+                    {% elif not request_is_send and accept_request%}
+                        <a href="?friendship=accept" class="flat_button button_wide">Принять запрос</a>
+                    {% elif not request_is_send and not accept_request and not is_friend%}
+                        <a href="?friendship=request" class="flat_button button_wide">Добавить в друзья</a>
+                    {% elif request_is_send and accept_request%}
+                        <a href="?friendship=accept" class="flat_button button_wide">Принять запрос</a>
+                    {% elif is_friend%}
+                        <a href="{% url 'im' %}?sel={{ user.pk }}" class="flat_button button_wide">Отправить сообщение</a>
+                    {% endif %}
+                {% endif %}
+            </div>
+        </div>
+    </div>
+    <div class="wide_column_wrap">
+        <div class="block-content">
+            <div class="main-data">
+                <div class="page-top">
+                    {% if another_user %}
+                        <h2 class="page_name">{{ other_user.get_full_name }}</h2>
+                    {% endif %}
+                    {% if not another_user %}
+                        <h2 class="page_name">{{ user.get_full_name }}</h2>
+                    {% endif %}
+                </div>
+                <div class="profile_info profile_info_short" id="profile_short">
+                    {% if user.date_of_birth %}
+                    <div class="clear_fix profile_info_row ">
+                        <div class="label column_left">День рождения:</div>
+                        <div class="labeled">{{user.date_of_birth}}</div>
+                    </div>
+                    {% endif %}
+                    <div class="clear_fix profile_info_row ">
+                        <div class="label fl_l">Образование:</div>
+                    </div>
+                </div>
+                <div class="profile_more_info">
+                </div>
+            </div>
+            <div class="counts_module">
+                <a class="page_counter" id='url_friends' href="{% url 'friends' pk=user.pk %}">
+{#                <a class="page_counter" id='url_friends' href="#">#}
+                    <div class="count">{{count_friends}}</div>
+                    <div class="label">друзей</div>
+                </a>
+                <a class="page_counter">
+                    <div class="count">4</div>
+                    <div class="label">подписчика</div>
+                </a>
+                <a class="page_counter" href="{% url 'albums' pk=user.pk %}">
+                    <div class="count">{{count_photo}}</div>
+                    <div class="label">фотографии</div>
+                </a>
+                <a class="page_counter" href="/videos483686337">
+                    <div class="count">1</div>
+                    <div class="label">видеозапись</div>
+                </a>
+                <a class="page_counter" href="/audios483686337">
+                    <div class="count">79</div>
+                    <div class="label">аудиозаписей</div>
+                </a>
+            </div>
+        </div>
+        <div class="block-content">
+            <div class="module clear photos_module" id="profile_photos_module">
+                <div class="header_right_link fl_r">
+                </div>
+                <a href="{% url 'albums' pk=user.pk %}" class="module_header">
+                    <div class="header_top clear_fix">
+                        <span class="header_label fl_l">Мои фотографии</span>
+                        <span class="header_count fl_l">{{count_photo}}</span>
+                    </div>
+                </a>
+                <div id="page_photos_module" class="page_photos_module">
+                    {% for i in all_photo %}
+                    <a class="page_square_photo crisp_image" href="{{i.photo.url}}" aria-label="фотография"
+                       style="background-image: url({{i.photo.url}});"><span class="blind_label">фотография</span></a>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+        <div class="block-content" id="page_block_submit_post" style="">
+            <form>
+                <input type="text" class="form-control" id="send_massage">
+                <button type="submit" class="index_login_button flat_button" id="send_massage_btn">Отправить</button>
+            </form>
+            <h4>Massage from user: </h4>
+            <div class="qwerty" id="massage_from_user"></div>
+            <h4>Massage to user: </h4>
+            <div class="qwerty" id="massage_to_user"></div>
+        </div>
+    </div>
+{% endblock %}
+

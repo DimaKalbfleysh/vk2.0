@@ -1,0 +1,73 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+          integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+            integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+            crossorigin="anonymous"></script>
+    <script src="{% static 'js/jquery.js' %}"></script>
+    <script src="https://cdn.jsdelivr.net/npm/js-cookie@2/src/js.cookie.min.js"></script>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <title>{% block title%}{%endblock%}</title>
+</head>
+<body style="background: #edeef0">
+<div class="page">
+    <div class="header">
+        <div class="back"></div>
+        <div class="page-header" style="width: 960px;">
+            <div class="column_left">
+                {% if main_user.is_authenticated %}
+                    <a href="{% url 'account' pk=main_user.pk %}" class="top_home_link column_left">
+                {% else %}
+                    <a href="" class="top_home_link column_left">
+                {% endif %}
+                    <div class="top_home_logo"></div>
+                </a>
+            </div>
+            <div class="column_left">
+                Search
+            </div>
+            <div class="column_right">
+                <a href="{% url 'logout' %}" class="top_nav_link">Выйти</a>
+            </div>
+        </div>
+    </div>
+    {% if main_user.is_authenticated %}
+    <div class="page_layout">
+        <div class="side_bar" style="float: left">
+            <div class="side_bar_inner">
+                <nav>
+                    <ol>
+                        <li>
+                            <a href="{% url 'account' pk=main_user.pk %}">Моя Страница</a>
+                        </li>
+                        <li>Новости</li>
+                        <li><a href="/di/">Сообщения</a></li>
+                        <li><a href="{% url 'friends' pk=main_user.pk %}">Друзья</a></li>
+                        <li>Группы</li>
+                        <li><a href="{% url 'albums' pk=main_user.pk %}">Фотографии</a></li>
+                        <li>Музыка</li>
+                        <li>Видео</li>
+                    </ol>
+                </nav>
+            </div>
+        </div>
+        <div class="page_body">
+            {%block content%}
+            {%endblock%}
+        </div>
+    </div>
+    {% else %}
+        {% block login %}
+        {% endblock %}
+    {% endif %}
+    {% block edit %}
+    {% endblock %}
+</div>
+</body>
+    {% block javascript_code %}
+    {% endblock %}
+</html>

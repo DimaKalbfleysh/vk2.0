@@ -1,0 +1,24 @@
+{% extends 'base_page.html' %}
+
+{% block login %}
+<div class="wrap3">
+    <div class="wrap2">
+        <div class="wrap1">
+            <div class="content">
+                <div id="index_rcolumn" class="index_rcolumn">
+                    <div id="index_login" class="block-content index_login">
+                        <form action="{% url 'login' %}" method="post">
+                            {% csrf_token %}
+                            {{form.username}}
+                            {{form.password}}
+                            <button type="submit" class="index_login_button flat_button">Войти</button>
+                            <a href="{% url 'init_register' %}">Зарегистрироваться</a>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock%}

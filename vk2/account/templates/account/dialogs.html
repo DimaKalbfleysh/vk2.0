@@ -1,0 +1,92 @@
+{% extends 'base_page.html' %}
+{% load static %}
+
+{% block content %}
+    <div class="im-page js-im-page im-page_classic " style="min-height: 686px; height: auto;">
+        <div class="im-page--dialogs _im_page_dialogs block-content"
+             style="min-height: 686px; position: static; top: 0px;">
+            <div class="im-page--header ui_search _im_dialogs_search" style="transform: unset;">
+                <div class="ui_search ui_search_field_empty _im_dialogs_search_input im-page--dialogs-search ui_search_custom _wrap ui_search_old"
+                     data-init-options="{ }">
+                    <div class="ui_search_sugg_list _ui_search_sugg_list"></div>
+                    <div class="ui_search_filters_pane" style="display: none;">
+                        <div class="ui_search_filters"></div>
+                        <div class="ui_search_filters_reset" onclick="return uiSearch.removeAllFilters(this);"></div>
+                    </div>
+                </div>
+            </div>
+            <ul id="im_dialogs" class="im-page--dcontent ui_clean_list _im_page_dcontent">
+                {% for dialog in dialogs %}
+                    <li class="nim-dialog _im_dialog nim-dialog_classic" style="">
+                        <div class="nim-dialog--photo">
+                            <div class="nim-peer _online _im_peer_online">
+                                <div class="nim-peer--photo-w">
+                                    <div class="nim-peer--photo _im_dialog_photo">
+                                        <a href="/id{{ dialog.interlocutor.pk }}" class="_im_peer_target _online_reader"
+                                           target="_blank">
+                                            <div class="im_grid">
+                                                <img alt="{{ dialog.interlocutor.get_full_name }}"
+                                                     src="{{ dialog.interlocutor.main_photo.url }}" width="50"
+                                                     height="50">
+                                            </div>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="nim-dialog--content">
+                            <div class="nim-dialog--cw">
+                                <div class="nim-dialog--date _im_dialog_date">{{ dialog.massages.last.pub_date.time }}</div>
+                                <button type="button" class="nim-dialog--close _im_dialog_close"
+                                        data-peer="483686337"></button>
+                                <button type="button" class="nim-dialog--markre _im_dialog_markre"></button>
+                                <div class="nim-dialog--name">
+                                        <span class="nim-dialog--name-w" aria-hidden="true">
+                                            <span class="_im_dialog_link">
+                                                <a href="/im/?sel={{ dialog.interlocutor.pk }}">
+                                                    {{ dialog.interlocutor.get_full_name }}
+                                                </a>
+                                            </span>
+                                        </span>
+                                    <span
+                                            class="nim-dialog--verfifed _im_dialog_verified">
+                                        </span>
+                                    <span class="nim-dialog--mute"></span>
+                                    <button type="button" class="nim-dialog--star _im_dialog_star"></button>
+                                </div>
+                                {% if dialog.massages.last.author != main_user%}
+                                <div class="nim-dialog--text-preview">
+                                    <span class="nim-dialog--preview _dialog_body" tabindex="0">
+                                        {{ dialog.massages.last.massage }}
+                                    </span>
+                                </div>
+                                {% else %}
+                                <div class="nim-dialog--text-preview">
+                                    <span class="nim-dialog--preview _dialog_body" tabindex="0">
+                                        <span class="nim-dialog--who">
+                                            <div class="im-prebody">
+                                                <img alt="" src="{{ dialog.massages.last.author.main_photo.url }}">
+                                            </div>
+                                        </span>
+                                        <span class="nim-dialog--inner-text">
+                                            {{ dialog.massages.last.massage }}
+                                        </span>
+                                    </span>
+                                    <span class="nim-dialog--typing _im_dialog_typing"></span>
+                                    <span class="nim-dialog--typer-el"></span>
+                                </div>
+                                {% endif %}
+                                <span class="nim-dialog--typing _im_dialog_typing"></span>
+                                <span class="nim-dialog--typer-el"></span>
+                            </div>
+                                <label class="blind_label _im_unread_blind_label"></label>
+                                <div class="nim-dialog--unread _im_dialog_unread_ct" aria-hidden="true"></div>
+                            </div>
+                    </li>
+                {% endfor %}
+            </ul>
+        </div>
+    </div>
+{% endblock %}
+
+

@@ -1,0 +1,133 @@
+{% extends 'base_page.html' %}
+{% load static %}
+
+
+{% block content %}
+    <div class="im-page-wrapper _im-page-wrap" style="">
+        <div class="im-page js-im-page im-page_classic im-page_history-show" style="min-height: 686px; height: auto;">
+            <div class="im-page--history block-content _im_page_history"
+                 style="min-height: 686px; position: relative; top: 0px;">
+                <div class="im-page-history-w">
+                    <div class="im-page--chat-header _im_dialog_actions" style="transform: unset;">
+                        <div class="im-page--chat-header-in">
+                            <div class="im-page--toolsw">
+                                <div class="im-page--back"><a href="/di"
+                                                              class="im-page--back-btn _im_page_back"> Назад </a></div>
+                                <div class="im-page--aside">
+                                    <div class="im-page--aside-photo"><a href="/id483686337" class="_im_header_link"
+                                                                         target="_blank">
+                                        <div class="nim-peer  nim-peer_smaller">
+                                            <div class="nim-peer--photo-w">
+                                                <div class="nim-peer--photo">
+                                                    <div class="im_grid">
+                                                        <img src="{{ to_user.main_photo.url }}"
+                                                            alt="">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </a></div>
+                                </div>
+                                <div class="im-page--title-wrapper">
+                                    <div class="im-page--title ">
+                                        <span class="im-page--title-main" title="Виктор Александров">
+                                            <span class="im-page--title-main-in">
+                                                <a href="/id{{ to_user.pk }}" target="_blank" class="im-page--title-main-inner _im_page_peer_name">
+                                                    {{ to_user.get_full_name }}
+                                                </a>
+                                                <span class="im-page--title-main-verified _im_chat_verified"></span>
+                                            </span>
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="im-page--chat-body">
+                        <div class="im-page--chat-body-wrap _chat_body_wrap">
+                            <div class="im-page--chat-body-abs _im_chat_body_abs"
+                                 style="min-height: 686px; height: 686px; position: relative; top: 0px;">
+                                <div class="im-page--chat-body-wrap-inner-2">
+                                    <div class="im-page--chat-body-wrap-inner _im_peer_history_w" style="border-bottom-width: 61px;">
+                                        <div class="_im_peer_history im-page-chat-contain" aria-live="polite" aria-relevant="additions">
+                                            <h5 class="im-page--history-new-bar im-page--history-new-bar_days _im_bar_date _im_bar_822019 " data-date="1549631228">
+                                                <span>
+                                                    8 февраля
+                                                </span>
+                                            </h5>
+                                            {% for massage in massages %}
+                                            <div class="im-mess-stack _im_mess_stack " data-peer="483686337" data-admin="">
+                                                <div class="im-mess-stack--photo">
+                                                    <div class="nim-peer nim-peer_small fl_l">
+                                                        <div class="nim-peer--photo-w">
+                                                            <div class="nim-peer--photo">
+                                                                <a target="_blank" class="im_grid" href="/id{{ massage.author.pk }} ">
+                                                                    <img alt="{{ massage.author.first_name }}" src="{{ massage.author.main_photo.url }}">
+                                                                </a>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="im-mess-stack--content">
+                                                    <div class="im-mess-stack--info">
+                                                        <div class="im-mess-stack--pname">
+                                                            <a href="/id{{ massage.author.pk }}" class="im-mess-stack--lnk" title="" target="_blank">{{ massage.authon.first_name }}</a>
+                                                            <span class="im-mess-stack--tools">
+                                                                <a href="/im?sel=483686337&amp;msgid=9085" class="_im_mess_link">
+                                                                    {{ massage.pub_date.time  }}
+                                                                </a>
+                                                            </span>
+                                                        </div>
+                                                    </div>
+                                                    <ul class="ui_clean_list im-mess-stack--mess _im_stack_messages">
+                                                        <li class="im-mess im_in _im_mess _im_mess_9085"
+                                                            aria-hidden="false" data-ts="1549631228" data-msgid="9085" data-peer="483686337">
+                                                            <div class="im-mess--actions">
+                                                                <span role="link" aria-label="Переслать" class="im-mess--forward _im_mess_forward"></span>
+                                                                <span role="link" aria-label="Ответить" class="im-mess--reply _im_mess_reply"></span>
+                                                                <span role="link" aria-label="Редактировать" class="im-mess--edit _im_mess_edit"></span>
+                                                                <span role="link" aria-label="Важное сообщение" class="im-mess--fav _im_mess_fav"></span>
+                                                            </div>
+                                                            <div class="im-mess--check fl_l"></div>
+                                                            <div class="im-mess--text wall_module _im_log_body">
+                                                                {{ massage.massage }}
+                                                            </div>
+                                                            <span tabindex="0" role="link" aria-label="Выделить сообщение" class="blind_label im-mess--blind-select _im_mess_blind_label_select"></span>
+                                                            <span class="blind_label im-mess--blind-read _im_mess_blind_unread_marker"></span>
+                                                            <span class="im-mess--marker _im_mess_marker"></span>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                            {% endfor %}
+                                        </div>
+                                        <div class="im-page--fixer _im_typer_c"></div>
+                                        <div class="im-page--error _im_error" style="display: none;"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="im-page--chat-input _im_chat_input_w" style="top: auto; bottom: 0px;">
+                            <div class="im-chat-input--textarea fl_l _im_text_input _emoji_field_wrap _voice_field_wrap">
+                                <div class="im-chat-input--txt-wrap _im_text_wrap">
+                                    <form method="post">
+                                        {% csrf_token %}
+{#                                        <div class="im_editable im-chat-input--text _im_text" tabindex="0"#}
+{#                                             contenteditable="true" id="im_editable0" role="textbox"#}
+{#                                             aria-multiline="true">#}
+{#                                        </div>#}
+                                        <input type="text" id="im_editable0" title="123">
+                                        <button type="submit" id="button" class="flat_button button_wide">Отправить</button>
+                                    </form>
+                                </div>
+                            </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}{% block javascript_code %}
+     <script src="{% static 'js/friends.js' %}"></script>
+{% endblock %}

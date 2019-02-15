@@ -1,0 +1,52 @@
+{% extends 'base_page.html' %}
+
+
+{% block content %}
+
+    <div id="friends" class="block-content clear_fix">
+        <div id="friends_tabs_wrap">
+            <h2 class="page_block_h2 ">
+                <ul class="ui_tabs clear_fix friends_tabs ui_tabs_header _friends_header"
+                    onmouseover="uiTabs.tryInit(this)">
+                    <li id="friends_tab_all">
+                        <a href="" class="ui_tab ui_tab_sel"
+                           onclick="return Friends.switchTab(this, 'all', event);">
+                            Все друзья<span class="ui_tab_count" dir="auto">{{ count_friends }}</span>
+                        </a>
+                    </li>
+                </ul>
+            </h2>
+            <div id="friends_tab_list" class="_friends_header friend__header page_block_header unshown">
+                <div class="friends__header-title-wrapper">
+                    <span id="friends_list_title" class="friends__header-title"></span>
+                    <span id="friends_list_count" class="page_block_header_count friends__header-list-count"></span>
+                </div>
+            </div>
+        </div>
+        <div id="friends_list" class="friends_list">
+            <div id="list_content">
+                <div class="friends_list_bl">
+                    {% for friend in all_friends %}
+                        <div class="friends_user_row clear_fix">
+                            <div id="res213238245"></div>
+                            <div class="friends_photo_wrap">
+                                <a class="friends_photo _online" href="{% url 'account' pk=friend.pk %}">
+                                    <img class="friends_photo_img" alt="{{ friend.get_full_name }}"
+                                         src="{{ friend.main_photo.url }}">
+                                </a>
+                            </div>
+                            <div class="friends_user_info">
+                                <div class="friends_field friends_field_title">
+                                    <a href="{% url 'account' pk=friend.pk %}">{{ friend.get_full_name }}</a>
+                                </div>
+                                <div class="friends_field">{{ friend.date_of_birth}}</div>
+                                <a href="/im/?sel={{ friend.pk }}" class="friends_field_act">Написать сообщение</a>
+                            </div>
+                        </div>
+                    {% endfor %}
+
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
