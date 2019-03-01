@@ -50,7 +50,6 @@
 
 .page_layout {
     width: 960px;
-    padding: 0 15px;
     margin: 0 auto;
     position: relative;
 }
@@ -99,13 +98,14 @@
     text-decoration: none;
 }
 
-.page-top {
+.page_top {
     border-bottom: 1px solid #e7e8ec;
 }
 
 .page_name, h2.page_name {
     font-size: 19px;
     line-height: 25px;
+    font-weight: 400;
     -webkit-font-smoothing: subpixel-antialiased;
     -moz-osx-font-smoothing: auto;
     margin: -1px 0 -1px -1px;
@@ -221,7 +221,7 @@
 }
 
 .content {
-    padding: 30px 0 105px;
+
 }
 
 .index_rcolumn {
@@ -374,8 +374,7 @@ div.submit_post_field, div.submit_post_field[contenteditable=true] {
 }
 
 .page_photos_module {
-    padding: 13px 20px 20px;
-    height: 123px;
+    padding: 5px 0px 15px;
     text-align: center;
 }
 
@@ -433,12 +432,6 @@ div.submit_post_field, div.submit_post_field[contenteditable=true] {
     color: #000;
 }
 
-h2.page_block_h2 {
-    margin: 0px;
-    font-size: inherit;
-    font-weight: inherit;
-    color: inherit;
-}
 
 .page_block_header {
     display: block;
@@ -524,12 +517,6 @@ h2.page_block_h2 {
     display: inline-block;
 }
 
-h2.page_block_h2 {
-    margin: 0px;
-    font-size: inherit;
-    font-weight: inherit;
-    color: inherit;
-}
 
 .ui_tabs_header {
     background-color: #fafbfc;
@@ -554,8 +541,6 @@ h2.page_block_h2 {
 }
 
 .ui_tab, .ui_tabs .ui_tab {
-    color: #656565;
-    float: left;
     -o-transition: color 0.2s ease;
     transition: color 0.2s ease;
     cursor: pointer;
@@ -1537,14 +1522,12 @@ element.style {
     color: #000;
     padding: 3px 5px;
     margin: 0;
-    border: 1px solid #d3d9de;
 }
 
 .fakeinput, .fakeinput~.placeholder .ph_input, div[contenteditable=true], div[contenteditable=true]~.placeholder .ph_input, input.big_text, input.big_text~.placeholder .ph_input, input.dark, input.dark~.placeholder .ph_input, input.search, input.search~.placeholder .ph_input, input.text, input.text~.placeholder .ph_input, textarea, textarea~.placeholder .ph_input {
     color: #000;
     padding: 3px 5px;
     margin: 0;
-    border: 1px solid #d3d9de;
 }
 
 .fakeinput, div[contenteditable=true], input.big_text, input.file, input.search, input.text, input[type=button], input[type=password], input[type=search], input[type=submit], input[type=text], input[type~=email], input[type~=password], input[type~=search], input[type~=text], textarea {
@@ -1710,4 +1693,2836 @@ element.style {
     border-radius: 50%;
     -moz-force-broken-image-icon: 0;
     background-color: #fafbfc;
+}
+
+.wall_module .wall_posts.all .all, .wall_module .wall_posts.all .all_ads_promoted_post, .wall_module .wall_posts.own .own, .wall_module .wall_posts.own .own_ads_promoted_post, .wall_module .wall_posts.postponed .postponed, .wall_module .wall_posts.suggested .suggest, .wall_module .wall_posts_search .post {
+    display: block;
+}
+
+.wall_module .wall_posts.all>.all, .wall_module .wall_posts.all>.all.unshown+.all, .wall_module .wall_posts.all>.all.unshown+.all_ads_promoted_post, .wall_module .wall_posts.all>.all_ads_promoted_post, .wall_module .wall_posts .no_posts, .wall_module .wall_posts .no_rows, .wall_module .wall_posts.own>.own, .wall_module .wall_posts.own>.own.unshown+.own, .wall_module .wall_posts.own>.own.unshown+.own_ads_promoted_post, .wall_module .wall_posts.own>.own_ads_promoted_post, .wall_module .wall_posts.postponed>.postponed, .wall_module .wall_posts.suggested>.suggest, .wall_module .wall_posts_search>.post {
+    margin-top: 0;
+    border-radius: 0 0 4px 4px;
+}
+
+.wall_module .post {
+    line-height: 14px;
+    position: relative;
+    overflow: visible;
+}
+
+.wall_module .post_header {
+    padding: 15px 20px 0;
+}
+
+.wall_module .post_header {
+    padding: 15px 20px 0;
+}
+
+.post_header {
+    position: relative;
+    min-height: 50px;
+}
+
+.wall_module .post_poster.wpe_wrap .wall_text, .wall_module .wall_text, .wall_module.wl_postreach_wall_module .post_poster .wall_text {
+    padding: 8px 20px 19px;
+}
+
+
+.wall_module .post_poster.wpe_wrap .wall_text, .wall_module .wall_text, .wall_module.wl_postreach_wall_module .post_poster .wall_text {
+    padding: 8px 20px 19px;
+}
+
+.wall_text {
+    word-wrap: break-word;
+    text-overflow: ellipsis;
+    position: relative;
+}
+
+.wall_post_text {
+    margin-top: 10px;
+    line-height: 1.462;
+    padding-top: 3px;
+    overflow: hidden;
+    word-wrap: break-word;
+}
+
+.page_post_sized_thumbs {
+    padding: 10px 0 4px;
+}
+
+
+a.page_post_thumb_wrap, span.page_post_thumb_wrap {
+    display: block;
+    overflow: hidden;
+    position: relative;
+    margin: 0 5px 5px 0;
+}
+
+
+.wall_audio_rows {
+    margin: 5px -10px 0;
+}
+
+.wall_audio_rows {
+    margin: 5px -10px 0;
+}
+
+.audio_row {
+    height: 40px;
+}
+
+.audio_row {
+    position: relative;
+    cursor: pointer;
+    box-sizing: border-box;
+    line-height: 1.25;
+    outline: none;
+}
+
+
+.audio_row {
+    height: 40px;
+}
+
+.audio_row {
+    position: relative;
+    cursor: pointer;
+    box-sizing: border-box;
+    line-height: 1.25;
+    outline: none;
+}
+
+.audio_row .audio_row_content {
+    height: 100%;
+}
+
+.audio_row .audio_row_content {
+    height: 100%;
+}
+
+.audio_row .audio_row__play_btn {
+    background-image: url(data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2224%22%20height%3D%2224%22%20viewBox%3D%220%200%2024%2024%22%3E%3Cg%20fill%3D%22none%22%20fill-rule%3D%22evenodd%22%3E%3Ccircle%20cx%3D%2212%22%20cy%3D%2212%22%20r%3D%2212%22%20fill%3D%22%235181B8%22%2F%3E%3Cpath%20fill%3D%22%23FFF%22%20d%3D%22M9.846%2016.86c-.467.303-.846.097-.846-.45V7.588c0-.551.38-.752.846-.45l6.91%204.48c.324.21.327.549%200%20.761l-6.91%204.48z%22%2F%3E%3C%2Fg%3E%3C%2Fsvg%3E);
+    width: 24px;
+    height: 24px;
+    position: absolute;
+    top: 10px;
+    left: 10px;
+}
+
+.audio_row .audio_row__inner {
+    height: 40px;
+    box-sizing: border-box;
+    padding-left: 44px;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    -ms-flex-align: stretch;
+    align-items: stretch;
+}
+.audio_row .audio_row__performer_title {
+    overflow: hidden;
+    position: relative;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-negative: 1;
+    flex-shrink: 1;
+    -ms-flex-positive: 1;
+    flex-grow: 1;
+}
+
+.audio_row .audio_row__performers {
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+
+.audio_row .audio_row__performers, .audio_row .audio_row__title {
+    padding: 12px 0;
+    -o-transition: padding-top 70ms linear;
+    transition: padding-top 70ms linear;
+    max-width: 70%;
+    -ms-flex-negative: 1;
+    flex-shrink: 1;
+}
+
+.audio_row .audio_row__performers a {
+    color: #2a5885;
+    font-weight: 500;
+    -webkit-font-smoothing: subpixel-antialiased;
+    -moz-osx-font-smoothing: auto;
+}
+
+.audio_row .audio_row__title {
+    position: relative;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+.audio_row .audio_row__performers, .audio_row .audio_row__title {
+    padding: 12px 0;
+    -o-transition: padding-top 70ms linear;
+    transition: padding-top 70ms linear;
+    max-width: 70%;
+    -ms-flex-negative: 1;
+    flex-shrink: 1;
+}
+.audio_row .audio_row__info {
+    margin-left: 15px;
+    margin-right: 12px;
+    height: 100%;
+    -ms-flex-negative: 0;
+    flex-shrink: 0;
+}
+
+.audio_row2.audio_row .audio_row__duration {
+    top: 11px;
+}
+
+.audio_row .audio_player__place {
+    position: absolute;
+    width: 100%;
+    padding: 0 12px 0 32px;
+    box-sizing: border-box;
+    top: 25px;
+}
+
+.audio_row .audio_row__play_btn {
+    background-image: url(data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2224%22%20height%3D%2224%22%20viewBox%3D%220%200%2024%2024%22%3E%3Cg%20fill%3D%22none%22%20fill-rule%3D%22evenodd%22%3E%3Ccircle%20cx%3D%2212%22%20cy%3D%2212%22%20r%3D%2212%22%20fill%3D%22%235181B8%22%2F%3E%3Cpath%20fill%3D%22%23FFF%22%20d%3D%22M9.846%2016.86c-.467.303-.846.097-.846-.45V7.588c0-.551.38-.752.846-.45l6.91%204.48c.324.21.327.549%200%20.761l-6.91%204.48z%22%2F%3E%3C%2Fg%3E%3C%2Fsvg%3E);
+    width: 24px;
+    height: 24px;
+    position: absolute;
+    top: 10px;
+    left: 10px;
+}
+
+.post_image {
+    display: block;
+    float: left;
+}
+
+.online {
+    position: relative;
+}
+
+.post_img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    vertical-align: top;
+}
+
+.post_img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    vertical-align: top;
+}
+
+img {
+    border: 0;
+    color: transparent;
+}
+
+.post_header_info {
+    margin-left: 65px;
+    padding-top: 8px;
+}
+
+h5.copy_post_author, h5.post_author {
+    font-size: 13px;
+    margin: 0;
+    font-weight: 400;
+    -webkit-font-smoothing: subpixel-antialiased;
+    -moz-osx-font-smoothing: auto;
+}
+
+.post_author {
+    line-height: 16px;
+    padding-right: 20px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.post_header_info .explain, .post_author {
+    color: #939393;
+}
+
+.post_author .author, .wall_module .author, .wall_module .copy_author {
+    font-weight: 500;
+    -webkit-font-smoothing: subpixel-antialiased;
+    -moz-osx-font-smoothing: auto;
+}
+
+.post_date, .post_date .post_link, .post_date .wall_text_name_explain_promoted_post {
+    color: #939393;
+    font-weight: 400;
+    font-size: 12px;
+}
+
+
+.post_date, .post_date .post_link, .post_date .wall_text_name_explain_promoted_post {
+    color: #939393;
+}
+
+.post_date, .post_date .post_link, .post_date .wall_text_name_explain_promoted_post {
+    color: #939393;
+}
+
+.post_date, .post_date .post_link, .post_date .wall_text_name_explain_promoted_post {
+    color: #939393;
+}
+
+.wall_module>.page_block:first-child {
+    border-radius: 4px 4px 0 0;
+}
+
+.wall_module>.page_block:first-child {
+    border-radius: 4px 4px 0 0;
+}
+
+h2, h3 {
+    margin: 20px 0 15px;
+}
+
+h2 {
+    font-size: 16px;
+    color: #000;
+}
+
+.wall_module .ui_tabs {
+    z-index: 1;
+}
+
+.wall_module .ui_tabs {
+    z-index: 1;
+}
+
+.ui_tabs {
+    position: relative;
+    border-bottom: 1px solid #e7e8ec;
+    padding: 0 10px;
+    margin: 0;
+    list-style: none;
+    -ms-user-select: none;
+    user-select: none;
+    -o-user-select: none;
+    -moz-user-select: none;
+    -khtml-user-select: none;
+    -webkit-user-select: none;
+}
+
+
+.ui_tabs {
+    position: relative;
+    border-bottom: 1px solid #e7e8ec;
+    padding: 0 10px;
+    margin: 0;
+    list-style: none;
+    -ms-user-select: none;
+    user-select: none;
+    -o-user-select: none;
+    -moz-user-select: none;
+    -khtml-user-select: none;
+    -webkit-user-select: none;
+}
+
+.clear_fix {
+    display: block;
+}
+
+.ui_tab_sel, .ui_tab_sel:hover, .ui_tabs .ui_tab_sel, .ui_tabs .ui_tab_sel:hover, .ui_tabs_box .ui_tab_sel, .ui_tabs_box .ui_tab_sel:hover {
+    border-bottom: 2px solid #5181b8;
+    padding-bottom: 13px;
+}
+
+.page_block {
+    position: relative;
+    background: #fff;
+    border-radius: 4px;
+    box-shadow: 0 1px 0 0 #d7d8db, 0 0 0 1px #e3e4e8;
+    margin: 15px 0 0;
+}
+
+.audio_row .audio_row__title:before {
+    display: inline-block;
+    content: "\00a0\2013";
+    padding: 0 3px;
+}
+
+.audio_row .audio_row__title:before {
+    display: inline-block;
+    content: "\00a0\2013";
+    padding: 0 3px;
+}
+
+.wall_module .wall_posts.all>.all~.all, .wall_module .wall_posts.all>.all~.all_ads_promoted_post, .wall_module .wall_posts.all>.post:not(.unshown)~.post.unshown+.post:not(.unshown), .wall_module .wall_posts.own>.own~.own, .wall_module .wall_posts.own>.own~.own_ads_promoted_post, .wall_module .wall_posts.own>.post:not(.unshown)~.post.unshown+.post:not(.unshown), .wall_module .wall_posts.postponed>.postponed~.postponed, .wall_module .wall_posts.suggested>.suggest~.suggest, .wall_module .wall_posts_search>.post~.post {
+    margin-top: 15px;
+    border-radius: 4px;
+}
+
+.like_wrap {
+    padding: 0 20px;
+}
+
+.like_cont {
+    padding: 12px 0;
+    border-top: 1px solid #e7e8ec;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-align: center;
+    align-items: center;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    position: relative;
+}
+
+.like_cont {
+    padding: 12px 0;
+    border-top: 1px solid #e7e8ec;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-align: center;
+    align-items: center;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    position: relative;
+}
+
+.like_btns, .like_btn {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-align: center;
+    align-items: center;
+}
+
+.like_views {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-align: center;
+    align-items: center;
+    height: 14px;
+    line-height: 14px;
+    color: #909399;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+.like_btn.like, .like_btn:first-child {
+    margin-left: -3px;
+}
+
+.like_btn {
+    margin-left: 21px;
+    cursor: pointer;
+    text-decoration: none!important;
+    height: 26px;
+    padding: 0 3px;
+    box-sizing: border-box;
+    white-space: nowrap;
+}
+
+.like_btns, .like_btn {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-align: center;
+    align-items: center;
+}
+
+.like_btn {
+    margin-left: 21px;
+    cursor: pointer;
+    text-decoration: none!important;
+    height: 26px;
+    padding: 0 3px;
+    box-sizing: border-box;
+    white-space: nowrap;
+}
+
+.like_btn.like .like_button_icon {
+    background-image: url(data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2024%2024%22%20height%3D%22100%25%22%20width%3D%22100%25%22%3E%3Ctitle%3Elike_outline_24%3C%2Ftitle%3E%3Cpath%20d%3D%22M0%2C0H24V24H0Z%22%20fill%3D%22none%22%2F%3E%3Cpath%20d%3D%22M17%2C2.9A6.43%2C6.43%2C0%2C0%2C1%2C23.4%2C9.33c0%2C3.57-1.43%2C5.36-7.45%2C10l-2.78%2C2.16a1.9%2C1.9%2C0%2C0%2C1-2.33%2C0L8.05%2C19.37C2%2C14.69.6%2C12.9.6%2C9.33A6.43%2C6.43%2C0%2C0%2C1%2C7%2C2.9a6.46%2C6.46%2C0%2C0%2C1%2C5%2C2.54A6.46%2C6.46%2C0%2C0%2C1%2C17%2C2.9ZM7%2C4.7A4.63%2C4.63%2C0%2C0%2C0%2C2.4%2C9.33c0%2C2.82%2C1.15%2C4.26%2C6.76%2C8.63l2.78%2C2.16a.1.1%2C0%2C0%2C0%2C.12%2C0L14.84%2C18c5.61-4.36%2C6.76-5.8%2C6.76-8.63A4.63%2C4.63%2C0%2C0%2C0%2C17%2C4.7c-1.56%2C0-3%2C.88-4.23%2C2.73L12%2C8.5l-.74-1.07C10%2C5.58%2C8.58%2C4.7%2C7%2C4.7Z%22%20fill%3D%22%23828a99%22%2F%3E%3C%2Fsvg%3E)
+}
+
+
+.like_button_icon {
+    width: 24px;
+    height: 24px;
+    background: no-repeat 50% / contain;
+    opacity: 0.7;
+    -o-transition: opacity 100ms ease-in-out;
+    transition: opacity 100ms ease-in-out;
+    -ms-flex: 0 0 auto;
+    flex: 0 0 auto;
+}
+
+
+.like_views {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-align: center;
+    align-items: center;
+    height: 14px;
+    line-height: 14px;
+    color: #909399;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+.like_views:before {
+    content: '';
+    display: block;
+    width: 14px;
+    height: 14px;
+    background: url(data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2214%22%20height%3D%2210%22%20viewBox%3D%221%202%2014%2010%22%20style%3D%22fill%3A%23828a99%3B%22%3E%3Cpath%20d%3D%22M8%2012C3.8%2012%201%208%201%207%201%206%203.8%202%208%202%2012.2%202%2015%206%2015%207%2015%208%2012.2%2012%208%2012ZM8%2010.5C9.9%2010.5%2011.5%208.9%2011.5%207%2011.5%205.1%209.9%203.5%208%203.5%206.1%203.5%204.5%205.1%204.5%207%204.5%208.9%206.1%2010.5%208%2010.5ZM8%208.6C7.1%208.6%206.4%207.9%206.4%207%206.4%206.1%207.1%205.4%208%205.4%208.9%205.4%209.6%206.1%209.6%207%209.6%207.9%208.9%208.6%208%208.6Z%22%2F%3E%3C%2Fsvg%3E) no-repeat 50% / contain;
+    margin-right: 6px;
+    opacity: 0.5;
+}
+
+.page_add_media {
+    float: right;
+    padding: 3px 0 0;
+    position: relative;
+    margin-left: -3px;
+}
+
+.clear_fix {
+    display: block;
+}
+
+.media_selector>.ms_item {
+    float: left;
+    width: 22px;
+    height: 22px;
+    padding: 0 0 0 22px;
+    margin-right: 4px;
+    box-sizing: border-box;
+    overflow: hidden;
+}
+
+.media_selector .ms_item {
+    position: relative;
+    display: block;
+    outline: none;
+}
+
+.media_selector .ms_item.ms_item_photo:before {
+    background-position: left -65px;
+}
+
+.media_selector>.ms_item:before {
+    left: 0;
+}
+
+.media_selector .ms_item:before {
+    position: absolute;
+    content: '';
+    width: 22px;
+    height: 22px;
+    background: url(https://vk.com/images/post_icon.png?10) no-repeat;
+    opacity: 0.7;
+    filter: alpha(opacity=70);
+}
+
+.blind_label, div#utils {
+    position: absolute;
+    overflow: hidden;
+}
+
+.blind_label {
+    height: 1px;
+    width: 1px;
+    clip: rect(1px, 1px, 1px, 1px);
+    opacity: 0;
+    outline: none;
+}
+
+.media_selector .ms_item.ms_item_photo:before {
+    background-position: left -65px;
+}
+
+.media_selector .ms_item.ms_item_video:before {
+    background-position: left -87px;
+}
+
+.media_selector .ms_item.ms_item_audio:before {
+    background-position: left -109px;
+}
+
+
+.narrow_column_wrap {
+    float: left;
+}
+
+.narrow_column_wrap {
+    position: relative;
+    width: 230px;
+}
+
+.narrow_column {
+    width: 230px;
+}
+
+.page_photo {
+    margin-top: 0px !important;
+    padding: 15px;
+    font-size: 12.5px;
+}
+
+.page_block {
+    position: relative;
+    background: #fff;
+    border-radius: 4px;
+    box-shadow: 0 1px 0 0 #d7d8db, 0 0 0 1px #e3e4e8;
+    margin: 15px 0 0;
+}
+
+.page_avatar_wrap {
+    margin-bottom: 2px;
+    position: relative;
+    overflow: hidden;
+}
+
+.profile_content .page_avatar {
+    max-height: 300px;
+}
+
+.page_avatar {
+    text-align: center;
+    max-height: 500px;
+    height: auto!important;
+    height: 500px;
+    overflow: hidden;
+    border-radius: 2px;
+}
+
+a {
+    color: #2a5885;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.page_avatar_img {
+    vertical-align: top;
+    border-radius: 2px;
+    max-width: 200px;
+}
+
+img {
+    border: 0;
+    color: transparent;
+}
+
+.clear_fix {
+    display: block;
+}
+
+.page_actions_wide.no_actions .page_action_left {
+    width: 200px;
+}
+
+
+
+.page_action_left {
+    position: relative;
+    width: 157px;
+}
+
+.fl_l {
+    float: left;
+}
+
+.page_photo .flat_button, .page_photo .page_actions_expanded, .page_photo .page_actions_wrap {
+    margin-top: 10px;
+}
+
+.button_wide button, .flat_button.button_wide {
+    width: 100%;
+    padding-left: 3px;
+    padding-right: 3px;
+}
+
+.button_gray button, .flat_button.secondary {
+    background-color: #e5ebf1;
+    color: #55677d;
+}
+
+.button_wide {
+    display: block;
+}
+
+.button_blue button, .button_gray button, .button_light_gray button, .flat_button {
+    padding: 7px 16px 8px;
+    margin: 0;
+    font-size: 12.5px;
+    display: inline-block;
+    zoom: 1;
+    cursor: pointer;
+    white-space: nowrap;
+    outline: none;
+    font-family: -apple-system,BlinkMacSystemFont,Roboto,Helvetica Neue,sans-serif;
+    vertical-align: top;
+    line-height: 15px;
+    text-align: center;
+    text-decoration: none;
+    background: none;
+    background-color: #5181b8;
+    color: #fff;
+    border: 0;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+
+.module {
+    border: solid #e7e8ec;
+    border-width: 1px 0 0;
+}
+
+.module_header {
+    display: block;
+}
+
+module_header .header_top {
+    height: 32px;
+    line-height: 40px;
+    overflow: hidden;
+    padding: 0 15px;
+    margin: 0;
+    font-weight: 400;
+    -webkit-font-smoothing: subpixel-antialiased;
+    -moz-osx-font-smoothing: auto;
+    font-size: 12.5px;
+    letter-spacing: 0;
+    outline: none;
+    color: #000;
+}
+
+.module_header .header_label {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 100%;
+}
+
+.module_header .header_count {
+    color: #939393;
+    padding: 0 6px;
+}
+
+.clear_fix:after {
+    content: '.';
+    display: block;
+    height: 0;
+    font-size: 0;
+    line-height: 0;
+    clear: both;
+    visibility: hidden;
+}
+
+.people_module .module_body {
+    padding: 6px 10px 8px;
+}
+
+.module_body {
+    padding: 12px 15px 15px;
+    font-size: 12.5px;
+}
+
+.narrow_column .people_module .people_row {
+    width: 210px;
+    overflow: hidden;
+}
+
+.module_body .people_cell {
+    float: left;
+    width: 70px;
+    overflow: hidden;
+    padding: 6px 0 5px;
+    text-align: center;
+}
+
+.module_body .people_cell_ava {
+    display: block;
+    height: 50px;
+    width: 50px;
+    margin: 0 10px;
+    padding-bottom: 7px;
+}
+
+.module_body .people_cell_img {
+    overflow: hidden;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+}
+
+#page_layout {
+
+    margin: 0 auto;
+    position: relative;
+    width: 960px;
+}
+
+.body_im .side_bar, .side_bar.sticky_top {
+    position: fixed;
+    position: -webkit-sticky;
+    top: 0!important;
+}
+
+.side_bar_inner {
+    z-index: 10;
+    width: 149px;
+    padding: 15px 0 10px;
+    margin-top: 42px;
+}
+
+#side_bar ol {
+    list-style: none;
+    margin: 0 0 10px;
+    padding: 0;
+}
+
+#side_bar ol li {
+    margin-left: -8px;
+}
+
+#side_bar ol li .left_row {
+    color: #285473;
+    border: 0;
+    display: block;
+    white-space: nowrap;
+}
+
+.left_fixer, .left_fixer>span {
+    display: block;
+}
+
+.left_fixer, .left_fixer>span {
+    display: block;
+}
+
+.left_void {
+    display: none!important;
+}
+
+.left_count_wrap {
+    margin: 2px 0 2px 2px;
+    zoom: 1;
+    padding: 1px 6px;
+    vertical-align: top;
+    color: #5b6e85;
+    background: #d1d9e0;
+    font-weight: 700;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    font-size: 11px;
+    line-height: 17px;
+    height: 20px;
+    border-radius: 2px;
+    -o-transition: background-color 200ms linear, color 200ms linear;
+    transition: background-color 200ms linear, color 200ms linear;
+}
+
+.fl_r {
+    float: right;
+}
+
+.left_void {
+    display: none!important;
+}
+
+#side_bar #l_pr .left_icon {
+    background-position: 7px 6px;
+}
+
+#side_bar .left_icon {
+    width: 35px;
+    height: 25px;
+    opacity: 0.75;
+    filter: alpha(opacity=75);
+    background: url('data:image/svg+xml;charset=utf-8,%3Csvg%20width%3D%2218%22%20height%3D%221045%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20xmlns%3Axlink%3D%22http%3A%2F%2Fwww.w3.org%2F1999%2Fxlink%22%3E%0A%20%20%20%20%3Cdefs%3E%0A%20%20%20%20%20%20%20%20%3Cpath%20id%3D%22a%22%20d%3D%22M0%200h18v1045H0z%22%2F%3E%0A%20%20%20%20%3C%2Fdefs%3E%0A%20%20%20%20%3Cg%20fill%3D%22none%22%20fill-rule%3D%22evenodd%22%3E%0A%20%20%20%20%20%20%20%20%3Cmask%20id%3D%22b%22%20fill%3D%22%23fff%22%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%3Cuse%20xlink%3Ahref%3D%22%23a%22%2F%3E%0A%20%20%20%20%20%20%20%20%3C%2Fmask%3E%0A%20%20%20%20%20%20%20%20%3Cg%20mask%3D%22url(%23b)%22%20fill%3D%22%237D9CB8%22%20fill-rule%3D%22nonzero%22%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%3Cpath%20d%3D%22M3.34314575%20908.656854c-3.12419433-3.124194-3.12419433-8.189514%200-11.313708%203.12419433-3.124195%208.18951415-3.124195%2011.31370845%200%203.1241944%203.124194%203.1241944%208.189514%200%2011.313708-3.1241943%203.124195-8.18951412%203.124195-11.31370845%200zm3.53553391-3.535534c1.41421356%201.414214%201.92503606%202.344536%201.92503606%202.344536.31386927.465139.80527777.475584%201.1203791.029206%200%200%201.90433228-1.666635-.92409482-4.495062-2.82842712-2.828427-4.49506166-.924095-4.49506166-.924095-.46357352.288318-.43330227.816712.02920587%201.120379%200%200%20.93032188.510823%202.34453545%201.925036zm3.72102664-1.968055c.3167775.452405%201.1236967.433954%201.8023045-.041212.6786078-.475167.9719292-1.227112.6551516-1.679517-.3167775-.452405-1.1236967-.433954-1.8023045.041212-.6786077.475167-.9719291%201.227112-.6551516%201.679517zm.8087715%202.271479c.1664955.35705.7356371.44404%201.2712132.194297.5355762-.249743.8347752-.741647.6682797-1.098698-.1664955-.357051-.7356371-.44404-1.2712132-.194297-.5355762.249743-.8347752.741647-.6682797%201.098698zm-4.85646959-4.85647c.35705078.166495.84895454-.132703%201.09869781-.66828.24974327-.535576.16275335-1.104717-.19429743-1.271213-.35705078-.166495-.84895455.132704-1.09869781.66828-.24974327.535576-.16275335%201.104717.19429743%201.271213zm2.29473037.832023c.45240518.316778%201.20435042.023457%201.67951672-.655151.4751663-.678608.4936178-1.485527.0412126-1.802305-.4524052-.316777-1.20435043-.023456-1.67951671.655152-.47516628.678608-.49361779%201.485527-.04121261%201.802304zM8.99262937%20867c3.42948403%200%206.47506643%202.179347%207.57841983%205.423131%201.110154%203.261905.0148198%206.854683-2.7255203%208.940236-.6850163.52129-1.448574.927284-2.269367%201.206542-.8397404.28543-1.70880616.43013-2.58317874.43013h-.00031448c-1.22576476-.000039-2.41186572-.278315-3.52540041-.827043-1.91655958-.943008-3.35078534-2.576496-4.03839605-4.599546-1.1100361-3.261945-.01450539-6.85492%202.72614927-8.940669.68462315-.521015%201.44798425-.926813%202.2688559-1.206149C7.25618826%20867.143521%208.12041885%20867%208.99262937%20867zm.77405343%201.763251c-3.2638316%202.48396-3.50079234%205.308581-3.49560342%206.115026l.0011793.186368.1766985.059044c.41377718.138253.81273448.208343%201.18578648.208343.33409579%200%20.65321446-.056253.94843264-.167264l.15566764-.058493.01242197-.165967c.08408411-1.13032.60997344-3.350353%203.18749159-5.518222l.3088194-.2598-.3638928-.174379c-.4985295-.238926-1.024694-.415467-1.5637915-.52467l-.1102253-.022407-.0918675.06494c-.11836242.083652-.23648901.170291-.351117.257481zm-6.91600679%203.652293l-.06777046.16121.12374792.123748c.40905997.408981%201.05563103%201.005511%201.81305632%201.524835l.35107771.240735.0545623-.42219c.16608479-1.286931.75577427-3.218153%202.6218598-5.110065l.63450289-.643348-.87960081.207007c-.22823392.053658-.44691551.116121-.64983379.185504-.68399419.232046-1.32097361.570506-1.89332737%201.006061-.92575076.704514-1.65479422%201.647325-2.10827451%202.726503zm-.23904418%204.487748l.08907649.05299c1.86875861%201.114203%203.63436776%201.679206%205.24776854%201.679206.04119689%200%20.0824724-.000275.12343343-.001061%201.38269033-.024844%202.35262551-.464094%202.92285661-.828184l.2768604-.176895-.2353884-.229256c-.4584726-.446365-.9867599-.846305-1.57023837-1.188656l-.11710453-.068714-.12335481.056607c-.49337995.226622-1.02595198.341486-1.58285691.341486-1.96557917%200-3.88595183-1.433518-4.8557298-2.288l-.38779326-.341683-.04390928.515001c-.06816356.800745.00860889%201.600586.2281553%202.377312l.02822459.099847zm10.13683327%203.609367l.1658882-.112977-.0669449-.189199c-.1731213-.489292-.403478-.96569-.6847018-1.415986l-.1438746-.230317-.2242637.153466c-.7540839.516691-2.03303511%201.1326-3.84337905%201.1326-1.12013876%200-2.31009211-.23928-3.53683962-.711157l-1.06085927-.408078.77731616.829245c.55037946.587174%201.19734362%201.066048%201.92292781%201.423337.92881694.457293%201.91773889.689144%202.93936676.689144.72975105%200%201.45470631-.120957%202.15469961-.359254.5611111-.190497%201.099619-.459888%201.6006644-.800824zm2.4421344-3.027028l.0404893-.101105-.0435555-.099887c-1.2780471-2.924665-3.217092-4.085765-4.2592397-4.517585l-.2197822-.091121-.1105791.210702c-.4539913.865252-.5992025%201.589068-.64106767%202.043924l-.01509504.16467.14265601.08373c2.0675494%201.213067%203.119328%202.840148%203.6376305%203.991499l.1725316.383469.266404-.325369c.4309556-.526243.7773555-1.11267%201.0296078-1.742927zm-.0066041-2.681729l.5227839.74921-.0491376-.912229c-.0335314-.61984-.1487097-1.222148-.3425081-1.79006-.3677451-1.081811-1.0127045-2.056306-1.8650241-2.818095l-.1609745-.143953-.1711558.131531c-.5676759.436027-1.0678958.899099-1.486744%201.376401l-.2276835.259642.3122394.14757c.9357355.442159%202.2970019%201.321563%203.4682043%202.999983zM9.92410215%20851.01354l-.92379693-.89343-.92461085.89343c-1.36087089%201.31528-3.56658866%201.31528-4.92745955%200-1.53097976-1.480762-1.53097976-3.875531%200-5.355436l5.15697828-4.986051c.38762006-.374772%201.00256418-.374772%201.39018424%200l5.15697826%204.986051c1.5301659%201.479905%201.5301659%203.875532%200%205.355436-1.3608709%201.31528-3.5674026%201.31528-4.92827345%200zM6.99999237%20855l1.99999976-4%201.99999977%204s-.99999989.5-1.99999977.5c-.99999988%200-1.99999976-.5-1.99999976-.5zM11.8177979%20818.099115c1.6989336-5.76-3.27044701-8-3.27044701-8-.33978671%202.88-2.03872024%203.48-3.82260044%205-2.97313368%202.52-2.71829365%205-2.71829365%205-.21236669%203.84%204.8844339%205.52%204.8844339%205.52-2.33603361-4%201.10430679-6%201.10430679-6-.12742001%205.16%204.20486051%206.48%204.20486051%206.48%207.0930475-3.64%202.0811936-11.24%202.0811936-11.24-.1698934%202.6-2.4634537%203.24-2.4634537%203.24zM3.46972561%20765c-.26403164%200-.48255645-.2052934-.49902629-.46881086l-.41295762-6.60732189c-.00626404-.10022472.03082317-.19831191.10183103-.26931977.1366835-.1366835.35829125-.1366835.49497475%200L6.5%20761l2.18695048-4.37390097c.0338673-.06773459.08879017-.12265746.15652476-.15652475.17289248-.08644624.38312804-.01636772.46957428.15652475L11.5%20761l3.3454525-3.34545252c.0710079-.07100786.1690951-.10809508.2693198-.10183103.1929232.0120577.3395437.17822758.327486.3711508l-.4129576%206.60732189C15.0128308%20764.7947066%2014.794306%20765%2014.5302744%20765H3.46972561zm.17124569%201h10.7180574c.2228797%200%20.3037012.0232064.3851827.0667832.0814815.0435767.1454287.1075239.1890054.1890054.0435768.0814815.0667832.162303.0667832.3851827v.7180574c0%20.2228797-.0232064.3037012-.0667832.3851827-.0435767.0814815-.1075239.1454287-.1890054.1890054-.0814815.0435768-.162303.0667832-.3851827.0667832H3.6409713c-.22287968%200-.30370124-.0232064-.38518273-.0667832-.08148148-.0435767-.14542862-.1075239-.18900539-.1890054C3.0232064%20767.6627299%203%20767.5819084%203%20767.3590287v-.7180574c0-.2228797.0232064-.3037012.06678318-.3851827.04357677-.0814815.10752391-.1454287.18900539-.1890054C3.33727006%20766.0232064%203.41809162%20766%203.6409713%20766zM16.6710289%20790.95792l.0480191.113795c.5299824.602009.7836924%201.371923.7809297%202.140426-.0041441.85081-.3204759%201.70303-.9826085%202.322441v1.759938c0%20.388955-.3103458.70548-.6906807.70548h-1.6143511c-.3812558%200-.6906807-.316525-.6906807-.70548V796H4.47788318v1.29452c0%20.388955-.30942496.70548-.69068073.70548H2.17285136c-.38125576%200-.69068073-.316525-.69068073-.70548%200%200-.01335316-1.805559-.02025997-1.811673-.62391493-.58696-.9651112-1.416604-.96188803-2.334669.00322318-.743106.24588234-1.485741.74639564-2.075523l.05116863-.117002C.46828724%20790.891209%200%20790.491009%200%20789.982728%200%20789.439729.62512952%20789%201.39542906%20789c.20334189%200%20.44627711.050412.6936548.145813l.12981288-.296831c.43420795-1.161691.99458025-2.303157%201.63461106-2.733971%202.21248061-1.486681%208.0809646-1.486681%2010.2934452%200%20.6395703.430343%201.2022449%201.570399%201.6341506%202.733971l.125895.298345c.2487296-.096382.4931572-.147327.6975723-.147327C17.3748705%20789%2018%20789.439729%2018%20789.982728c0%20.514658-.4801115.918506-1.3289711.975192zm-12.03366161-3.480102c-.34508322.253407-.78896042%201.273244-1.19480426%202.522182H14.6721461c-.4067715-1.249455-.8506487-2.269809-1.1957319-2.522182-1.7755088-1.303757-7.06261044-1.303757-8.83904691%200zM3.59544126%20792c-.77029953%200-1.39542905.439729-1.39542905.982728%200%20.542998.53444431.962648%201.47254039.981359.54535749.009958%202.01765864.113493%202.02742803-.084343C5.70750991%20792.72521%204.36668653%20792%203.59544126%20792zm10.80911744%200c-.7712452%200-2.1120686.72521-2.1045393%201.879744.0097694.197836%201.4820705.094301%202.027428.084343.9380961-.018711%201.4725404-.438361%201.4725404-.981359%200-.542999-.6251295-.982728-1.3954291-.982728zM2.96145695%20700h4.0770861c.33431953%200%20.45555187.03481.57777409.100175.12222222.065365.21814294.161286.2835081.283508C7.9651904%20700.505905%208%20700.627137%208%20700.961457v4.077086c0%20.33432-.0348096.455552-.10017476.577774s-.16128588.218143-.2835081.283508C7.49409492%20705.96519%207.37286258%20706%207.03854305%20706h-4.0770861c-.33431953%200-.45555187-.03481-.57777409-.100175-.12222222-.065365-.21814294-.161286-.2835081-.283508C2.0348096%20705.494095%202%20705.372863%202%20705.038543v-4.077086c0-.33432.0348096-.455552.10017476-.577774s.16128588-.218143.2835081-.283508C2.50590508%20700.03481%202.62713742%20700%202.96145695%20700zm0%208h4.0770861c.33431953%200%20.45555187.03481.57777409.100175.12222222.065365.21814294.161286.2835081.283508C7.9651904%20708.505905%208%20708.627137%208%20708.961457v4.077086c0%20.33432-.0348096.455552-.10017476.577774s-.16128588.218143-.2835081.283508C7.49409492%20713.96519%207.37286258%20714%207.03854305%20714h-4.0770861c-.33431953%200-.45555187-.03481-.57777409-.100175-.12222222-.065365-.21814294-.161286-.2835081-.283508C2.0348096%20713.494095%202%20713.372863%202%20713.038543v-4.077086c0-.33432.0348096-.455552.10017476-.577774s.16128588-.218143.2835081-.283508C2.50590508%20708.03481%202.62713742%20708%202.96145695%20708zm7.99999995%200h4.0770862c.3343195%200%20.4555518.03481.577774.100175.1222223.065365.218143.161286.2835081.283508.0653652.122222.1001748.243454.1001748.577774v4.077086c0%20.33432-.0348096.455552-.1001748.577774-.0653651.122222-.1612858.218143-.2835081.283508-.1222222.065365-.2434545.100175-.577774.100175h-4.0770862c-.3343195%200-.4555518-.03481-.577774-.100175-.1222223-.065365-.218143-.161286-.2835081-.283508C10.0348096%20713.494095%2010%20713.372863%2010%20713.038543v-4.077086c0-.33432.0348096-.455552.1001748-.577774.0653651-.122222.1612858-.218143.2835081-.283508.1222222-.065365.2434545-.100175.577774-.100175zm2.7183958-8.562788l2.8829353%202.882935c.2363996.2364.2975097.346738.3377137.479383.040204.132644.040204.268296%200%20.40094-.040204.132645-.1013141.242983-.3377137.479383l-2.8829353%202.882935c-.2363996.2364-.3467379.29751-.4793822.337714-.1326443.040204-.2682967.040204-.400941%200s-.2429826-.101314-.4793822-.337714l-2.88293526-2.882935c-.2363996-.2364-.2975097-.346738-.33771372-.479383-.04020401-.132644-.04020401-.268296%200-.40094.04020402-.132645.10131412-.242983.33771372-.479383l2.88293526-2.882935c.2363996-.2364.3467379-.29751.4793822-.337714.1326443-.040204.2682967-.040204.400941%200s.2429826.101314.4793822.337714zM8%20741.929111c-3.06569114-.438513-5.49059835-2.86342-5.92911113-5.929111H1c-.55228475%200-1-.447715-1-1s.44771525-1%201-1h1.07088887C2.50940165%20730.934309%204.93430886%20728.509402%208%20728.070889V727c0-.552285.44771525-1%201-1s1%20.447715%201%201v1.070889c3.0656911.438513%205.4905983%202.86342%205.9291111%205.929111H17c.5522847%200%201%20.447715%201%201s-.4477153%201-1%201h-1.0708889c-.4385128%203.065691-2.86342%205.490598-5.9291111%205.929111V743c0%20.552285-.44771525%201-1%201s-1-.447715-1-1v-1.070889zM9%20740c2.7614237%200%205-2.238576%205-5s-2.2385763-5-5-5c-2.76142375%200-5%202.238576-5%205s2.23857625%205%205%205zm0-3c-1.1045695%200-2-.895431-2-2%200-1.104569.8954305-2%202-2s2%20.895431%202%202c0%201.104569-.8954305%202-2%202zM10.7142183%20675.888889c0%201.981%202.0459196%203.027889%203.7987079%207C15.0709042%20684.152778%2016.5039907%20686%209%20686c-7.50399075%200-6.07090422-1.847222-5.51292615-3.111111%201.75278824-3.972111%203.79870782-5.019%203.79870782-7v-2.333333h-.42855458c-.23656213%200-.42855459-.174223-.42855459-.388889v-.777778c0-.214667.19199246-.388889.42855459-.388889h4.28554581c.2365621%200%20.4285546.174222.4285546.388889v.777778c0%20.214666-.1919925.388889-.4285546.388889h-.4285546v2.333333zm1.735443%208.069203c.1783937-.04876.2478885-.235997.1848417-.408281-.1576169-.435586-.4563727-1.187786-1.0108977-2.029053-.4556562-.691737-.1339743.323114-1.3067875.323114-1.17281325%200-2.58205184-2.376871-3.94042315-.323114-.55595788.840617-.85328071%201.593467-1.01089763%202.029053-.06304677.172284.00644796.360172.18484166.408281C6.05327996%20684.094619%207.05414743%20684.25%209%20684.25c1.9458526%200%202.94672-.155381%203.4496613-.291908zM14.7651429%20625.421307c-.7225715%201.161648-3.03%202.012216-5.7651429%202.012216-2.73514286%200-5.04257143-.850568-5.766-2.012216-.15257143-.247159-.234-.115057-.234.005966v1.70625C3%20628.786932%205.68628571%20630.5%209%20630.5c3.3137143%200%206-1.713068%206-3.365625v-1.70625c0-.121875-.0822857-.253977-.2348571-.006818zm.0094285-4.360227c-.7114285%201.026988-3.0274285%201.78125-5.7745714%201.78125-2.74714286%200-5.064-.754262-5.77542857-1.78125C3.078%20620.849716%203%20620.964773%203%20621.059375v2.008807c0%201.501704%202.68628571%202.717898%206%202.717898%203.3137143%200%206-1.217046%206-2.717898v-2.008807c0-.094602-.0788571-.209659-.2254286.001705zM9%20615.5c-3.31371429%200-6%201.005682-6%202.244034v1.073864c0%201.313352%202.68628571%202.378693%206%202.378693%203.3137143%200%206-1.065341%206-2.378693v-1.073864C15%20616.505682%2012.3137143%20615.5%209%20615.5z%22%2F%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%3Cpath%20d%3D%22M14.7651429%20624.921307c-.7225715%201.161648-3.03%202.012216-5.7651429%202.012216-2.73514286%200-5.04257143-.850568-5.766-2.012216-.15257143-.247159-.234-.115057-.234.005966v1.70625C3%20628.286932%205.68628571%20630%209%20630c3.3137143%200%206-1.713068%206-3.365625v-1.70625c0-.121875-.0822857-.253977-.2348571-.006818zm.0094285-4.360227c-.7114285%201.026988-3.0274285%201.78125-5.7745714%201.78125-2.74714286%200-5.064-.754262-5.77542857-1.78125C3.078%20620.349716%203%20620.464773%203%20620.559375v2.008807c0%201.501704%202.68628571%202.717898%206%202.717898%203.3137143%200%206-1.217046%206-2.717898v-2.008807c0-.094602-.0788571-.209659-.2254286.001705zM9%20615c-3.31371429%200-6%201.005682-6%202.244034v1.073864c0%201.313352%202.68628571%202.378693%206%202.378693%203.3137143%200%206-1.065341%206-2.378693v-1.073864C15%20616.005682%2012.3137143%20615%209%20615zM12.9371701%20654.002258c.1074811.531128.206315.76532.466883.991883L5.03026389%20655c.05160041-1.108983%203.14833772-3%203.14833772-5.5-.52472295.5-2.76294717%201.285628-3.14833772%201.5-.06826304.04026-1.37206726-.706153-1.57416886-1-.44612852-.650436-.46646006-.746281-.45355996-.875427.0252627-.254632.32111869-.378538.48129495-.465332.00806257-.004183.85502645-.466534%201.59946983-1.451599.31443999-.7571.56466377-1.397048%201.83209878-2.023432.48751635-.240515.95084501-.424039%201.28517266-.544819-.04850158-.210334-.2864851-1.143496-.54669263-1.639391%200%200%20.88145622.136433%201.57352833.534546.55544928.319521.93401641.909582%201.05008641.965454.317665.153198.8018519.011257%202.0988918%201C15%20647.5%2013.5112876%20650.47804%2013.5%20650.5l-.5628299%203.502258zM3.6409713%20655h10.7180574c.2228797%200%20.3037012.023206.3851827.066783.0814815.043577.1454287.107524.1890054.189006.0435768.081481.0667832.162303.0667832.385182v1.718058c0%20.222879-.0232064.303701-.0667832.385182-.0435767.081482-.1075239.145429-.1890054.189006-.0814815.043577-.162303.066783-.3851827.066783H3.6409713c-.22287968%200-.30370124-.023206-.38518273-.066783-.08148148-.043577-.14542862-.107524-.18900539-.189006C3.0232064%20657.66273%203%20657.581908%203%20657.359029v-1.718058c0-.222879.0232064-.303701.06678318-.385182.04357677-.081482.10752391-.145429.18900539-.189006.08148149-.043577.16230305-.066783.38518273-.066783zM14.83824%20598.079066C14.4605335%20599.548962%2013.2008894%20602%209%20602c-4.20088941%200-5.46053351-2.451038-5.83824002-3.920934l-1.02341576.089538%201.73092217-3.162896%202.25385662%202.814273-.93084685.081438c.28818399.756608%201.00829889%201.75627%202.80772384%202.027917v-6.100042C6.83480763%20593.417458%206%20592.306219%206%20591c0-1.656854%201.34314575-3%203-3%201.6568542%200%203%201.343146%203%203%200%201.306219-.8348076%202.417458-2%202.829294v6.100042c1.799425-.271647%202.5195399-1.271309%202.8077238-2.027917l-.9308468-.081438%202.2538566-2.814273%201.7309222%203.162896-1.0234158-.089538zM9%20592c.55228475%200%201-.447715%201-1s-.44771525-1-1-1-1%20.447715-1%201%20.44771525%201%201%201zM1.25284123%20561.8042858c-.04792191-.54774995.35637394-1.03055912.90501873-1.07855932l8.97456364-.78517258c.5477499-.0479219%201.0305591.35637394%201.0785593.90501873l.7851726%208.97456367c.0479219.5477499-.356374%201.0305591-.9050187%201.0785593l-8.97456367.7851726c-.54774996.0479219-1.03055913-.356374-1.07855933-.9050188l-.78517257-8.9745636zM4%20564c.55228475%200%201-.44771525%201-1s-.44771525-1-1-1-1%20.44771525-1%201%20.44771525%201%201%201zm3%203c.55228475%200%201-.44771525%201-1s-.44771525-1-1-1-1%20.44771525-1%201%20.44771525%201%201%201zm3%202c.55228475%200%201-.44771525%201-1s-.44771525-1-1-1-1%20.44771525-1%201%20.44771525%201%201%201zm3.9274295-4.18030647l2.1975875.19226399c.5477499.04792191.9530189.52991453.9050187%201.07855932l-.7851726%208.97456366c-.0479219.5477499-.5299145.9530189-1.0785593.9050187l-8.9745636-.7851726c-.54774996-.0479219-.95301893-.5299145-.90501873-1.0785593l.0864965-.9886595%208.21791113-.7189741c.5486448-.0480002.9529407-.5308093.9050188-1.0785593l-.5687184-6.50048087zM1%20542.515023c0-.270884.21505737-.490479.49047852-.490479h3.01904296c.27088381%200%20.49047852.215058.49047852.490479v3.019043c0%20.270884-.21505737.490478-.49047852.490478H1.49047852C1.21959471%20546.024544%201%20545.809487%201%20545.534066v-3.019043zm5%200c0-.270884.21505737-.490479.49047852-.490479h3.01904296c.27088381%200%20.49047852.215058.49047852.490479v3.019043c0%20.270884-.21505737.490478-.49047852.490478H6.49047852C6.21959471%20546.024544%206%20545.809487%206%20545.534066v-3.019043zm5%200c0-.270884.2150574-.490479.4904785-.490479h3.019043c.2708838%200%20.4904785.215058.4904785.490479v3.019043c0%20.270884-.2150574.490478-.4904785.490478h-3.019043c-.2708838%200-.4904785-.215057-.4904785-.490478v-3.019043zm-5-5c0-.270884.21505737-.490479.49047852-.490479h3.01904296c.27088381%200%20.49047852.215058.49047852.490479v3.019043c0%20.270884-.21505737.490478-.49047852.490478H6.49047852C6.21959471%20541.024544%206%20540.809487%206%20540.534066v-3.019043zm5.5468329-4.141708c-.1915438-.191544-.1947522-.498889%200-.693641l2.1347857-2.134786c.1915438-.191544.4988893-.194752.6936414%200l2.1347858%202.134786c.1915437.191543.1947521.498889%200%20.693641l-2.1347858%202.134786c-.1915438.191544-.4988892.194752-.6936414%200l-2.1347857-2.134786zM1%20537.515023c0-.270884.21505737-.490479.49047852-.490479h3.01904296c.27088381%200%20.49047852.215058.49047852.490479v3.019043c0%20.270884-.21505737.490478-.49047852.490478H1.49047852C1.21959471%20541.024544%201%20540.809487%201%20540.534066v-3.019043zm0-5c0-.270884.21505737-.490479.49047852-.490479h3.01904296c.27088381%200%20.49047852.215058.49047852.490479v3.019043c0%20.270884-.21505737.490478-.49047852.490478H1.49047852C1.21959471%20536.024544%201%20535.809487%201%20535.534066v-3.019043zm5.04522705.707787c-.1354419-.234593-.05899411-.532296.1795276-.670006l2.6145679-1.509522c.23459226-.135442.53229554-.058994.67000612.179528l1.50952153%202.614568c.1354419.234592.0589941.532295-.1795276.670006l-2.61456795%201.509521c-.23459226.135442-.53229554.058994-.67000611-.179527l-1.50952149-2.614568zm6.40954585%202.900024c.135442-.234592.4314845-.317238.6700062-.179528l2.6145679%201.509522c.2345922.135442.3172381.431484.1795276.670006l-1.5095215%202.614568c-.1354419.234592-.4314844.317238-.6700061.179528l-2.6145679-1.509522c-.2345923-.135442-.3172382-.431484-.1795276-.670006l1.5095214-2.614568zM5%20392.000488v3.999024l1.5-2%201.5%202v-3.999024h5.5044548c.8259668%200%201.4955452.675249%201.4955452%201.498246v10.501754H4.50034732c-.27134675%200-.50034732.223858-.50034732.5%200%20.268067.22401312.5.50034732.5H15v.501733c0%20.275185-.2290006.498267-.5003473.498267H4.49554521C3.6695784%20406.000488%203%20405.325239%203%20404.502243v-11.003509c0-.827458.67955446-1.498246%201.49554521-1.498246H5zM8.96145695%20420h1.07708615c.3343195%200%20.4555518.03481.577774.100175.1222223.065365.218143.161286.2835081.283508.0653652.122222.1001748.243454.1001748.577774v11.077086c0%20.33432-.0348096.455552-.1001748.577774-.0653651.122222-.1612858.218143-.2835081.283508-.1222222.065365-.2434545.100175-.577774.100175H8.96145695c-.33431953%200-.45555187-.03481-.57777409-.100175-.12222222-.065365-.21814294-.161286-.2835081-.283508C8.0348096%20432.494095%208%20432.372863%208%20432.038543v-11.077086c0-.33432.0348096-.455552.10017476-.577774s.16128588-.218143.2835081-.283508C8.50590508%20420.03481%208.62713742%20420%208.96145695%20420zm-5%206.98435h1.0770861c.33431953%200%20.45555187.03481.57777409.100175.12222222.065365.21814294.161286.2835081.283508C5.9651904%20427.490255%206%20427.611488%206%20427.945807v4.077086c0%20.33432-.0348096.455552-.10017476.577774s-.16128588.218143-.2835081.283508c-.12222222.065365-.24345456.100175-.57777409.100175h-1.0770861c-.33431953%200-.45555187-.03481-.57777409-.100175-.12222222-.065365-.21814294-.161286-.2835081-.283508C3.0348096%20432.478445%203%20432.357213%203%20432.022893v-4.077086c0-.334319.0348096-.455552.10017476-.577774s.16128588-.218143.2835081-.283508c.12222222-.065365.24345456-.100175.57777409-.100175zM13.9614569%20423h1.0770862c.3343195%200%20.4555518.03481.577774.100175.1222223.065365.218143.161286.2835081.283508.0653652.122222.1001748.243454.1001748.577774v8.077086c0%20.33432-.0348096.455552-.1001748.577774-.0653651.122222-.1612858.218143-.2835081.283508-.1222222.065365-.2434545.100175-.577774.100175h-1.0770862c-.3343195%200-.4555518-.03481-.577774-.100175-.1222223-.065365-.218143-.161286-.2835081-.283508C13.0348096%20432.494095%2013%20432.372863%2013%20432.038543v-8.077086c0-.33432.0348096-.455552.1001748-.577774.0653651-.122222.1612858-.218143.2835081-.283508.1222222-.065365.2434545-.100175.577774-.100175zM10.8419872%20513.044184c.4118834%203.51457-.2735035%203.258415-4.03743348%204.862167-.71876085.306272-.96540245-.190923-.76353078-.736644.20105768-.544926.64550097-1.74933.64550097-1.74933l-2.10825661-2.106515s-1.20309007.444691-1.74846919.64516c-.54537912.20206-1.04273232-.045344-.73585482-.762896%201.60357743-3.764361%201.34798184-4.449296%204.86282818-4.038017%200%200%204.05127153-5.74598%208.68862203-5.108775.1025638.013524.1701257.047731.2140816.091484.043142.043753.0773299.112167.0911679.213197.637361%204.637833-5.1086558%208.690169-5.1086558%208.690169zm.8213247-4.706247c.4859572.486058%201.2755359.486058%201.7631212%200%20.4867712-.488444.4867712-1.277592%200-1.763649-.4875853-.486058-1.27635-.486058-1.7631212%200-.4867712.487648-.4867712%201.276%200%201.763649zM8%20455.000977v1h3v-1h5v5.009222c0%20.547191-.4474894.990778-.9985023.990778H3.99850233C3.44704472%20461.000977%203%20460.550001%203%20460.010199v-5.009222h5zm-6-3.990632c0-.557459.44892021-1.009368%201.00748397-1.009368H15.992516c.5564181%200%201.007484.443353%201.007484%201.009368v2.990632H2v-2.990632zM7%20450H5.5l1-2h6l1%202H12l-.5-1h-4l-.5%201zM9.61250802%20307.724397l1.55804178%204.386363h3.8891124c.3589851%200%20.65.291015.65.65%200%20.203909-.0956876.396001-.2584489.518833l-3.2073249%202.420493%201.2017619%204.452355c.093548.346582-.1115766.703378-.4581585.796926-.195015.052638-.4034183.011621-.5639414-.110992L9%20318.223357l-3.42285182%202.61497c-.28526332.217934-.69318517.163352-.91111894-.121911-.12262072-.160504-.16365866-.36889-.11105024-.563902l1.20113256-4.452428-3.20732489-2.420493c-.28654357-.216248-.34352961-.623841-.12728189-.910384.12283217-.162761.31492375-.258449.51883303-.258449h3.88911244l1.55804174-4.386363c.12015708-.338279.49179281-.515101.83007165-.394944.18438244.065492.3294515.210562.39494438.394944zM4.5%20258c.8%200%201.5.7%201.5%201.5s-.7%201.5-1.5%201.5-1.5-.7-1.5-1.5.7-1.5%201.5-1.5zm5%200c.8%200%201.5.7%201.5%201.5s-.7%201.5-1.5%201.5-1.5-.7-1.5-1.5.7-1.5%201.5-1.5zm5%200c.8%200%201.5.7%201.5%201.5s-.7%201.5-1.5%201.5-1.5-.7-1.5-1.5.7-1.5%201.5-1.5zM14.9595514%20346.479776L12%20345v-6l2.9595514-1.479776v-.010574c0-.281472.2206524-.50965.4958467-.50965h.0487552c.2738486%200%20.4958467.227653.4958467.50965v8.9807c0%20.281472-.2206524.50965-.4958467.50965h-.0487552c-.2738485%200-.4958467-.227653-.4958467-.50965v-.010574zM8.16623492%20345l.59956759%203.778868c.08211273.517528-.27086121%201.003633-.78838934%201.085745-.00621676.000987-.01244318.001911-.01867833.002774-.53402898.073867-1.03003984-.290166-1.11969938-.821771L6.15670995%20345H4.99686968C3.34174426%20345%202%20343.653483%202%20342c0-1.656854%201.34739093-3%202.99686968-3H11v6H8.16623492zM10%20284.502301V280l5%205h-4.5023012C10.2148438%20285%2010%20284.777173%2010%20284.502301zM4.2819426%20280H9v4.718057c0%20.44576.04641281.607403.13356635.770366.08715355.162963.21504784.290857.3780108.378011.16296296.087153.32460608.133566.77036545.133566H15v6.718057c0%20.44576-.0464128.607403-.1335664.770366-.0871535.162963-.2150478.290857-.3780107.378011-.162963.087153-.3246061.133566-.7703655.133566H4.2819426c-.44575937%200-.60740249-.046413-.77036545-.133566-.16296296-.087154-.29085725-.215048-.3780108-.378011C3.04641281%20293.32546%203%20293.163817%203%20292.718057v-11.436114c0-.44576.04641281-.607403.13356635-.770366.08715355-.162963.21504784-.290857.3780108-.378011.16296296-.087153.32460608-.133566.77036545-.133566zM15.4974334%20142.07563c.8527902%200%201.5989817.764706%201.4923829%201.638656v7.647059c0%20.873949-.7461914%201.638655-1.5989816%201.638655H2.59898163C1.74619143%20153%201%20152.235294%201%20151.361345v-7.428572c0-.873949.74619143-1.857143%201.59898163-1.857143h1.38578408c.31979632%200%20.53299387-.218487.63959265-.436975l.53299387-1.20168c.10659878-.218488.4263951-.436975.63959265-.436975h6.50252532c.3197963%200%20.5329938.218487.6395926.436975l.5329939%201.20168c.1065988.218488.4263951.436975.6395926.436975h1.3857841zM9%20151c2.1714286%200%204-1.828571%204-4s-1.8285714-4-4-4c-2.17142857%200-4%201.828571-4%204s1.82857143%204%204%204zm0-6.5c1.4130435%200%202.5%201.086957%202.5%202.5s-1.0869565%202.5-2.5%202.5c-1.41304348%200-2.5-1.086957-2.5-2.5s1.08695652-2.5%202.5-2.5zM13.0000003%20176.822313l-1e-7-5.822313-6.00000013%202v7.5s-.02790912-.006998-.07712396-.020993c.13156025.916545-.60227365%201.920746-1.77303785%202.346869-1.29744476.472231-2.64017405.055693-2.99906981-.930365-.35889577-.986058.40194853-2.168235%201.69939329-2.640467.39135719-.142442.78683459-.20402%201.15818869-.193495-.00167862-.020301-.00253569-.040818-.00253569-.061549v-9.043823L15.0000002%20167v11.5c0%20.011614-.0298575.007042-.0823026-.010114-.0287355.812672-.6742896%201.659959-1.6753085%202.084866-1.2709519.539487-2.633641.193792-3.0436512-.772131-.41001023-.965924.287921-2.1863%201.558873-2.725787.4165313-.176807.842916-.258538%201.2423894-.254521zM12%20210H6v-2H4v2h-.99315453C2.45078007%20210%202%20209.550051%202%20208.993155v-11.98631C2%20196.45078%202.44994876%20196%203.00684547%20196H4v2h2v-2h6v2h2v-2h.9931545C15.5492199%20196%2016%20196.449949%2016%20197.006845v11.98631C16%20209.54922%2015.5500512%20210%2014.9931545%20210H14v-2h-2v2zm-6-8v-2H4v2h2zm8%200v-2h-2v2h2zm-8%204v-2H4v2h2zm8%200v-2h-2v2h2zM16.7700878%20232.254457c.0995654.403513.9956538%204.539525-1.5930461%204.741282-1.0952191.100878-2.2900037-1.614054-3.1860921-2.521959-.796523-1.008783-1.6926114-1.513175-3.08652675-1.513175-1.39391531%200-2.19043835.504392-3.08652676%201.513175-.89608841.907905-2.09087296%202.622837-3.08652675%202.521959-2.48913449-.100879-1.59304607-4.337769-1.49348069-4.741282C1.63615016%20230.035133%203.03006547%20226%205.81789609%20226c0%200%20.89608841.100878%201.59304607.504392%201.19478455.504391%201.79217682.504391%203.08652674%200C11.2939919%20226.100878%2012.090515%20226%2012.090515%20226c2.887396%200%204.1817459%203.934255%204.6795728%206.254457zM11%20230.5c0%20.268066.2238576.5.5.5.2680664%200%20.5-.223858.5-.5%200-.268066-.2238576-.5-.5-.5-.2680664%200-.5.223858-.5.5zm2%200c0%20.268066.2238576.5.5.5.2680664%200%20.5-.223858.5-.5%200-.268066-.2238576-.5-.5-.5-.2680664%200-.5.223858-.5.5zm-7-.5v-.5c0-.276142-.22385763-.5-.5-.5-.27614237%200-.5.223858-.5.5v.5h-.5c-.27614237%200-.5.223858-.5.5s.22385763.5.5.5H5v.5c0%20.276142.22385763.5.5.5.27614237%200%20.5-.223858.5-.5v-.5h.5c.27614237%200%20.5-.223858.5-.5s-.22385763-.5-.5-.5H6zM9%2092c5.4%200%206%202.7%206%204.1%200%20.7-.24.9-1.68.9H4.8c-1.44%200-1.8-.2-1.8-.9%200-1.5.6-4.1%206-4.1zm0-1c-1.65685425%200-3-1.1666667-3-3.5S7.34314575%2084%209%2084c1.6568542%200%203%201.1666667%203%203.5S10.6568542%2091%209%2091zM1%20123.1c0-1.5%200-4.1%205-4.1s5%202.7%205%204.1c0%20.7-.2.9-1.4.9H2.5c-1.2%200-1.5-.2-1.5-.9zm11.5888378.9c.0076614-.087343.0111607-.181103.0111607-.281667%200-1.366528-.0360801-3.335002-1.4736169-4.689226C11.3991584%20119.009997%2011.6899671%20119%2012%20119c4.5%200%205%202.7%205%204.1%200%20.7-.2.9-1.4.9h-3.0111622zM6%20118c-1.1045695%200-2-.833333-2-2.5s.8954305-2.5%202-2.5%202%20.833333%202%202.5-.8954305%202.5-2%202.5zm6%200c-1.1045695%200-2-.833333-2-2.5s.8954305-2.5%202-2.5%202%20.833333%202%202.5-.8954305%202.5-2%202.5zM13.2276469%2030.3559519C15.4383532%2031.0930238%2017%2032.8945374%2017%2035.0000031c0%201.7856435-1.1232489%203.3526628-2.8130558%204.2371485.085624.4846394.3884255%201.1327788.826289%201.7789863-1.5830134%200-2.4263434-.4200033-2.8895897-1.1036649-.3639838.0574652-.7396.0875331-1.1236435.0875331-.3188002%200-.6317933-.0207195-.9371458-.0606309C12.6570816%2038.9412165%2014.5%2036.7046958%2014.5%2034c0-1.367561-.4711538-2.6154301-1.2723531-3.6440481zM5.87559716%2038.912347c-.46259633.6734773-1.30776189%201.0876591-2.8955938%201.0876591.44584613-.6429487.75166072-1.2878546.83075488-1.7640638C2.12223085%2037.3512391%201%2035.784831%201%2033.9999969c0-2.7614254%202.6862915-5.000003%206-5.000003s6%202.2385776%206%205.000003C13%2036.7614224%2010.3137085%2039%207%2039c-.38431053%200-.76018205-.0301098-1.12440284-.087653zM9%2070c-1.1%200-2-.9-2-2h4c0%201.1-.9%202-2%202zm4.8461546-6s1.163079.8000031%201.7015406%201.6000004C16.5061561%2066.8999939%2015.8600039%2067%2014.3738447%2067H3.63059629c-1.49574637%200-2.13678052-.1-1.17522929-1.4.53419513-.8%201.69847929-1.6%201.69847929-1.6v-3c0-2.6%201.18617441-4.5%203.66154035-5%200%200%200-1%201.18461382-1%201.18461384%200%201.18461384%201%201.18461384%201%202.2067821.5%203.6615403%202.4%203.6615403%205v3zM9.65018866.29787234c-.40173693-.39716312-1.00434233-.39716312-1.30564503%200L1.21371306%207.24822695c-.40173693.39716312-.20086847.69503546.3013027.69503546L3%208v5c0%201%200%201%201%201h2.50461102C6.7782068%2014%207%2013.7721195%207%2013.5089948V9.99791312C7%208.89449617%207.88772964%208%209%208c1.1045695%200%202%20.89826062%202%201.99791312v3.51108168C11%2013.7801695%2011.2157526%2014%2011.495389%2014H14c1%200%201%200%201-1V8l1.5801508-.05673759c.4017369-.09929078.6026054-.39716312.2008684-.69503546L9.65018866.29787234zM5.00247329%20937H1.99117881C1.44956458%20937%201%20936.554345%201%20936.004602V927h2v6.496577c0%20.27052.22319652.503423.49852337.503423H4v-9.993155C4%20923.45078%204.45576096%20923%205.00247329%20923h9.99505341C15.5511774%20923%2016%20923.449949%2016%20924.006845v11.49491C16%20936.329213%2015.3204455%20937%2014.5044548%20937H5.00247329zM7%20926.490479v3.019042c0%20.275422.21983051.490479.49100518.490479h5.01798962C12.7721195%20930%2013%20929.780405%2013%20929.509521v-3.019042c0-.275422-.2198305-.490479-.4910052-.490479H7.49100518C7.22788048%20926%207%20926.219595%207%20926.490479zM7%20931.5c0%20.268066.21983051.5.49100518.5h5.01798962C12.7721195%20932%2013%20931.776142%2013%20931.5c0-.268066-.2198305-.5-.4910052-.5H7.49100518C7.22788048%20931%207%20931.223858%207%20931.5zm0%202c0%20.268066.21959471.5.49047852.5h3.01904298C10.7849426%20934%2011%20933.776142%2011%20933.5c0-.268066-.2195947-.5-.4904785-.5H7.49047852C7.21505737%20933%207%20933.223858%207%20933.5zM5%20953c0-2.209139%201.790861-4%204-4s4%201.790861%204%204h.7180574c.4457594%200%20.6074025.04641281.7703655.13356635.1629629.08715355.2908572.21504784.3780107.3780108.0871536.16296296.1335664.32460608.1335664.77036545v8.4361148c0%20.4457594-.0464128.6074025-.1335664.7703655-.0871535.1629629-.2150478.2908572-.3780107.3780107-.162963.0871536-.3246061.1335664-.7703655.1335664H4.2819426c-.44575937%200-.60740249-.0464128-.77036545-.1335664-.16296297-.0871535-.29085725-.2150478-.3780108-.3780107C3.04641281%20963.3254599%203%20963.1638168%203%20962.7180574v-8.4361148c0-.44575937.0464128-.60740249.13356635-.77036545s.21504783-.29085725.3780108-.3780108C3.6745401%20953.04641281%203.83618323%20953%204.2819426%20953H5zm1.25%200h5.5c0-1.51878306-1.23121694-2.75-2.75-2.75s-2.75%201.23121694-2.75%202.75zM7.91448459%20973.63597946C8.243947%20973.54532649%208.60578547%20973.5%209%20973.5c.39421453%200%20.756053.04532649%201.08551541.13597946L10.9%20972.55c.2485281-.33137085.7186292-.39852814%201.05-.15.3313708.24852814.3985281.71862915.15%201.05l-.7072098.94294637c.5731737.5832726.9422437%201.45229048%201.1072098%202.60705363h-7c.16496616-1.15476314.53403609-2.02378102%201.10720978-2.60705363L5.9%20973.45c-.24852814-.33137085-.18137085-.80147186.15-1.05s.80147186-.18137085%201.05.15l.81448459%201.08597946zm-3.60229728%205.33742426C4.35969993%20978.63665834%204.42230416%20978.31078336%204.5%20978h9c.0776941.31077637.1402973.63664367.1878095.97338098l.5356572-.35710482c.0574965-.03833102.0965631-.0987508.1079234-.16691269l.4287771-2.57266271c.0680963-.40857774.454517-.68459249.8630947-.6164962.4085778.06809629.6845925.45451694.6164962.86309468l-.4287771%202.57266258c-.0795222.47713405-.3529882.90007256-.7554639%201.16838975l-1.2557259.83715056c-.0048915.86166345-.0957328%201.74576027-.2725238%202.59491857l1.6815745%201.4013121c.3070809.2559005.5173004.6092172.5956938%201.0011842l.430774%202.1538701c.0812339.4061698-.1821786.8012886-.5883484.8825226-.4061698.0812339-.8012887-.1821786-.8825226-.5883484l-.430774-2.1538702c-.0111991-.0559952-.0412304-.1064689-.0850991-.1430262l-1.1689618-.9741348C12.3201723%20986.9388652%2010.96030438%20988.5%209%20988.5c-1.96032979%200-3.32020757-1.5611752-4.07963333-3.6241501l-1.16905806.974215c-.04386869.0365573-.07390003.087031-.08509908.1430263l-.43077402%202.1538701c-.08123397.4061698-.4763528.6695823-.88252261.5883484-.40616982-.081234-.66958237-.4763528-.5883484-.8825226l.43077401-2.1538701c.07839341-.391967.28861291-.7452836.59569365-1.0011841l1.68168185-1.4014016c-.17677708-.8491227-.2676121-1.73317886-.27250508-2.59480419l-1.25576326-.83717551c-.40247573-.26831716-.67594166-.69125562-.75546402-1.16838978l-.4287771-2.57266258c-.06809628-.40857774.20791847-.79499839.61649621-.86309468.40857774-.06809629.79499839.20791846.86309468.6164962l.4287771%202.57266258c.01136034.06816202.0504269.1285818.10792343.16691282l.53569134.35712756zM3.34314575%201014.65685c-3.12419433-3.12419-3.12419433-8.18951%200-11.3137%203.12419433-3.1242%208.18951415-3.1242%2011.31370845%200%203.1241944%203.12419%203.1241944%208.18951%200%2011.3137-3.1241943%203.1242-8.18951412%203.1242-11.31370845%200zm7.42714775-3.89162c-.000844.00085-.0016862.0017-.0025265.00254-.97631078.97631-2.55922322.97631-3.53553395%200-.97631073-.97631-.97631073-2.55923%200-3.53554.97631073-.97631%202.55922317-.97631%203.53553395%200%20.0013199.00132.0026443.00265.0039732.004l-.0000163.00001c.2759811.27861.7051161.3361%201.044701.13997.3230058-.18656.4336168-.59965.2470566-.92266-.019161-.03317-.0411099-.06465-.0656092-.09411-.0606228-.07291-.1171102-.13553-.1694452-.18787-1.5620971-1.56209-4.09475706-1.56209-5.65685422%200-1.56209717%201.5621-1.56209717%204.09476%200%205.65686%201.56209716%201.56209%204.09475712%201.56209%205.65685422%200%20.0514726-.05148.1069946-.11293.1665658-.18436l.0000272.00002c.2389566-.28654.2003802-.71255-.0861627-.9515-.0294615-.02457-.0609622-.04659-.0941605-.06581-.3391791-.19638-.7681089-.13952-1.0444062.13845zM9%201045c-4.418278%200-8-3.58172-8-8s3.581722-8%208-8%208%203.58172%208%208-3.581722%208-8%208zm.5-5c.27614237%200%20.5-.22386.5-.5s-.22385763-.5-.5-.5H8v-1h1.5c1.75%200%203-1%203-2.5s-1.26875-2.4875-3-2.4875h-2c-.27614237%200-.5.22386-.5.5V1037l-.50003906-.00625c-.00205719-.00003-.00411453-.00004-.00617188-.00004-.27271217%200-.49378906.22108-.49378906.49379%200%20.27715.22283503.50279.49996094.50625L7%201038v1.0125l-.50003906-.00625c-.00205719-.00003-.00411453-.00004-.00617188-.00004-.27271217%200-.49378906.22108-.49378906.49379%200%20.27715.22283503.50279.49996094.50625L7%201040.0125v.48746c0%20.00206.00001286.00412.00003858.00617.0034089.27272.22724925.49103.49996142.48762.27714757-.00346.5-.22912.5-.50629V1040h1.5zm-1.5-6h1.5c1.5%200%202%20.75%202%201.49879%200%20.74879-.5%201.49879-2%201.49879H8V1034zM14.6567251%20365.343094c3.1242276%203.124126%203.1242276%208.189061.0008333%2011.313187-3.125061%203.124959-8.19015992%203.124959-11.31522095%200-3.12339433-3.123293-3.12339433-8.188227.0016667-11.313187%203.12339433-3.124125%208.18849325-3.124125%2011.31272095%200zm-8.13134675%208.131416c1.36717114%201.36732%203.58264265%201.36732%204.94981385%200%201.3656495-1.366559%201.3671711-3.582271%200-4.949591-1.3671712-1.366559-3.58416432-1.366559-4.94981385%200-1.36717113%201.366559-1.36717113%203.582271%200%204.949591zm6.93048995-.075687l1.487529.799156c1.072521-1.989974%201.072521-4.405776-.0016667-6.39825l-1.4858623.79999c.8075157%201.49998.8066824%203.299957%200%204.799104zm-1.2566912-8.341558c-1.9925389-1.072486-4.40675275-1.072486-6.39845831.000833l.80084897%201.485814c1.49752925-.805823%203.2975644-.805823%204.79676034%200l.800849-1.486647zm-9.14101187%202.742464c-1.07335429%201.992474-1.07418764%204.407443-.00083335%206.39825l1.4866957-.800823c-.80584907-1.499147-.80584907-3.29829.00083335-4.796604l-1.4866957-.800823zm2.74088686%209.140714c1.99253891%201.074153%204.40758611%201.074153%206.40095831.001667l-.800849-1.487481c-1.49919589.80749-3.30006439.80749-4.79926034%200l-.80084897%201.485814zM9.00041664%20475.000122c4.41060366%200%207.99958336%203.589167%207.99958336%208s-3.5889797%208-7.99958336%208c-4.41227019%200-8.00041664-3.589167-8.00041664-8s3.58814645-8%208.00041664-8zm6.82297796%208c0-3.004167-1.9532316-5.56-4.6564241-6.468333-.1674913.203333-.2916515.399166-.2799854.53.1824904%201.825833%201.4274256.455833%201.6682464.724166.8607885.953334-1.6157492%201.284167-.7549607%203.0075.4149784.828334.8941201%201.059167%201.5924171%201.069167.6991302.011667.9566168%201.204167%201.011614%201.699167.0583303.495833-.0074997%201.769166-.2599865%202.319166-.249987.546667.0158325%201.074167.2658195%201.269167.8832873-1.15%201.4132597-2.589167%201.4132597-4.15zm-7.76042913-6.755833c-2.48820374.345-4.5522629%202.034166-5.4297172%204.31.50247383.0525%201.70741107.066666%201.85823655.491666.15415864.4275-.53163898.870834-.53163898%201.760834%200%20.9875%201.26493412.975833%201.26493412%201.718333%200%20.743333.2733191%201.610833.2733191%201.858333%200%20.2475%201.05577834%201.613334%201.4482579%201.613334.39081298%200%20.08332899-1.526667.10416124-1.931667.01083277-.261667.18665695-1.0625.23748763-1.25.33831572-1.2775%201.60908286-1.1475%201.89906776-1.919167.91495231-2.426666-1.95573147-2.565-2.34654445-2.703333-.38997969-.136667-1.05411177-.141667-1.30576533-.058333-.25165356.081666-.75496067-.34-.75496067-.698334%200-.358333.99661475-1.070833%201.30576532-1.565833.3066507-.495.55163794-.423333%201.12160825-.939167.26165304-.239166.69246393-.368333.85578876-.686666zm-1.20910369%2013.230833c.67496484.224167%201.39659393.348333%202.14572158.348333%201.38826104%200%202.68236024-.418333%203.76147074-1.135833-.2999844-.545-1.414093-.62-1.9790636-.574167-.6691318.055-1.4299255.486667-1.85490337.579167-.47914171.105833-.82495703.2525-1.2499349.271667-.37164731.014166-.41331181.294166-.82329045.510833z%22%2F%3E%0A%20%20%20%20%20%20%20%20%3C%2Fg%3E%0A%20%20%20%20%3C%2Fg%3E%0A%3C%2Fsvg%3E') no-repeat 7px -441px;
+}
+
+#side_bar .left_label {
+
+    height: 28px;
+    line-height: 27px;
+    font-size: 12.5px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+
+}
+
+#side_bar .inl_bl {
+
+    vertical-align: baseline;
+
+}
+
+.left_fixer, .left_fixer > span {
+
+    display: block;
+
+}
+
+#side_bar #l_nwsf .left_icon {
+
+    background-position: 7px -917px;
+
+}
+
+#side_bar #l_msg .left_icon {
+
+    background-position: 7px -21px;
+
+}
+
+#side_bar #l_fr .left_icon {
+
+    background-position: 7px -77px;
+
+}
+
+#side_bar #l_gr .left_icon, #side_bar .l_comm .left_icon {
+
+    background-position: 7px -105px;
+
+}
+
+#side_bar #l_ph .left_icon {
+
+    background-position: 7px -133px;
+
+}
+
+#side_bar #l_aud .left_icon {
+
+    background-position: 7px -161px;
+
+}
+
+#side_bar #l_vid .left_icon {
+
+    background-position: 7px -189px;
+
+}
+
+#page_layout {
+
+    margin: 0 auto;
+    position: relative;
+    width: 960px;
+
+}
+
+#page_body {
+
+    font-size: 13px;
+    width: 631px;
+    margin-top: 42px;
+
+}
+
+#page_body {
+
+    font-size: 13px;
+
+}
+
+#wrap_between {
+
+    height: 0;
+    overflow: hidden;
+
+}
+
+.wide_column_right .wide_column_wrap {
+
+    margin-left: 245px;
+
+}
+
+.wide_column_right .wide_column {
+
+    float: right;
+
+}
+
+.wide_column {
+
+    position: relative;
+    width: 100%;
+
+}
+
+.wide_column {
+
+    position: relative;
+    width: 100%;
+
+}
+
+.page_block {
+
+    position: relative;
+    background: #fff;
+    border-radius: 4px;
+    box-shadow: 0 1px 0 0 #d7d8db, 0 0 0 1px #e3e4e8;
+    margin: 15px 0 0;
+
+}
+
+.page_info_wrap {
+
+    padding: 15px 20px;
+
+}
+
+.page_info_wrap {
+
+    padding: 15px 20px;
+
+}
+
+.page_info_wrap {
+    padding: 15px 20px;
+}
+
+h2.page_block_h2 {
+    margin: 0px;
+    font-size: inherit;
+    font-weight: inherit;
+    color: inherit;
+}
+
+#page_header {
+    position: relative;
+    height: 42px;
+    margin: 0 auto;
+    font-size: 12.5px;
+    padding: 0 15px;
+}
+
+.head_nav {
+    margin: 0;
+}
+
+.fl_l {
+    float: left;
+}
+
+.top_home_link {
+    width: 165px;
+    height: 42px;
+    display: block;
+}
+
+.top_home_link .top_home_logo {
+    background: url(https://vk.com/images/svg_icons/ic_head_logo.svg) no-repeat 50% / contain;
+    height: 19px;
+    width: 34px;
+    margin: 11px 10px 0 0;
+}
+
+#page_header_cont {
+    position: fixed;
+    height: 42px;
+    width: 100%;
+    left: 0;
+    top: 0;
+    z-index: 120;
+    direction: ltr;
+}
+
+#page_header_wrap {
+    direction: ltr;
+}
+
+.input_back_wrap {
+    position: relative;
+    z-index: 90;
+    cursor: text;
+    pointer-events: none;
+}
+
+.no_select {
+    -ms-user-select: none;
+    user-select: none;
+    -o-user-select: none;
+    -moz-user-select: none;
+    -khtml-user-select: none;
+    -webkit-user-select: none;
+}
+
+.input_back {
+    position: absolute;
+    color: #8c8e91;
+    z-index: 90;
+}
+
+.ts_wrap .input_back_content {
+    font-size: 13px;
+    color: #8fadc8;
+    line-height: 16px;
+}
+
+.input_back_content {
+    padding: 0 1px;
+    white-space: nowrap;
+    line-height: normal;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+
+input.text.ts_input {
+    border: 0;
+    box-sizing: border-box;
+    padding: 6px 6px 6px 19px;
+    margin: 7px 0;
+    height: 28px;
+    line-height: 16px;
+    width: 230px;
+    border-radius: 14px;
+    -o-transition: background-color 0.05s, color 0.05s;
+    transition: background-color 0.05s, color 0.05s;
+    background: #224b7a url(/images/svg_icons/ic_head_loupe.svg) no-repeat;
+    padding-left: 19px;
+    border-left: 8px solid transparent;
+    background-position: left 8px;
+    color: #d9e2ec;
+}
+
+.fakeinput, .fakeinput~.placeholder .ph_input, div[contenteditable=true], div[contenteditable=true]~.placeholder .ph_input, input.big_text, input.big_text~.placeholder .ph_input, input.dark, input.dark~.placeholder .ph_input, input.search, input.search~.placeholder .ph_input, input.text, input.text~.placeholder .ph_input, textarea, textarea~.placeholder .ph_input {
+    color: #000;
+    padding: 3px 5px;
+    margin: 0;
+}
+
+.fakeinput, div[contenteditable=true], input.big_text, input.dark, input.search, input.text, textarea {
+    background: #fff;
+    -webkit-appearance: none;
+    border-radius: 0;
+}
+
+.fakeinput, div[contenteditable=true], input.big_text, input.file, input.search, input.text, input[type=button], input[type=password], input[type=search], input[type=submit], input[type=text], input[type~=email], input[type~=password], input[type~=search], input[type~=text], textarea {
+    font-size: 13px;
+    font-family: -apple-system,BlinkMacSystemFont,Roboto,Helvetica Neue,sans-serif;
+    outline: none;
+    box-shadow: none;
+}
+
+.head_nav_btns {
+    padding-left: 15px;
+}
+
+.top_nav_btn {
+    padding: 0!important;
+    width: 46px;
+    position: relative;
+    display: inline-block;
+    color: #000;
+    opacity: 1;
+    -o-transition: opacity 100ms linear;
+    transition: opacity 100ms linear;
+}
+
+.top_nav_btn#top_notify_btn .top_nav_btn_icon {
+    background-image: url(https://vk.com/images/svg_icons/ic_head_notify.svg);
+}
+
+.top_nav_btn .top_nav_btn_icon {
+    margin: 11px auto;
+    background: 50% / contain no-repeat;
+    height: 20px;
+    width: 20px;
+}
+
+.top_notify_count {
+    display: none;
+    padding: 1px 4px;
+    border: 2px solid #4a76a8;
+    border-radius: 12px;
+    color: #fff;
+    font-size: 9px;
+    height: 11px;
+    line-height: 11px;
+    min-width: 5px;
+    top: 6px;
+    left: 21px;
+    background-color: #ff734c;
+    text-align: center;
+    position: absolute;
+}
+
+#top_audio_layer_place {
+    display: inline-block;
+    position: relative;
+}
+
+.top_nav_btn_audio_group {
+    display: inline-block;
+}
+
+.top_nav_btn#top_audio .top_nav_btn_icon {
+    background-image: url(https://vk.com/images/svg_icons/ic_head_audio.svg);
+}
+
+.top_nav_btn .top_nav_btn_icon {
+    margin: 11px auto;
+    background: 50% / contain no-repeat;
+    height: 20px;
+    width: 20px;
+}
+
+.top_audio_play {
+    position: relative;
+    height: 42px;
+    display: inline-block;
+    vertical-align: top;
+}
+
+.top_audio_play__button {
+    position: relative;
+    display: block;
+    -webkit-appearance: none;
+    cursor: pointer;
+    width: 20px;
+    top: 11px;
+    height: 20px;
+    border: none;
+    border-radius: 3px;
+    background-color: #224b7a;
+    overflow: visible;
+}
+
+.top_audio_play__button:before {
+    position: absolute;
+    content: '';
+    display: block;
+    width: 8px;
+    height: 8px;
+    background-color: #224b7a;
+    -o-transform: rotate(45deg);
+    transform: rotate(45deg);
+    top: 6px;
+    left: -2px;
+    border-radius: 1px;
+}
+
+.top_audio_play__button:after {
+    display: block;
+    content: '';
+    position: absolute;
+    width: 7px;
+    height: 10px;
+    top: 5px;
+    left: 8px;
+    background: url(data:image/svg+xml;charset=utf-8,%3Csvg%20width%3D%227%22%20height%3D%2210%22%20viewBox%3D%220%200%207%2010%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cpath%20d%3D%22M.797%209.836c-.44.327-.797.152-.797-.41V.574C0%20.02.353-.166.797.163l5.962%204.42c.31.23.31.603%200%20.833L.797%209.836z%22%20fill%3D%22%23B4C8E0%22%20fill-rule%3D%22evenodd%22%2F%3E%3C%2Fsvg%3E) no-repeat
+}
+
+.top_profile_name {
+    padding-right: 10px;
+    display: inline-block;
+    vertical-align: top;
+}
+
+.top_profile_img, .top_profile_arrow {
+    display: inline-block;
+    vertical-align: top;
+}
+
+.top_profile_img {
+    width: 28px;
+    height: 28px;
+    border-radius: 14px;
+    margin: 7px 0;
+}
+
+.top_profile_arrow {
+    background: url(data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%228%22%20height%3D%224%22%20viewBox%3D%220%200%208%204%22%3E%3Cpath%20fill%3D%22none%22%20stroke%3D%22%23FFF%22%20stroke-width%3D%221.5%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%20d%3D%22M.8.7L4%203.3%207.2.7%22%2F%3E%3C%2Fsvg%3E) no-repeat right 0;
+    margin: 20px 8px 0 7px;
+    width: 8px;
+    height: 4px;
+    opacity: 0.45;
+    filter: alpha(opacity=45);
+}
+
+.top_profile_img, .top_profile_arrow {
+    display: inline-block;
+    vertical-align: top;
+}
+
+.left_fixer, .left_fixer>span {
+    display: block;
+}
+
+.left_count_wrap {
+    margin: 2px 0 2px 2px;
+    zoom: 1;
+    padding: 1px 6px;
+    vertical-align: top;
+    color: #5b6e85;
+    background: #d1d9e0;
+    font-weight: 700;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    font-size: 11px;
+    line-height: 20px;
+    height: 21px;
+    border-radius: 2px;
+    -o-transition: background-color 200ms linear, color 200ms linear;
+    transition: background-color 200ms linear, color 200ms linear;
+}
+
+#side_bar .left_count_wrap .inl_bl {
+     vertical-align: top;
+}
+
+.left_count_wrap {
+    margin: 2px 0 2px 2px;
+    zoom: 1;
+    padding: 1px 6px;
+    vertical-align: top;
+    color: #5b6e85;
+    background: #d1d9e0;
+    font-weight: 700;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    font-size: 11px;
+    line-height: 20px;
+    height: 20px;
+    border-radius: 2px;
+    -o-transition: background-color 200ms linear, color 200ms linear;
+    transition: background-color 200ms linear, color 200ms linear;
+}
+
+.inl_bl {
+    display: -moz-inline-stack;
+    display: inline-block;
+    _overflow: hidden;
+    vertical-align: top;
+    zoom: 1;
+}
+
+.im-page .im-page--history_empty-hist .im-page--chat-body-wrap-inner {
+    top: 50%;
+    text-align: center;
+    position: absolute;
+    padding: 0!important;
+    border-bottom-width: 0px!important;
+    height: 20px;
+}
+
+.im-page_classic.im-page .im-page--chat-body-wrap-inner {
+    display: table-cell;
+    overflow: visible;
+    vertical-align: bottom;
+    width: 100%;
+    padding-top: 63px;
+    max-height: none;
+    background: #fff;
+    padding-bottom: 15px;
+    position: relative;
+    border-bottom: 0 solid #edeef0;
+}
+
+.im-page .im-page--chat-body-wrap-inner {
+    overflow-y: hidden;
+    padding-top: 34px;
+    overflow-x: hidden;
+    height: 100%;
+    box-sizing: border-box;
+    bottom: 0;
+    z-index: 1;
+    width: 100%;
+}
+
+.im-page .im-page-chat-contain {
+    z-index: 1;
+    position: relative;
+}
+
+.im-page .im-page--fixer {
+    min-height: 34px;
+    width: 100%;
+}
+
+.im-page .im-page--error {
+    display: none;
+    cursor: pointer;
+    background: #fdf0f0;
+    border-radius: 4px;
+    border: solid 1px #f2cecf;
+    margin: 8px 20px 16px;
+    padding: 15px;
+}
+
+.im-page-wrapper, .im-page {
+    position: relative;
+}
+
+.im-page_classic.im-page {
+    width: 550px;
+    min-height: 500px;
+    height: auto;
+}
+
+.im-page {
+    height: 500px;
+    padding-top: 15px;
+    padding-bottom: 2px;
+}
+
+.im-page-wrapper, .im-page {
+    position: relative;
+}
+
+.im-page_classic.im-page .im-page--dialogs {
+    width: 100%;
+    padding-bottom: 0;
+    height: auto;
+}
+
+.im-page_classic.im-page .im-page--dialogs, .im-page_classic.im-page .im-page--history {
+    position: absolute;
+    top: 15px;
+    bottom: 0;
+}
+
+.im-page .im-page--dialogs {
+    width: 316px;
+    float: left;
+    margin-top: 0;
+    height: 100%;
+    box-sizing: border-box;
+    padding: 48px 0 45px;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+    position: relative;
+    z-index: 3;
+}
+
+.im-page_classic.im-page .im-page--header {
+    position: fixed;
+    width: 550px;
+    max-width: 550px;
+    top: 105px;
+    left: auto;
+    margin-left: -1px;
+    margin-top: -63px;
+    border-top: solid 15px #edeef0;
+    border-left: solid 1px #edeef0;
+    border-right: solid 1px #edeef0;
+    border-bottom: none;
+}
+
+.page_block>.ui_search:first-child {
+    border-radius: 4px 4px 0 0;
+}
+
+.im-page .im-page--header, .im-page .im-page--search-header {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: #fff;
+    z-index: 2;
+}
+
+.ui_search {
+    z-index: 3;
+    border-bottom: 1px solid #e7e8ec;
+    background-color: #fff;
+    position: relative;
+}
+
+.im-page_classic.im-page .im-page--dialogs-search {
+    box-shadow: 0 0 0 1px #e3e4e8;
+    border-radius: 4px 4px 0 0;
+}
+
+.im-page--dialogs-search.ui_search {
+    border-bottom: 0;
+    border-top-left-radius: 4px;
+}
+
+.ui_search {
+    z-index: 3;
+    border-bottom: 1px solid #e7e8ec;
+    background-color: #fff;
+    position: relative;
+}
+
+.im-page--dialogs-search .ui_search_input_block {
+    display: -ms-flexbox;
+    display: flex;
+}
+
+.im-page--dialogs-search.ui_search_custom .ui_search_field {
+    border-left-width: 15px;
+    padding: 15px 10px 15px 26px;
+    height: 48px;
+    -ms-flex: 1 1 auto;
+    flex: 1 1 auto;
+    padding-left: 28px;
+    border-left: 20px solid transparent;
+}
+
+.ui_search_custom input.ui_search_field {
+    padding-right: 140px;
+}
+
+input.ui_search_field {
+    background: url(https://vk.com/images/search_icon.png) no-repeat;
+    -ms-high-contrast-adjust: auto;
+    padding-left: 28px;
+    border-left: 20px solid transparent;
+    background-position: 0;
+    color: #000;
+
+}
+
+.im-page--dialogs-search .ui_search_custom_ctrl {
+    box-sizing: unset;
+    position: static;
+    -ms-flex: 0 0 auto;
+    flex: 0 0 auto;
+}
+
+.ui_search_custom_ctrl {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 20px;
+}
+
+input.ui_search_field::-webkit-input-placeholder {
+    color: #929eb0;
+    -o-transition: color 0.2s ease;
+    transition: color 0.2s ease;
+}
+
+.im-dialog-select.im-dialog-select_classic {
+    padding-right: 20px;
+}
+
+.im-dialog-select {
+    width: 14px;
+    height: 14px;
+    display: inline-block;
+    vertical-align: top;
+    z-index: 10;
+    padding: 18px 15px 16px 10px;
+    cursor: pointer;
+}
+
+.im-dialog-select .im-dialog-select--btn {
+    width: 100%;
+    height: 100%;
+    background: url(data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2214%22%20height%3D%2214%22%20viewBox%3D%220%200%2014%2014%22%3E%3Cpath%20fill%3D%22%2391A8C4%22%20d%3D%22M8%206v-6h-2v6h-6v2h6v6h2v-6h6v-2h-6z%22%2F%3E%3C%2Fsvg%3E) top no-repeat;
+    display: block;
+    padding: 0;
+    -o-transition: transform 0.3s, -o-transform 0.3s;
+    transition: transform 0.3s;
+    transition: transform 0.3s, -o-transform 0.3s;
+    outline: 0;
+    cursor: pointer;
+    border: none;
+    opacity: .8;
+}
+
+input.ui_search_field, input.ui_search_field~.placeholder .ph_input {
+    padding: 14px 44px 13px 48px;
+    box-sizing: border-box;
+    width: 100%;
+    border: none;
+    margin: 0;
+    line-height: 18px;
+}
+
+*, ::after, ::before{
+        box-sizing: content-box;
+}
+
+.im-page_classic.im-page {
+    width: 550px;
+    min-height: 500px;
+    height: auto;
+}
+
+.im-page {
+    height: 500px;
+    padding-top: 15px;
+    padding-bottom: 2px;
+}
+
+.im-page_classic.im-page.im-page_history-show .im-page--history {
+    display: block;
+}
+
+.im-page_classic.im-page .im-page--history {
+    display: none;
+    box-shadow: none;
+    margin-left: 0;
+    width: 100%;
+}
+
+.im-page_classic.im-page .im-page--dialogs, .im-page_classic.im-page .im-page--history {
+    position: absolute;
+    top: 15px;
+    bottom: 0;
+}
+
+.im-page .im-page--history {
+    margin-left: 317px;
+    height: 100%;
+    margin-top: 0;
+    box-sizing: border-box;
+    position: relative;
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+}
+
+.page_block {
+    position: relative;
+    background: #fff;
+    border-radius: 4px;
+    box-shadow: 0 1px 0 0 #d7d8db, 0 0 0 1px #e3e4e8;
+    margin: 15px 0 0;
+}
+
+.im-page_classic.im-page .im-page-history-w, .im-page_classic.im-page .im-page--chat-body {
+    display: block;
+}
+
+.im-page .im-page-history-w {
+    display: table;
+    width: 100%;
+    table-layout: fixed;
+    height: 100%;
+}
+
+.im-page_classic .im-page--chat-header {
+    position: fixed;
+    top: 57px;
+    z-index: 3;
+    margin-top: -15px;
+    margin-left: -1px;
+    width: 550px;
+    border: solid 1px #edeef0;
+    border-top: solid 15px #edeef0;
+    border-left: solid 1px #edeef0;
+    border-radius: 4px 4px 0 0;
+}
+
+.im-page--chat-header {
+    position: relative;
+    z-index: 5;
+    max-width: 100%;
+    width: 100%;
+    height: 48px;
+    background: #fff;
+    white-space: nowrap;
+    font-size: 13px;
+    font-family: -apple-system,BlinkMacSystemFont,Roboto,Helvetica Neue,sans-serif;
+    line-height: 18px;
+}
+
+.im-page_classic .im-page--chat-header-in {
+    border: 0;
+    border-radius: 2px 2px 0 0;
+    box-shadow: 0 0 0 1px #e3e4e8;
+}
+
+.im-page--chat-header-in {
+    width: 100%;
+    height: 100%;
+    border-bottom: solid 1px #e4e6e9;
+}
+
+.im-page--toolsw {
+    position: relative;
+    z-index: 1;
+    height: 48px;
+    border-bottom: 1px solid #e4e6e9;
+    background: #fff;
+    border-radius: 2px 2px 0 0;
+}
+
+.im-page_classic .im-page--back {
+    display: block;
+}
+
+.im-page--back {
+    display: none;
+    float: left;
+    width: 148px;
+    color: #818d99;
+}
+
+.im-page--back-btn {
+    display: block;
+    padding: 14px 20px 15px 36px;
+    height: 19px;
+    background: url(data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%229%22%20height%3D%2216%22%20viewBox%3D%220%200%209%2016%22%3E%3Cpath%20fill%3D%22%23828A99%22%20d%3D%22M8%2015.9c-.2%200-.4-.1-.6-.3l-7-7c-.3-.3-.3-.9%200-1.2l7-7c.3-.3.9-.3%201.2%200%20.3.3.3.9%200%201.2l-6.4%206.4%206.4%206.4c.3.3.3.9%200%201.2-.2.2-.4.3-.6.3z%22%20opacity%3D%22.7%22%2F%3E%3C%2Fsvg%3E) 15px 16px no-repeat;
+    color: #818d99;
+    text-decoration: none;
+    font-size: 14px;
+    line-height: 19px;
+}
+
+.im-page_classic .im-page--aside {
+    padding: 0 15px;
+}
+
+.im-page--aside {
+    float: right;
+    height: 48px;
+    padding: 0 20px 0 15px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    min-width: 118px;
+    text-align: right;
+}
+
+.im-page--header-icon {
+    position: relative;
+    display: none;
+    padding: 0;
+    width: 34px;
+    height: 48px;
+    outline: 0;
+    border: none;
+    background: none;
+    vertical-align: top;
+    text-align: center;
+    cursor: pointer;
+}
+
+.im-page--header-icon.im-page--header-icon_search.im-page-header-icon_search-shown {
+    display: inline-block;
+}
+
+.im-page--header-icon {
+    position: relative;
+    display: none;
+    padding: 0;
+    width: 34px;
+    height: 48px;
+    outline: 0;
+    border: none;
+    background: none;
+    vertical-align: top;
+    text-align: center;
+    cursor: pointer;
+}
+
+.im-page--aside>* {
+    text-align: left;
+}
+.im-page--header-icon.im-page--header-icon_search:before {
+    position: relative;
+    top: 1px;
+    width: 24px;
+    height: 24px;
+    background: url(data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2224%22%20height%3D%2224%22%20viewBox%3D%220%200%2024%2024%22%3E%3Cpath%20fill%3D%22%23828A99%22%20d%3D%22M20.7%2019.3l-3.1-3.1c.9-1.2%201.4-2.6%201.4-4.2%200-3.9-3.1-7-7-7s-7%203.1-7%207%203.1%207%207%207c1.6%200%203-.5%204.2-1.4l3.1%203.1c.2.2.5.3.7.3s.5-.1.7-.3c.4-.4.4-1%200-1.4zm-13.7-7.3c0-2.8%202.2-5%205-5s5%202.2%205%205-2.2%205-5%205-5-2.2-5-5z%22%2F%3E%3C%2Fsvg%3E) 0 0 no-repeat;
+    opacity: .7;
+}
+
+
+.im-page--header-icon:before {
+    display: inline-block;
+    content: '';
+    opacity: .7;
+}
+
+.im-page--header-more {
+    position: relative;
+    display: inline-block;
+    width: 40px;
+    height: 48px;
+    vertical-align: top;
+    cursor: pointer;
+}
+
+.im-page--header-more .ui_actions_menu_icons {
+    right: 0;
+    /*margin-top: -17px;*/
+    margin-right: 0;
+    width: 42px;
+    height: 48px;
+    background: url(data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2224%22%20height%3D%2224%22%20viewBox%3D%220%200%2024%2024%22%3E%3Cpath%20fill%3D%22%23828A99%22%20d%3D%22M5%2014c1.1%200%202-.9%202-2s-.9-2-2-2-2%20.9-2%202%20.9%202%202%202zm7%200c1.1%200%202-.9%202-2s-.9-2-2-2-2%20.9-2%202%20.9%202%202%202zm7%200c1.1%200%202-.9%202-2s-.9-2-2-2-2%20.9-2%202%20.9%202%202%202z%22%2F%3E%3C%2Fsvg%3E) 50% no-repeat;
+    opacity: .7;
+}
+
+.im-page--aside-photo {
+    display: inline-block;
+    margin: 0 0 0 8px;
+    padding: 9px 0;
+    border-color: #fff;
+}
+
+.im-page--aside-photo>a {
+    border-color: inherit;
+}
+
+.nim-peer.nim-peer_smaller {
+    width: 30px;
+    height: 30px;
+}
+
+.nim-peer {
+    width: 46px;
+    height: 46px;
+    position: relative;
+    border-color: inherit;
+    background-color: inherit;
+}
+
+.nim-peer .nim-peer--photo-w {
+    overflow: hidden;
+    border-radius: 50%;
+}
+
+.nim-peer.nim-peer_smaller .nim-peer--photo {
+    background-color: inherit;
+    overflow: hidden;
+    margin-left: -2px;
+    margin-bottom: -1px;
+}
+
+.nim-peer .nim-peer--photo {
+    background-color: inherit;
+    overflow: hidden;
+    margin-left: -2px;
+    margin-bottom: -1px;
+}
+
+.nim-peer .im_grid {
+    display: block;
+    float: left;
+}
+
+.nim-peer.nim-peer_smaller .nim-peer--photo .im_grid>img, .nim-peer.nim-peer_smaller .nim-peer--photo>img {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    -moz-force-broken-image-icon: 0;
+    background-color: #fafbfc;
+    background-color: inherit;
+}
+
+.nim-peer.nim-peer_smaller .im_grid img, .nim-peer.nim-peer_smaller .nim-peer--photo>img {
+    margin-left: 2px;
+    margin-bottom: 1px;
+}
+
+.nim-peer.nim-peer_smaller .im_grid>img {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    -moz-force-broken-image-icon: 0;
+    background-color: #fafbfc;
+    background-color: inherit;
+}
+
+.nim-peer .nim-peer--photo .im_grid>img, .nim-peer .nim-peer--photo>img {
+    width: 46px;
+    height: 46px;
+    border-radius: 50%;
+    -moz-force-broken-image-icon: 0;
+    background-color: #fafbfc;
+    background-color: inherit;
+}
+
+.nim-peer.nim-peer_smaller img {
+    width: 30px;
+    height: 30px;
+}
+
+.nim-peer.nim-peer_smaller img {
+    width: 30px;
+    height: 30px;
+    display: block;
+}
+
+.nim-peer .im_grid img, .nim-peer .nim-peer--photo>img {
+    margin-left: 2px;
+    margin-bottom: 1px;
+}
+
+.nim-peer img {
+    width: 46px;
+    height: 46px;
+    display: block;
+}
+
+img {
+    border: 0;
+    color: transparent;
+}
+
+.im-page_classic .im-page--title {
+    -ms-flex-direction: column;
+    flex-direction: column;
+    padding: 8px 0 4px;
+    height: auto;
+    text-align: center;
+    font-size: 13px;
+}
+
+.im-page--title {
+    position: relative;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-align: center;
+    align-items: center;
+    overflow: hidden;
+    padding: 15px 20px;
+    height: 18px;
+    text-overflow: ellipsis;
+    line-height: 18px;
+    font-size: 14px;
+}
+
+
+
+.im-page_classic .im-page--title-main {
+    line-height: 17px;
+}
+
+.im-page--title-main {
+    display: -ms-inline-flexbox;
+    display: inline-flex;
+    -ms-flex-align: center;
+    align-items: center;
+    overflow: hidden;
+    max-width: 100%;
+}
+
+.im-page--title-main-in {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex: 1 1 auto;
+    flex: 1 1 auto;
+    -ms-flex-align: center;
+    align-items: center;
+    box-sizing: border-box;
+    max-width: 100%;
+    color: #222;
+}
+
+.im-page--title-main-inner {
+    -ms-flex: 1 1 auto;
+    flex: 1 1 auto;
+    overflow: hidden;
+    color: #222;
+    text-overflow: ellipsis;
+    font-weight: 500;
+    cursor: pointer;
+}
+
+.im-page_classic.im-page .im-page--chat-input {
+    display: block;
+    position: fixed;
+    bottom: 0;
+    border-bottom: solid 15px #edeef0;
+    width: 550px;
+    z-index: 110;
+    margin-left: -1px;
+    border-left: solid 1px #edeef0;
+    border-right: solid 2px #edeef0;
+}
+
+.im-to-end {
+    position: absolute;
+    margin-top: -43px;
+    padding-bottom: 11px;
+    cursor: pointer;
+    box-sizing: border-box;
+    left: 0;
+    width: 100%;
+    opacity: 0;
+    color: #2a5885;
+    font-size: 12.5px;
+    z-index: 102;
+    text-align: center;
+    overflow: hidden;
+    -o-transition: 0.2s opacity;
+    transition: 0.2s opacity;
+    pointer-events: none;
+    -o-transition-delay: 0.1s;
+    transition-delay: 0.1s;
+}
+
+.im-chat-input.im-chat-input_classic {
+    padding-left: 26px;
+    padding-right: 0px;
+    border-top: 0;
+    border-radius: 0 0 4px 4px;
+    box-shadow: 0 1px 0 0 #d7d8db, 0 0 0 1px #e3e4e8;
+}
+
+.im-chat-input {
+    padding: 12px 0 0 10px;
+    box-sizing: border-box;
+    border-top: solid 1px #e4e6e9;
+    background: #fafbfc;
+    position: relative;
+}
+
+.im-chat-input.im-chat-input_classic .im-chat-input--error {
+    padding-left: 92px;
+}
+
+.im-chat-input .im-chat-input--error {
+    display: none;
+    padding: 15px 36px 15px 82px;
+    height: 80px;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -ms-flex-pack: center;
+    justify-content: center;
+    box-sizing: border-box;
+}
+
+.im-page--history:not(.is_msg_editing) .im-chat-input--editing-head, .im-page--history:not(.is_channel) .im-mess--forward, .im-page--history.is_channel .im-mess--fav, .im-page--history.is_tf_blocked .im-mess--edit, .im-page--history.is_tf_blocked .im-mess--reply {
+    display: none;
+}
+
+.im-chat-input_classic .im-chat-input--editing-head {
+    width: 438px;
+    margin-left: 30px;
+}
+
+
+
+.im-chat-input--editing-head {
+    width: 482px;
+    margin: -2px 0 12px 46px;
+    color: #222;
+    font-weight: 500;
+}
+
+.im-mess--cancel-edit {
+    display: inline-block;
+    vertical-align: top;
+    width: 24px;
+    height: 24px;
+    opacity: 0.7;
+    cursor: pointer;
+    margin: -5px -3px 0 0;
+}
+
+.im-page_classic .im-replied-container {
+    margin-left: 30px;
+}
+
+.im-replied-container {
+    position: relative;
+    margin: 0 56px 0 46px;
+}
+
+.im-replied-container--content:empty, .im-replied-container--content:empty+.im-replied-container--remove {
+    display: none;
+}
+
+.im-replied-container--content {
+    padding: 0 24px 0 0;
+    margin: 0 0 12px;
+}
+
+.im-replied-container--content:empty, .im-replied-container--content:empty+.im-replied-container--remove {
+    display: none;
+}
+
+.im-chat-input.im-chat-input_classic .im-chat-input--textarea {
+    width: 438px;
+    margin-left: 30px;
+}
+
+.im-chat-input .im-chat-input--textarea {
+    width: 482px;
+    float: left;
+    margin: 0 7px 0 46px;
+    position: relative;
+}
+
+.im-chat-input .im-chat-input--txt-wrap {
+    position: relative;
+    cursor: text;
+    margin-bottom: 12px;
+    background: #fff;
+    border-radius: 6px;
+    border: solid 1px #d3d9de;
+}
+
+.im-chat-input .im_chat-input--buttons {
+    position: absolute;
+    right: 0;
+    z-index: 2;
+    display: -ms-flexbox;
+    display: flex;
+}
+
+.im-chat-input .im_chat-input--templates {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-align: end;
+    align-items: flex-end;
+}
+
+.im-chat-input .im_chat-input--buttons>* {
+    transform: translateZ(0);
+}
+
+.im-chat-input .im_chat-input--keyboard-button.im_chat-input--keyboard-button_hidden {
+    display: none;
+}
+
+.im-chat-input .im_chat-input--keyboard-button {
+    border: none;
+    padding: 6px 7px 6px 5px;
+    margin: 0;
+    background: transparent;
+    right: 73px;
+    bottom: 0;
+    cursor: pointer;
+    opacity: .7;
+}
+.im-chat-input .im_chat-input--keyboard-button .im_chat-input--keyboard-button-icon {
+    display: block;
+    background: url(data:image/svg+xml;charset=utf-8,%3Csvg%20height%3D%2224%22%20viewBox%3D%220%200%2024%2024%22%20width%3D%2224%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Crect%20height%3D%2217.8%22%20rx%3D%224%22%20stroke%3D%22%23828a99%22%20stroke-width%3D%221.8%22%20width%3D%2217.8%22%20x%3D%223.1%22%20y%3D%223.1%22%20fill%3D%22none%22%2F%3E%3Cpath%20d%3D%22M9%207a2%202%200%201%201%200%204%202%202%200%200%201%200-4zm6%200a2%202%200%201%201%200%204%202%202%200%200%201%200-4zm-6%206a2%202%200%201%201%200%204%202%202%200%200%201%200-4zm6%200a2%202%200%201%201%200%204%202%202%200%200%201%200-4z%22%20fill%3D%22%23828a99%22%2F%3E%3C%2Fsvg%3E);
+    width: 24px;
+    height: 24px;
+}
+
+.im-chat-input .im-chat-input--attach {
+    overflow: hidden;
+    right: 41px;
+    bottom: 0;
+}
+
+.im-chat-input .im-chat-input--attach-file {
+    cursor: pointer;
+    opacity: 0;
+    width: 1px;
+    height: 1px;
+    z-index: -1;
+    pointer-events: none;
+    position: absolute;
+}
+
+nput[type="file" i] {
+    align-items: baseline;
+    color: inherit;
+    text-align: start !important;
+}
+
+input[type="hidden" i], input[type="image" i], input[type="file" i] {
+    -webkit-appearance: initial;
+    background-color: initial;
+    cursor: default;
+    padding: initial;
+    border: initial;
+}
+
+input[type="button" i], input[type="submit" i], input[type="reset" i], input[type="file" i]::-webkit-file-upload-button, button {
+    padding: 1px 6px;
+}
+
+                                                                                           input[type="button" i], input[type="submit" i], input[type="reset" i], input[type="file" i]::-webkit-file-upload-button, button {
+    align-items: flex-start;
+    text-align: center;
+    cursor: default;
+    color: buttontext;
+    background-color: buttonface;
+    box-sizing: border-box;
+    padding: 2px 6px 3px;
+    border-width: 2px;
+    border-style: outset;
+    border-color: buttonface;
+    border-image: initial;
+}
+
+                                                                                                                                                                                      input[type="file" i]::-webkit-file-upload-button {
+    -webkit-appearance: push-button;
+    white-space: nowrap;
+    font-size: inherit;
+    -webkit-user-modify: read-only !important;
+    margin: 0px;
+}
+
+.im-chat-input .im-chat-input--attach-label {
+    background: url(data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2224%22%20height%3D%2224%22%20viewBox%3D%220%200%2024%2024%22%3E%3Cg%20fill%3D%22none%22%20stroke%3D%22%23828A99%22%20stroke-width%3D%221.7%22%3E%3Cpath%20d%3D%22M14.134%203.65c.853%200%201.46.278%201.988.899.017.019.494.61.66.815.228.281.674.536.945.536h.41C20.556%205.9%2022%207.463%2022%209.95v5.85c0%202.241-2%204.2-4.273%204.2H6.273c-2.267%200-4.223-1.953-4.223-4.2V9.95c0-2.496%201.4-4.05%203.814-4.05h.409c.271%200%20.717-.255.945-.536.166-.204.643-.796.66-.815.528-.621%201.135-.899%201.988-.899h4.268z%22%2F%3E%3Ccircle%20cx%3D%2212%22%20cy%3D%2212%22%20r%3D%223.85%22%2F%3E%3C%2Fg%3E%3C%2Fsvg%3E) 50% no-repeat;
+    width: 24px;
+    height: 24px;
+    padding: 6px 7px 6px 5px;
+    opacity: 0.7;
+    cursor: pointer;
+    display: block;
+}
+
+.im-chat-input .im-chat-input--smile-wrap {
+    top: auto;
+    bottom: 0;
+    right: 0;
+    position: relative;
+}
+
+.im-chat-input .im_chat-input--buttons>* {
+    transform: translateZ(0);
+}
+
+.im-chat-input .im-chat-input--smile-wrap .emoji_smile {
+    opacity: 1;
+    padding: 6px 14px 6px 3px;
+}
+
+.emoji_smile_wrap .emoji_smile {
+    position: relative;
+}
+
+.emoji_smile, .reply_fake_emoji {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    right: 0;
+    opacity: 0.7;
+    filter: alpha(opacity=70);
+    z-index: 4;
+    transform: translateZ(0);
+    -o-transition: opacity 200ms ease-in-out;
+    transition: opacity 200ms ease-in-out;
+}
+
+.im-chat-input .im-chat-input--smile-wrap .emoji_smile_icon_vector {
+    opacity: 0.7;
+}
+
+.emoji_smile_icon_vector {
+    width: 24px;
+    height: 24px;
+    background: url(data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2224%22%20height%3D%2224%22%20viewBox%3D%220%200%2024%2024%22%3E%3Cg%20fill%3D%22none%22%20fill-rule%3D%22evenodd%22%3E%3Cpath%20opacity%3D%22.4%22%20d%3D%22M0%200h24v24H0z%22%2F%3E%3Cpath%20fill%3D%22%23828A99%22%20fill-rule%3D%22nonzero%22%20d%3D%22M2%2012C2%206.477%206.477%202%2012%202s10%204.477%2010%2010-4.477%2010-10%2010S2%2017.523%202%2012zm18.3%200a8.3%208.3%200%201%200-16.6%200%208.3%208.3%200%200%200%2016.6%200zm-11.05-.5a1.25%201.25%200%201%201%200-2.5%201.25%201.25%200%200%201%200%202.5zm5.5%200a1.25%201.25%200%201%201%200-2.5%201.25%201.25%200%200%201%200%202.5z%22%2F%3E%3Cpath%20stroke%3D%22%23828A99%22%20stroke-width%3D%221.7%22%20d%3D%22M9%2014.85c.833.767%201.833%201.15%203%201.15s2.167-.383%203-1.15%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%2F%3E%3C%2Fg%3E%3C%2Fsvg%3E);
+}
+
+.im-chat-input .im-chat-input--selector {
+    position: absolute;
+    left: -55px;
+    bottom: -13px;
+}
+
+.im-chat-input .im-chat-input--textarea .ms_items_more_wrap {
+    z-index: 118;
+}
+
+.ms_items_more_wrap {
+    float: left;
+    position: relative;
+}
+
+.im-chat-input .im-chat-input--selector .ms_item_more {
+    padding: 20px 16px 20px 15px;
+}
+
+.media_selector .ms_item_more {
+    float: left;
+    height: 22px;
+    line-height: 22px;
+    padding: 0 6px 0 5px;
+    opacity: 0.7;
+    filter: alpha(opacity=70);
+    outline: none;
+}
+
+.ms_items_more_wrap.ms_items_more_wrap_vector .ms_item_more_label {
+    background: url(data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2224%22%20height%3D%2224%22%20viewBox%3D%220%200%2024%2024%22%3E%0A%20%20%3Cg%20fill%3D%22none%22%20fill-rule%3D%22evenodd%22%3E%0A%20%20%20%20%3Crect%20width%3D%2224%22%20height%3D%2224%22%2F%3E%0A%20%20%20%20%3Cpath%20stroke%3D%22%23828A99%22%20stroke-width%3D%221.8%22%20d%3D%22M20.0291094%2C15.0279907%20L14.6443834%2C20.2583795%20L14.6443834%2C20.2583795%20C12.0566785%2C22.7719155%207.93029511%2C22.7421861%205.37907548%2C20.1916257%20L5.37907548%2C20.1916257%20L5.37907548%2C20.1916257%20L5.37907548%2C20.1916257%20C2.76745218%2C17.5806772%202.76690514%2C13.3469463%205.37785362%2C10.735323%20C5.38546336%2C10.7277113%205.39309146%2C10.720118%205.40073787%2C10.7125431%20L13.4673115%2C2.72143747%20L13.4673115%2C2.72143747%20C15.2274317%2C0.977784268%2018.0678013%2C0.991133451%2019.8114545%2C2.7512537%20C19.8205797%2C2.76046506%2019.8296649%2C2.76971594%2019.8387099%2C2.77900608%20L19.8387099%2C2.77900608%20L19.8387099%2C2.77900608%20C21.5887922%2C4.57652514%2021.569373%2C7.4467765%2019.7951292%2C9.22045114%20L11.6642625%2C17.3487092%20L11.6642625%2C17.3487092%20C10.8163456%2C18.196354%209.46403082%2C18.26344%208.53638318%2C17.5038779%20L8.40267048%2C17.3943933%20L8.40267048%2C17.3943933%20C7.50791768%2C16.6617656%207.37648933%2C15.342513%208.10911705%2C14.4477602%20C8.14767542%2C14.4006692%208.18826865%2C14.3552816%208.23078109%2C14.311727%20L13.6981137%2C8.71035836%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%2F%3E%0A%20%20%3C%2Fg%3E%0A%3C%2Fsvg%3E) 0 0 no-repeat;
+    width: 24px;
+    height: 24px;
+    display: block;
+    padding: 0;
+}
+
+
+.blind_label, div#utils {
+    position: absolute;
+    overflow: hidden;
+}
+
+.blind_label {
+    height: 1px;
+    width: 1px;
+    clip: rect(1px, 1px, 1px, 1px);
+    opacity: 0;
+    outline: none;
+}
+
+.im-chat-input .im-chat-input--textarea:not(.im-chat-input_open-keyboard):not(.im-chat-input_close-keyboard):not(.im-chat-input--textarea_show-templates) .im-chat-input--text {
+    padding-right: 74px;
+}
+
+.im-chat-input .im-chat-input--text {
+    outline: 0;
+    min-height: 36px;
+    width: 100%;
+    resize: none;
+    max-height: 200px;
+    overflow-y: auto;
+    overflow-x: hidden;
+    border-radius: 6px;
+    line-height: 17px;
+    padding: 9px 106px 10px 13px;
+    margin-bottom: 0;
+    word-wrap: break-word;
+    box-sizing: border-box;
+    border: none;
+    -o-transition: border-bottom-color 0.3s linear;
+    transition: border-bottom-color 0.3s linear;
+    -webkit-font-smoothing: subpixel-antialiased;
+}
+
+.fakeinput.dark, .fakeinput.dark~.placeholder .ph_input, div[contenteditable=true], div[contenteditable=true]~.placeholder .ph_input, input.dark, input.dark~.placeholder .ph_input, textarea.dark, textarea.dark~.placeholder .ph_input {
+    padding: 5px 9px 7px;
+    border-radius: 2px;
+    box-sizing: border-box;
+}
+
+.fakeinput, .fakeinput~.placeholder .ph_input, div[contenteditable=true], div[contenteditable=true]~.placeholder .ph_input, input.big_text, input.big_text~.placeholder .ph_input, input.dark, input.dark~.placeholder .ph_input, input.search, input.search~.placeholder .ph_input, input.text, input.text~.placeholder .ph_input, textarea, textarea~.placeholder .ph_input {
+    color: #000;
+    padding: 3px 5px;
+    margin: 0;
+}
+
+.fakeinput, div[contenteditable=true], input.big_text, input.dark, input.search, input.text, textarea {
+    background: #fff;
+    -webkit-appearance: none;
+    border-radius: 0;
+}
+
+.fakeinput, div[contenteditable=true], input.big_text, input.file, input.search, input.text, input[type=button], input[type=password], input[type=search], input[type=submit], input[type=text], input[type~=email], input[type~=password], input[type~=search], input[type~=text], textarea {
+    font-size: 13px;
+    font-family: -apple-system,BlinkMacSystemFont,Roboto,Helvetica Neue,sans-serif;
+    outline: none;
+    box-shadow: none;
+}
+
+.im-chat-input--text {
+    -webkit-transform: translateZ(0);
+}
+
+.im-chat-input .im-chat-input--txt-wrap .composer_wdd {
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 103;
+}
+
+.composer_wdd.wdd_toup {
+    position: absolute;
+    top: 0;
+}
+
+.composer_wdd {
+    clear: both;
+    position: relative;
+}
+
+.wdd_toup.composer_wdd .wdd_lwrap {
+    top: auto;
+    bottom: 100%;
+}
+
+.composer_wdd .wdd_lwrap {
+    left: 0;
+    top: 0;
+    right: 0;
+}
+
+.wdd_lwrap {
+    position: absolute;
+    z-index: 20;
+    display: none;
+    left: -1px;
+    top: -1px;
+}
+
+.im-chat-input .im-chat-input--txt-wrap .composer_wdd .wdd_list {
+    margin: 0 -1px;
+}
+
+.composer_wdd.wdd_toup .wdd_list {
+    border-width: 1px;
+    border-radius: 3px 3px 0 0;
+}
+
+.wdd_toup .wdd_list {
+    border-width: 1px 1px 0px;
+    border-radius: 2px 2px 0 0;
+    box-shadow: none;
+}
+
+.composer_wdd .wdd_list {
+    border-color: #d3d9de;
+    border-width: 1px;
+    border-radius: 0 0 3px 3px;
+    margin-top: -1px;
+}
+
+.wdd_list {
+    border: solid #c9d0d6;
+    border-width: 0px 1px 1px;
+    border-radius: 0 0 2px 2px;
+    box-shadow: 0 1px 3px rgba(0,0,0,.1);
+    overflow: hidden;
+}
+
+.im-chat-input .im-chat-input--textarea .placeholder {
+    position: absolute;
+    top: 28px;
+    left: 11px;
+    width: 100%;
+}
+
+.placeholder {
+    -ms-user-select: none;
+    user-select: none;
+    -o-user-select: none;
+    -moz-user-select: none;
+    -khtml-user-select: none;
+    -webkit-user-select: none;
+    position: relative;
+    z-index: 3;
+    cursor: text;
+    pointer-events: none;
+}
+
+.im-chat-input .im-chat-input--textarea .placeholder .ph_input {
+    padding: 0;
+}
+
+.fakeinput.dark, .fakeinput.dark~.placeholder .ph_input, div[contenteditable=true], div[contenteditable=true]~.placeholder .ph_input, input.dark, input.dark~.placeholder .ph_input, textarea.dark, textarea.dark~.placeholder .ph_input {
+    padding: 5px 9px 7px;
+    border-radius: 2px;
+    box-sizing: border-box;
+}
+
+.fakeinput~.placeholder .ph_input, div[contenteditable=true]~.placeholder .ph_input, input.big_text~.placeholder .ph_input, input.dark~.placeholder .ph_input, input.search~.placeholder .ph_input, input.text~.placeholder .ph_input, textarea~.placeholder .ph_input {
+    border-color: transparent;
+    line-height: 16px;
+}
+
+.placeholder .ph_input {
+    position: absolute;
+    line-height: normal;
+    z-index: 3;
+    bottom: 0;
+}
+
+.fakeinput, .fakeinput~.placeholder .ph_input, div[contenteditable=true], div[contenteditable=true]~.placeholder .ph_input, input.big_text, input.big_text~.placeholder .ph_input, input.dark, input.dark~.placeholder .ph_input, input.search, input.search~.placeholder .ph_input, input.text, input.text~.placeholder .ph_input, textarea, textarea~.placeholder .ph_input {
+    color: #000;
+    padding: 3px 5px;
+    margin: 0;
+}
+
+.fakeinput~.placeholder .ph_input, div[contenteditable=true]~.placeholder .ph_input, input.big_text~.placeholder .ph_input, input.dark~.placeholder .ph_input, input.search~.placeholder .ph_input, input.text~.placeholder .ph_input, textarea~.placeholder .ph_input {
+    border-color: transparent;
+    line-height: 16px;
+}
+
+.fakeinput~.placeholder .ph_content, div[contenteditable=true]~.placeholder .ph_content, input.big_text~.placeholder .ph_content, input.dark~.placeholder .ph_content, input.search~.placeholder .ph_content, input.text~.placeholder .ph_content, textarea~.placeholder .ph_content {
+    color: #828282;
+    -o-transition: color 0.2s ease;
+    transition: color 0.2s ease;
+    padding: 1px;
+    opacity: 1;
+    filter: none;
+}
+
+.im-chat-input .im-chat-input--send {
+    margin-top: -1px;
+    bottom: -13px;
+    right: -57px;
+    position: absolute;
+}
+
+.im-send-btn {
+    width: 52px;
+    height: 55px;
+    border: none;
+    background: none;
+    padding: 31px 28px;
+    cursor: pointer;
+    display: block;
+    opacity: 0.7;
+}
+
+.im-send-btn.im-send-btn_audio:after, .im-send-btn.im-send-btn_send:before {
+    -o-animation: 0.15s linear 0s im-zoom-hide;
+    animation: 0.15s linear 0s im-zoom-hide;
+    opacity: 0;
+}
+
+.im-send-btn:before {
+    background: url(data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2224%22%20height%3D%2224%22%20viewBox%3D%220%200%2024%2024%22%3E%3Cpath%20fill%3D%22%23828A99%22%20d%3D%22M12%2023.9c-.5%200-.9-.4-.9-.9v-2.6c-4-.3-7.4-3.2-8.3-7.2-.1-.5.2-1%20.7-1.1.5-.1%201%20.2%201.1.7.7%203.4%203.8%205.8%207.2%205.8h.5c3.4%200%206.5-2.4%207.2-5.8.1-.5.6-.8%201.1-.7.5.1.8.6.7%201.1-.9%204-4.3%206.9-8.3%207.2v2.6c-.1.5-.5.9-1%20.9zM12%2015.9c-2.7%200-4.9-2.2-4.9-4.9v-6c0-2.7%202.2-4.9%204.9-4.9s4.9%202.2%204.9%204.9v6c0%202.7-2.2%204.9-4.9%204.9zm0-14c-1.7%200-3.1%201.4-3.1%203.1v6c0%201.7%201.4%203.1%203.1%203.1%201.7%200%203.1-1.4%203.1-3.1v-6c0-1.7-1.4-3.1-3.1-3.1z%22%2F%3E%3C%2Fsvg%3E) 50% no-repeat;
+    background-size: 24px 24px;
+    opacity: 0;
+}
+
+.im-send-btn:after, .im-send-btn:before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+}
+
+.im-send-btn.im-send-btn_send:after {
+    -o-animation: 0.15s linear 0s im-zoom-appear;
+    animation: 0.15s linear 0s im-zoom-appear;
+    opacity: 1;
+}
+
+.im-send-btn:after {
+    background: url(data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2224%22%20height%3D%2224%22%20viewBox%3D%220%200%2024%2024%22%3E%3Cpath%20fill%3D%22%23828A99%22%20d%3D%22M4.7%2015.8c-.7%201.9-1.1%203.2-1.3%203.9-.6%202.4-1%202.9%201.1%201.8%202.1-1.1%2012-6.7%2014.3-7.9%202.9-1.6%202.9-1.5-.2-3.2-2.3-1.4-12.2-6.8-14-7.9s-1.7-.6-1.2%201.8c.2.8.6%202.1%201.3%203.9.5%201.3%201.6%202.3%203%202.5l5.8%201.1c.1%200%20.1.1.1.1s0%20.1-.1.1l-5.8%201.1c-1.3.4-2.5%201.3-3%202.7z%22%2F%3E%3C%2Fsvg%3E) 50% no-repeat;
+    background-size: 24px 24px;
+    opacity: 1;
+}
+
+
+.submit_post_box {
+    position: relative;
+    border-radius: 4px;
+}
+
+.post_upload_dropbox {
+    display: none;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: #fff;
+    color: #2a5885;
+    text-align: center;
+    z-index: 119;
+}
+
+.post_field_user_link {
+    display: block;
+    height: 28px;
+    float: left;
+    position: relative;
+}
+
+.post_field_user_image {
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    transform-style: preserve-3d;
+    -o-transition: transform 0.3s ease, -o-transform 0.3s ease;
+    transition: transform 0.3s ease;
+    transition: transform 0.3s ease, -o-transform 0.3s ease;
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+    -o-backface-visibility: hidden;
+    -moz-backface-visibility: hidden;
+    -khtml-backface-visibility: hidden;
+    transform: rotateY(0deg);
+    position: absolute;
+    top: 12px;
+    left: 20px;
+}
+
+img {
+    border: 0;
+    color: transparent;
+}
+
+.author_secondary .post_field_user_image, .post_field_user_image.post_field_image_secondary {
+    transform: rotateY(180deg);
+}
+
+.post_field_user_image {
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    transform-style: preserve-3d;
+    -o-transition: transform 0.3s ease, -o-transform 0.3s ease;
+    transition: transform 0.3s ease;
+    transition: transform 0.3s ease, -o-transform 0.3s ease;
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+    -o-backface-visibility: hidden;
+    -moz-backface-visibility: hidden;
+    -khtml-backface-visibility: hidden;
+    transform: rotateY(0deg);
+    position: absolute;
+    top: 12px;
+    left: 20px;
+}
+
+.post_field_wrap {
+    position: relative;
+    margin-left: 48px;
+}
+
+.post_upload_video_wrap, .post_upload_wrap {
+    position: absolute;
+}
+
+.post_upload_video_wrap div.post_upload_video, .post_upload_wrap div.post_upload {
+    overflow: hidden;
+    position: relative;
+}
+
+.post_upload_video_wrap input, .post_upload_wrap input {
+    position: absolute;
+}
+
+input.file {
+    margin: 0;
+}
+
+.fakeinput, div[contenteditable=true], input.big_text, input.file, input.search, input.text, input[type=button], input[type=password], input[type=search], input[type=submit], input[type=text], input[type~=email], input[type~=password], input[type~=search], input[type~=text], textarea {
+    font-size: 13px;
+    font-family: -apple-system,BlinkMacSystemFont,Roboto,Helvetica Neue,sans-serif;
+    outline: none;
+    box-shadow: none;
+}
+
+div.submit_post_field, div.submit_post_field[contenteditable=true], div.submit_post_field[contenteditable=true]~.placeholder .ph_input, div.submit_post_field~.placeholder .ph_input {
+    vertical-align: top;
+    overflow: hidden;
+    width: 100%;
+    min-height: 52px;
+    max-height: 52px;
+    padding: 16px 20px 16px 12px;
+    border: 0;
+    border-radius: 4px;
+    line-height: 1.462;
+    word-wrap: break-word;
+    resize: none;
+}
+
+.fakeinput.dark, .fakeinput.dark~.placeholder .ph_input, div[contenteditable=true], div[contenteditable=true]~.placeholder .ph_input, input.dark, input.dark~.placeholder .ph_input, textarea.dark, textarea.dark~.placeholder .ph_input {
+    padding: 5px 9px 7px;
+    border-radius: 2px;
+    box-sizing: border-box;
+}
+
+.fakeinput, .fakeinput~.placeholder .ph_input, div[contenteditable=true], div[contenteditable=true]~.placeholder .ph_input, input.big_text, input.big_text~.placeholder .ph_input, input.dark, input.dark~.placeholder .ph_input, input.search, input.search~.placeholder .ph_input, input.text, input.text~.placeholder .ph_input, textarea, textarea~.placeholder .ph_input {
+    color: #000;
+    padding: 3px 5px;
+    margin: 0;
+}
+
+.fakeinput, div[contenteditable=true], input.big_text, input.dark, input.search, input.text, textarea {
+    background: #fff;
+    -webkit-appearance: none;
+    border-radius: 0;
+}
+
+.fakeinput, div[contenteditable=true], input.big_text, input.file, input.search, input.text, input[type=button], input[type=password], input[type=search], input[type=submit], input[type=text], input[type~=email], input[type~=password], input[type~=search], input[type~=text], textarea {
+    font-size: 13px;
+    font-family: -apple-system,BlinkMacSystemFont,Roboto,Helvetica Neue,sans-serif;
+    outline: none;
+    box-shadow: none;
+}
+
+.composer_wdd {
+    clear: both;
+    position: relative;
+}
+
+placeholder {
+    -ms-user-select: none;
+    user-select: none;
+    -o-user-select: none;
+    -moz-user-select: none;
+    -khtml-user-select: none;
+    -webkit-user-select: none;
+    position: relative;
+    z-index: 3;
+    cursor: text;
+    pointer-events: none;
+}
+
+div.submit_post_field, div.submit_post_field[contenteditable=true], div.submit_post_field[contenteditable=true]~.placeholder .ph_input, div.submit_post_field~.placeholder .ph_input {
+    vertical-align: top;
+    overflow: hidden;
+    width: 100%;
+    min-height: 52px;
+    max-height: 52px;
+    padding: 16px 20px 16px 12px;
+    border: 0;
+    border-radius: 4px;
+    line-height: 1.462;
+    word-wrap: break-word;
+    resize: none;
+}
+
+.fakeinput.dark, .fakeinput.dark~.placeholder .ph_input, div[contenteditable=true], div[contenteditable=true]~.placeholder .ph_input, input.dark, input.dark~.placeholder .ph_input, textarea.dark, textarea.dark~.placeholder .ph_input {
+    padding: 5px 9px 7px;
+    border-radius: 2px;
+    box-sizing: border-box;
+}
+
+.placeholder .ph_input {
+    position: absolute;
+    line-height: normal;
+    z-index: 3;
+    bottom: 0;
+}
+
+div.submit_post_field[contenteditable=true]~.placeholder .ph_content, div.submit_post_field~.placeholder .ph_content {
+    padding: 0;
+}
+
+.fakeinput~.placeholder .ph_content, div[contenteditable=true]~.placeholder .ph_content, input.big_text~.placeholder .ph_content, input.dark~.placeholder .ph_content, input.search~.placeholder .ph_content, input.text~.placeholder .ph_content, textarea~.placeholder .ph_content {
+    color: #828282;
+    -o-transition: color 0.2s ease;
+    transition: color 0.2s ease;
+    padding: 1px;
+    opacity: 1;
+    filter: none;
+}
+
+#submit_post_box:not(.shown):not(.own_field) .submit_post {
+    display: block;
+    height: 0;
+    padding: 0;
+    border: 0;
+    overflow: hidden;
+}
+
+.submit_post {
+    display: none;
+    background: #fafbfc;
+    border-top: 1px solid #e7e8ec;
+    padding: 13px 20px 12px;
+    border-radius: 0 0 4px 4px;
+}
+
+.submit_post .addpost_button_wrap, .submit_post .addpost_opt, .submit_post .addpost_popt {
+    float: right;
+    top: 265px;
+    right: 14px;
+}
+
+.submit_post .addpost_button_wrap {
+    position: relative;
+}
+
+#submit_post_box:not(.shown):not(.own_field) .page_add_media {
+    float: none;
+    position: absolute;
+    bottom: 15px;
+    right: 11px;
+}
+
+.page_add_media {
+    float: left;
+    padding: 3px 0 0;
+    position: relative;
+    margin-left: -3px;
+}
+
+#submit_post_box:not(.shown):not(.own_field) .ms_item.ms_item_article, #submit_post_box:not(.shown):not(.own_field) .ms_item.ms_item_audio, #submit_post_box:not(.shown):not(.own_field) .ms_item.ms_item_photo, #submit_post_box:not(.shown):not(.own_field) .ms_item.ms_item_video {
+    display: block;
+}
+
+.media_selector>.ms_item {
+    float: left;
+    width: 22px;
+    height: 22px;
+    padding: 0 0 0 22px;
+    margin-right: 4px;
+    box-sizing: border-box;
+    overflow: hidden;
+}
+
+.media_selector .ms_item {
+    position: relative;
+    display: block;
+    outline: none;
+}
+
+.media_selector .ms_item.ms_item_photo:before {
+    background-position: left -65px;
+}
+
+.media_selector>.ms_item:before {
+    left: 0;
+}
+
+.media_selector .ms_item:before {
+    position: absolute;
+    left: 5px;
+    content: '';
+    width: 22px;
+    height: 22px;
+    background: url(https://vk.com/images/post_icon.png?10) no-repeat;
+    opacity: 0.7;
+    filter: alpha(opacity=70);
+}
+
+.media_selector .ms_item.ms_item_video:before {
+    background-position: left -87px;
+}
+
+.media_selector .ms_item.ms_item_audio:before {
+    background-position: left -109px;
+}
+
+.media_selector .ms_item.ms_item_article:before {
+    background: url(data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2224%22%20height%3D%2224%22%20viewBox%3D%220%200%2024%2024%22%3E%0A%20%20%20%20%3Cg%20fill%3D%22none%22%20fill-rule%3D%22evenodd%22%3E%0A%20%20%20%20%20%20%20%20%3Crect%20width%3D%2224%22%20height%3D%2224%22%2F%3E%0A%20%20%20%20%20%20%20%20%3Cpath%20fill%3D%22%23728FB5%22%20d%3D%22M8%2C6%20L8%2C13%20C8%2C13.5522847%207.55228475%2C14%207%2C14%20C6.44771525%2C14%206%2C13.5522847%206%2C13%20L6%2C6%20L4%2C6%20C3.44771525%2C6%203%2C5.55228475%203%2C5%20L3%2C5%20L3%2C5%20C3%2C4.44771525%203.44771525%2C4%204%2C4%20L4%2C4%20L10%2C4%20C10.5522847%2C4%2011%2C4.44771525%2011%2C5%20L11%2C5%20C11%2C5.55228475%2010.5522847%2C6%2010%2C6%20L8%2C6%20Z%20M12%2C12%20L20%2C12%20C20.5522847%2C12%2021%2C12.4477153%2021%2C13%20C21%2C13.5522847%2020.5522847%2C14%2020%2C14%20L12%2C14%20C11.4477153%2C14%2011%2C13.5522847%2011%2C13%20C11%2C12.4477153%2011.4477153%2C12%2012%2C12%20Z%20M14%2C7%20L20%2C7%20C20.5522847%2C7%2021%2C7.44771525%2021%2C8%20C21%2C8.55228475%2020.5522847%2C9%2020%2C9%20L14%2C9%20C13.4477153%2C9%2013%2C8.55228475%2013%2C8%20C13%2C7.44771525%2013.4477153%2C7%2014%2C7%20Z%20M6%2C17%20L20%2C17%20C20.5522847%2C17%2021%2C17.4477153%2021%2C18%20C21%2C18.5522847%2020.5522847%2C19%2020%2C19%20L6%2C19%20C5.44771525%2C19%205%2C18.5522847%205%2C18%20C5%2C17.4477153%205.44771525%2C17%206%2C17%20Z%22%2F%3E%0A%20%20%20%20%3C%2Fg%3E%0A%3C%2Fsvg%3E)!important;
+}
+
+
+.media_selector>.ms_item:before {
+    left: 0;
+}
+
+#submit_post_box:not(.shown):not(.own_field) .ms_items_more_wrap, #submit_post_box:not(.shown):not(.own_field) .ms_item {
+    display: none;
+}
+
+.tt_w.tt_black {
+    background: #000;
+    background: rgba(0,0,0,.7);
+    border: none;
+    border-radius: 3px;
+}
+
+.tt_w {
+    font-family: -apple-system,BlinkMacSystemFont,Roboto,Helvetica Neue,sans-serif;
+    z-index: 1501;
+    cursor: default;
+    font-size: 12.5px;
+    color: #222;
+    border-radius: 2px;
+    box-shadow: 0 1px 3px rgba(0,0,0,.1);
+    position: relative;
+    position: absolute;
+}
+
+.h4-text, .tt_w {
+    font-weight: 400;
+}
+
+.submit_post_box:before {
+    content: ' ';
+    display: table;
+}
+
+.submit_post_box.shown div.submit_post_field, .submit_post_box.shown div.submit_post_field~.placeholder .ph_input {
+    min-height: 80px;
+    max-height: none;
+}
+
+.submit_post_box.own_field div.submit_post_field, .submit_post_box.shown div.submit_post_field {
+    padding-right: 36px;
 }

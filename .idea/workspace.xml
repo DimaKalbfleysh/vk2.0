@@ -1,7 +1,33 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="38b61bd6-2496-425b-9ab7-defdaa96d304" name="Default" comment="" />
+    <list default="true" id="38b61bd6-2496-425b-9ab7-defdaa96d304" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vk2/account/templates/account/audios_block.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vk2/account/templates/account/friends_block.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vk2/account/templates/account/header.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vk2/account/templates/account/info_block.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vk2/account/templates/account/make_post.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vk2/account/templates/account/page_photo.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vk2/account/templates/account/photo_block.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vk2/account/templates/account/side_bar.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vk2/account/templates/account/wall.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vk2/static/js/send_massage.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vk2/static/js/send_post.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vk2/static/js/update_massages_list.js" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vk2/static/js/friends.js" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vk2/account/forms.py" afterPath="$PROJECT_DIR$/vk2/account/forms.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vk2/account/models.py" afterPath="$PROJECT_DIR$/vk2/account/models.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vk2/account/templates/account/dialogs.html" afterPath="$PROJECT_DIR$/vk2/account/templates/account/dialogs.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vk2/account/templates/account/massages.html" afterPath="$PROJECT_DIR$/vk2/account/templates/account/massages.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vk2/account/templates/account/user_account.html" afterPath="$PROJECT_DIR$/vk2/account/templates/account/user_account.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vk2/account/urls.py" afterPath="$PROJECT_DIR$/vk2/account/urls.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vk2/account/views.py" afterPath="$PROJECT_DIR$/vk2/account/views.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vk2/db.sqlite3" afterPath="$PROJECT_DIR$/vk2/db.sqlite3" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vk2/static/css/style.css" afterPath="$PROJECT_DIR$/vk2/static/css/style.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vk2/templates/base_page.html" afterPath="$PROJECT_DIR$/vk2/templates/base_page.html" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -24,23 +50,13 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="friends.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/vk2/static/js/friends.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="339">
-              <caret line="26" column="9" lean-forward="false" selection-start-line="26" selection-start-column="9" selection-end-line="26" selection-end-column="9" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="views.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="views.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/vk2/account/views.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="16">
-              <caret line="112" column="33" lean-forward="false" selection-start-line="112" selection-start-column="33" selection-end-line="112" selection-end-column="33" />
+              <caret line="147" column="37" lean-forward="false" selection-start-line="147" selection-start-column="37" selection-end-line="147" selection-end-column="37" />
               <folding>
-                <element signature="e#0#9#0" expanded="true" />
+                <element signature="e#0#50#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -49,8 +65,8 @@
       <file leaf-file-name="base_page.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/vk2/templates/base_page.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="928">
-              <caret line="58" column="29" lean-forward="false" selection-start-line="58" selection-start-column="29" selection-end-line="58" selection-end-column="29" />
+            <state relative-caret-position="315">
+              <caret line="54" column="7" lean-forward="false" selection-start-line="54" selection-start-column="7" selection-end-line="54" selection-end-column="7" />
               <folding />
             </state>
           </provider>
@@ -59,66 +75,12 @@
       <file leaf-file-name="massages.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/vk2/account/templates/account/massages.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1216">
-              <caret line="76" column="93" lean-forward="false" selection-start-line="76" selection-start-column="93" selection-end-line="76" selection-end-column="93" />
+            <state relative-caret-position="-578">
+              <caret line="8" column="139" lean-forward="false" selection-start-line="8" selection-start-column="139" selection-end-line="8" selection-end-column="139" />
               <folding>
-                <element signature="e#205#245#0#HTML" expanded="true" />
-                <element signature="e#337#393#0#HTML" expanded="true" />
-                <element signature="e#516#541#0#HTML" expanded="true" />
-                <element signature="e#3133#3204#0#HTML" expanded="true" />
-                <element signature="e#3382#3416#0#HTML" expanded="true" />
-                <element signature="e#8581#8603#0#HTML" expanded="true" />
-                <element signature="e#8856#8887#0#HTML" expanded="true" />
+                <element signature="e#468#493#0#HTML" expanded="true" />
+                <element signature="e#14771#14789#0#HTML" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="settings.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/vk2/vk2/settings.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1808">
-              <caret line="113" column="0" lean-forward="false" selection-start-line="113" selection-start-column="0" selection-end-line="113" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="style.css" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/vk2/static/css/style.css">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="27392">
-              <caret line="1712" column="1" lean-forward="false" selection-start-line="1712" selection-start-column="1" selection-end-line="1712" selection-end-column="1" />
-              <folding>
-                <element signature="e#32039#32194#2" expanded="true" />
-                <element signature="e#32472#32627#1" expanded="true" />
-                <element signature="e#33067#33222#1" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="dialogs.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/vk2/account/templates/account/dialogs.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1056">
-              <caret line="66" column="68" lean-forward="false" selection-start-line="66" selection-start-column="68" selection-end-line="66" selection-end-column="68" />
-              <folding>
-                <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#0;n#div#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="user_account.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/vk2/account/templates/account/user_account.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="432">
-              <caret line="27" column="97" lean-forward="false" selection-start-line="27" selection-start-column="74" selection-end-line="27" selection-end-column="97" />
-              <folding />
             </state>
           </provider>
         </entry>
@@ -126,11 +88,63 @@
       <file leaf-file-name="models.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/vk2/account/models.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="576">
-              <caret line="36" column="0" lean-forward="false" selection-start-line="36" selection-start-column="0" selection-end-line="36" selection-end-column="0" />
+            <state relative-caret-position="176">
+              <caret line="13" column="29" lean-forward="false" selection-start-line="13" selection-start-column="29" selection-end-line="13" selection-end-column="29" />
               <folding>
                 <element signature="e#0#28#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="style.css" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/vk2/static/css/style.css">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="16">
+              <caret line="383" column="0" lean-forward="false" selection-start-line="383" selection-start-column="0" selection-end-line="383" selection-end-column="0" />
+              <folding>
+                <element signature="e#107955#108228#1" expanded="true" />
+                <element signature="e#111147#111561#1" expanded="true" />
+                <element signature="e#112776#113260#1" expanded="true" />
+                <element signature="e#113711#114152#1" expanded="true" />
+                <element signature="e#121187#121837#2" expanded="true" />
+                <element signature="e#123584#124298#1" expanded="true" />
+                <element signature="e#125259#126189#2" expanded="true" />
+                <element signature="e#126812#128413#1" expanded="true" />
+                <element signature="e#134844#135567#1" expanded="true" />
+                <element signature="e#135971#136508#1" expanded="true" />
+                <element signature="e#144583#146041#2" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="make_post.html" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/vk2/account/templates/account/make_post.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="16">
+              <caret line="18" column="54" lean-forward="false" selection-start-line="18" selection-start-column="54" selection-end-line="18" selection-end-column="54" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="send_post.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/vk2/static/js/send_post.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="320">
+              <caret line="20" column="0" lean-forward="false" selection-start-line="20" selection-start-column="0" selection-end-line="31" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="send_massage.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/vk2/static/js/send_massage.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="336">
+              <caret line="21" column="12" lean-forward="false" selection-start-line="21" selection-start-column="12" selection-end-line="21" selection-end-column="12" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -148,20 +162,36 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>friends_search_input_wrap</find>
-      <find>im-page--title-meta _im_page_peer_online</find>
-      <find>im-page--top-date-bar-wrap</find>
+      <find>.left_count_wrap</find>
+      <find>.im-page_classic.im-page .im-page--chat-body-wrap-inner</find>
+      <find>.im-page .im-page-chat-contain</find>
+      <find>im-page--dialogs _im_page_dialogs page_block</find>
+      <find>ui_search_reset</find>
+      <find>nim-dialog--star _im_dialog_star</find>
+      <find>_im_peer_history im-page-chat-contain</find>
+      <find>im-page--center-empty</find>
+      <find>ui_actions_menu _ui_menu</find>
       <find>im-dropbox _im_upload_dropbox</find>
-      <find>im-page--header-more _im_dialog_action_wrapper</find>
-      <find>im-replied-container</find>
-      <find>_im_media_selector im-chat-input--selector</find>
-      <find>im-send-btn im-chat-input--send im-send-btn_saudio _im_send im-send-btn_audio</find>
-      <find>.im-page_classic .im-page--chat-header</find>
+      <find>im-audio-message-input im-chat-input_classic clear_fix _im_chat_audio_input_parent</find>
+      <find>ms_items_more _more_items</find>
+      <find>.im-page--header-more .ui_actions_menu_icons</find>
+      <find>.im-chat-input .im_chat-input--buttons</find>
       <find>im-mess-stack _im_mess_stack</find>
-      <find>im_editable im-chat-input--text _im_text</find>
-      <find>/</find>
-      <find>im-chat-input--txt-wrap _im_text_wrap</find>
-      <find>im-send-btn</find>
+      <find>post_field_user_link _post_field_author</find>
+      <find>post_upload_video_wrap fl_r</find>
+      <find>ms_items_more_wrap</find>
+      <find>post</find>
+      <find>composer_wdd clear_fix</find>
+      <find>.top_audio_play__button</find>
+      <find>addpost_button_wrap</find>
+      <find>.submit_post .addpost_button_wrap, .submit_post .addpost_opt, .submit_post .addpost_popt {</find>
+      <find>placeholder</find>
+      <find>media_preview</find>
+      <find>.fakeinput, .fakeinput~.placeholder .ph_input, div[contenteditable=true], div[contenteditable=true]~.placeholder .ph_input, input.big_text, input.big_text~.placeholder .ph_input, input.dark, input.dark~.placeholder .ph_input, input.search, input.search~.placeholder .ph_input, input.text, input.text~.placeholder .ph_input, textarea, textarea~.placeholder .ph_input</find>
+      <find>.page_photos_module</find>
+      <find>im-page--chat-input _im_chat_input_w</find>
+      <find>im-page--chat-header _im_dialog_actions</find>
+      <find>im-page--header ui_search _im_dialogs_search</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -170,19 +200,7 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/vk2/profil/views.py" />
-        <option value="$PROJECT_DIR$/vk2/profil/urls.py" />
-        <option value="$PROJECT_DIR$/vk2/profil/models.py" />
-        <option value="$PROJECT_DIR$/vk2/profile/forms.py" />
-        <option value="$PROJECT_DIR$/vk2/profile/models.py" />
-        <option value="$PROJECT_DIR$/vk2/profile/templates/profile/auth_user.html" />
-        <option value="$PROJECT_DIR$/vk2/profile/templates/profile/user_account.html" />
-        <option value="$PROJECT_DIR$/vk2/profile/urls.py" />
-        <option value="$PROJECT_DIR$/vk2/profile/templates/profile/login_user.html" />
-        <option value="$PROJECT_DIR$/vk2/profile/views.py" />
-        <option value="$PROJECT_DIR$/vk2/profile/templates/profile/register_user.html" />
         <option value="$PROJECT_DIR$/vk2/account/templates/account/register_user.html" />
-        <option value="$PROJECT_DIR$/vk2/account/forms.py" />
         <option value="$PROJECT_DIR$/vk2/login/urls.py" />
         <option value="$PROJECT_DIR$/vk2/register/templates/register/register_user.html" />
         <option value="$PROJECT_DIR$/vk2/edit/urls.py" />
@@ -208,28 +226,41 @@
         <option value="$PROJECT_DIR$/vk2/static/js/jquery.js" />
         <option value="$PROJECT_DIR$/vk2/register/views.py" />
         <option value="$PROJECT_DIR$/vk2/account/templates/account/albums.html" />
-        <option value="$PROJECT_DIR$/vk2/account/urls.py" />
         <option value="$PROJECT_DIR$/vk2/edit/views.py" />
-        <option value="$PROJECT_DIR$/vk2/account/templates/account/user_account.html" />
         <option value="$PROJECT_DIR$/vk2/account/templates/account/friends.html" />
-        <option value="$PROJECT_DIR$/vk2/static/js/friends.js" />
-        <option value="$PROJECT_DIR$/vk2/account/templates/account/massages.html" />
         <option value="$PROJECT_DIR$/vk2/vk2/settings.py" />
+        <option value="$PROJECT_DIR$/vk2/static/js/friends.js" />
+        <option value="$PROJECT_DIR$/vk2/account/forms.py" />
+        <option value="$PROJECT_DIR$/vk2/account/templates/account/friends_block.html" />
+        <option value="$PROJECT_DIR$/vk2/account/templates/account/audios_block.html" />
+        <option value="$PROJECT_DIR$/vk2/account/templates/account/wall.html" />
+        <option value="$PROJECT_DIR$/vk2/account/templates/account/photo_block.html" />
+        <option value="$PROJECT_DIR$/vk2/account/templates/account/info_block.html" />
+        <option value="$PROJECT_DIR$/vk2/account/templates/account/user_account.html" />
+        <option value="$PROJECT_DIR$/vk2/account/templates/account/header.html" />
+        <option value="$PROJECT_DIR$/vk2/account/urls.py" />
         <option value="$PROJECT_DIR$/vk2/templates/base_page.html" />
-        <option value="$PROJECT_DIR$/vk2/static/css/style.css" />
-        <option value="$PROJECT_DIR$/vk2/account/templates/account/dialogs.html" />
         <option value="$PROJECT_DIR$/vk2/account/models.py" />
         <option value="$PROJECT_DIR$/vk2/account/views.py" />
+        <option value="$PROJECT_DIR$/vk2/account/templates/account/side_bar.html" />
+        <option value="$PROJECT_DIR$/vk2/account/templates/account/page_photo.html" />
+        <option value="$PROJECT_DIR$/vk2/static/js/send_post.js" />
+        <option value="$PROJECT_DIR$/vk2/static/js/send_massage.js" />
+        <option value="$PROJECT_DIR$/vk2/account/templates/account/make_post.html" />
+        <option value="$PROJECT_DIR$/vk2/static/css/style.css" />
+        <option value="$PROJECT_DIR$/vk2/account/templates/account/massages.html" />
+        <option value="$PROJECT_DIR$/vk2/account/templates/account/dialogs.html" />
+        <option value="$PROJECT_DIR$/vk2/static/js/update_massages_list.js" />
       </list>
     </option>
   </component>
   <component name="JsBuildToolGruntFileManager" detection-done="true" sorting="DEFINITION_ORDER" />
   <component name="JsBuildToolPackageJson" detection-done="true" sorting="DEFINITION_ORDER" />
   <component name="JsFlowSettings">
-    <service-enabled>false</service-enabled>
+    <service-enabled>true</service-enabled>
     <exe-path />
     <annotation-enable>false</annotation-enable>
-    <other-services-enabled>false</other-services-enabled>
+    <other-services-enabled>true</other-services-enabled>
   </component>
   <component name="JsGulpfileManager">
     <detection-done>true</detection-done>
@@ -257,6 +288,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scratches" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -345,6 +378,28 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="js" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Vkontakte 2.0" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Vkontakte 2.0" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="vk2" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="static" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="css" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
@@ -363,7 +418,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="register" />
+              <option name="myItemId" value="login" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -381,7 +436,55 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="login" />
+              <option name="myItemId" value="edit" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Vkontakte 2.0" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Vkontakte 2.0" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="vk2" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="edit" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="templates" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Vkontakte 2.0" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Vkontakte 2.0" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="vk2" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="edit" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="templates" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="edit" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -463,15 +566,16 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scope" />
-      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="C:/Python36-32/Lib/site-packages/django/urls/resolvers.py" />
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
-    <property name="settings.editor.selected.configurable" value="ics" />
+    <property name="settings.editor.selected.configurable" value="Settings.JavaScript" />
+    <property name="Git.Branch.Popup.ShowAllRemotes" value="true" />
+    <property name="JavaScriptPreferStrict" value="false" />
+    <property name="JavaScriptWeakerCompletionTypeGuess" value="true" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -684,7 +788,7 @@
   <component name="ToolWindowManager">
     <frame x="-4" y="-4" width="1608" height="864" extended-state="6" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.20667523" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.21501926" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32991013" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -692,7 +796,7 @@
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32885906" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32885906" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="true" content_ui="tabs" />
-      <window_info id="Terminal" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32080537" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.29798657" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="true" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Data View" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32991013" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -701,12 +805,12 @@
     <layout-to-restore>
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="true" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32885906" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32885906" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3181208" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.22849807" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.29798657" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.21245186" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32991013" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32885906" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="true" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="true" content_ui="tabs" />
@@ -722,97 +826,11 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="3" />
+      <option name="time" value="4" />
     </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/vk2/edit/urls.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="64">
-          <caret line="4" column="43" lean-forward="false" selection-start-line="4" selection-start-column="43" selection-end-line="4" selection-end-column="43" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/env/Lib/site-packages/django/contrib/auth/forms.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="364">
-          <caret line="160" column="76" lean-forward="false" selection-start-line="160" selection-start-column="76" selection-end-line="160" selection-end-column="76" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/vk2/login/templates/login/__init__.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/vk2/edit/models.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/vk2/register/templates/register/init_register_user.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="352">
-          <caret line="22" column="13" lean-forward="false" selection-start-line="22" selection-start-column="13" selection-end-line="22" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/vk2/register/templates/register/final_register_user.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="160">
-          <caret line="10" column="75" lean-forward="false" selection-start-line="10" selection-start-column="75" selection-end-line="10" selection-end-column="75" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/vk2/post/models.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="112">
-          <caret line="7" column="0" lean-forward="true" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/vk2/post/forms.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/vk2/account/forms.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="16">
-          <caret line="1" column="0" lean-forward="false" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/vk2/post/urls.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/vk2/vk2/urls.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="20" column="0" lean-forward="false" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/vk2/login/templates/login/login_user.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="208">
-          <caret line="13" column="88" lean-forward="false" selection-start-line="13" selection-start-column="57" selection-end-line="13" selection-end-column="88" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/vk2/account/migrations/0010_auto_20190203_2337.py" />
-    <entry file="file://$PROJECT_DIR$/vk2/account/migrations/0009_auto_20190203_2337.py" />
     <entry file="file://$PROJECT_DIR$/vk2/account/migrations/0008_auto_20190203_2323.py" />
     <entry file="file://$PROJECT_DIR$/vk2/account/migrations/0009_auto_20190203_2353.py" />
     <entry file="file://$PROJECT_DIR$/vk2/account/migrations/0008_auto_20190203_2342.py" />
@@ -859,20 +877,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/vk2/edit/templates/edit/edit_user.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="32">
-          <caret line="2" column="13" lean-forward="false" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/vk2/edit/forms.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="252">
-          <caret line="23" column="33" lean-forward="false" selection-start-line="23" selection-start-column="33" selection-end-line="23" selection-end-column="33" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/env/Lib/site-packages/django/urls/resolvers.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="404">
@@ -887,20 +891,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/vk2/static/js/jquery.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="16">
-          <caret line="1" column="86841" lean-forward="false" selection-start-line="1" selection-start-column="86841" selection-end-line="1" selection-end-column="86841" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/vk2/login/forms.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="192">
-          <caret line="15" column="69" lean-forward="false" selection-start-line="15" selection-start-column="57" selection-end-line="15" selection-end-column="69" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/vk2/register/views.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="352">
@@ -912,14 +902,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="374">
           <caret line="306" column="76" lean-forward="false" selection-start-line="306" selection-start-column="51" selection-end-line="306" selection-end-column="76" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/vk2/login/views.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="176">
-          <caret line="14" column="65" lean-forward="false" selection-start-line="14" selection-start-column="65" selection-end-line="14" selection-end-column="65" />
         </state>
       </provider>
     </entry>
@@ -937,48 +919,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/vk2/edit/views.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="384">
-          <caret line="32" column="38" lean-forward="true" selection-start-line="32" selection-start-column="38" selection-end-line="32" selection-end-column="38" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/vk2/account/templates/account/friends.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="245">
           <caret line="42" column="62" lean-forward="false" selection-start-line="42" selection-start-column="62" selection-end-line="42" selection-end-column="62" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/vk2/account/templates/account/user_account.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="432">
-          <caret line="27" column="97" lean-forward="false" selection-start-line="27" selection-start-column="74" selection-end-line="27" selection-end-column="97" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/vk2/account/urls.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="112">
-          <caret line="7" column="49" lean-forward="false" selection-start-line="7" selection-start-column="49" selection-end-line="7" selection-end-column="49" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/vk2/account/templates/account/massages.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1216">
-          <caret line="76" column="93" lean-forward="false" selection-start-line="76" selection-start-column="93" selection-end-line="76" selection-end-column="93" />
-          <folding>
-            <element signature="e#205#245#0#HTML" expanded="true" />
-            <element signature="e#337#393#0#HTML" expanded="true" />
-            <element signature="e#516#541#0#HTML" expanded="true" />
-            <element signature="e#3133#3204#0#HTML" expanded="true" />
-            <element signature="e#3382#3416#0#HTML" expanded="true" />
-            <element signature="e#8581#8603#0#HTML" expanded="true" />
-            <element signature="e#8856#8887#0#HTML" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -990,64 +935,258 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/vk2/static/css/style.css">
+    <entry file="file://$PROJECT_DIR$/vk2/vk2/urls.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="27392">
-          <caret line="1712" column="1" lean-forward="false" selection-start-line="1712" selection-start-column="1" selection-end-line="1712" selection-end-column="1" />
-          <folding>
-            <element signature="e#32039#32194#2" expanded="true" />
-            <element signature="e#32472#32627#1" expanded="true" />
-            <element signature="e#33067#33222#1" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/vk2/templates/base_page.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="928">
-          <caret line="58" column="29" lean-forward="false" selection-start-line="58" selection-start-column="29" selection-end-line="58" selection-end-column="29" />
+        <state relative-caret-position="257">
+          <caret line="20" column="0" lean-forward="false" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/vk2/account/templates/account/dialogs.html">
+    <entry file="file://$PROJECT_DIR$/vk2/static/js/jquery.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1056">
-          <caret line="66" column="68" lean-forward="false" selection-start-line="66" selection-start-column="68" selection-end-line="66" selection-end-column="68" />
+        <state relative-caret-position="8672">
+          <caret line="1" column="86841" lean-forward="false" selection-start-line="1" selection-start-column="86841" selection-end-line="1" selection-end-column="86841" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vk2/login/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="176">
+          <caret line="14" column="65" lean-forward="false" selection-start-line="14" selection-start-column="65" selection-end-line="14" selection-end-column="65" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vk2/login/forms.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="80">
+          <caret line="8" column="0" lean-forward="false" selection-start-line="8" selection-start-column="0" selection-end-line="16" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vk2/edit/forms.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="288">
+          <caret line="23" column="33" lean-forward="false" selection-start-line="23" selection-start-column="33" selection-end-line="23" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vk2/account/forms.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="176">
+          <caret line="11" column="9" lean-forward="true" selection-start-line="11" selection-start-column="9" selection-end-line="11" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vk2/login/urls.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="e#0#28#0" expanded="false" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vk2/edit/templates/edit/edit_user.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="144">
+          <caret line="9" column="99" lean-forward="false" selection-start-line="9" selection-start-column="70" selection-end-line="9" selection-end-column="99" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vk2/edit/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="380">
+          <caret line="31" column="28" lean-forward="true" selection-start-line="31" selection-start-column="28" selection-end-line="31" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vk2/account/templates/account/friends_block.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="128">
+          <caret line="8" column="16" lean-forward="true" selection-start-line="8" selection-start-column="16" selection-end-line="8" selection-end-column="16" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vk2/account/templates/account/wall.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="432">
+          <caret line="27" column="39" lean-forward="true" selection-start-line="27" selection-start-column="39" selection-end-line="27" selection-end-column="39" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vk2/account/templates/account/audios_block.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="23" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="113" selection-end-column="6" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vk2/account/templates/account/info_block.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="96">
+          <caret line="6" column="37" lean-forward="true" selection-start-line="6" selection-start-column="37" selection-end-line="6" selection-end-column="37" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vk2/account/templates/account/photo_block.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="272">
+          <caret line="17" column="6" lean-forward="true" selection-start-line="17" selection-start-column="6" selection-end-line="17" selection-end-column="6" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vk2/account/templates/account/header.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="320">
+          <caret line="20" column="30" lean-forward="false" selection-start-line="20" selection-start-column="30" selection-end-line="20" selection-end-column="30" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vk2/account/templates/account/user_account.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="251">
+          <caret line="16" column="33" lean-forward="false" selection-start-line="16" selection-start-column="33" selection-end-line="16" selection-end-column="33" />
+          <folding>
+            <element signature="e#228#252#0#HTML" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vk2/account/urls.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="128">
+          <caret line="9" column="34" lean-forward="false" selection-start-line="9" selection-start-column="34" selection-end-line="9" selection-end-column="34" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vk2/account/templates/account/side_bar.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="83">
+          <caret line="33" column="107" lean-forward="false" selection-start-line="33" selection-start-column="77" selection-end-line="33" selection-end-column="107" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vk2/account/templates/account/page_photo.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="112">
+          <caret line="7" column="41" lean-forward="false" selection-start-line="7" selection-start-column="41" selection-end-line="7" selection-end-column="41" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vk2/static/js/send_post.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="320">
+          <caret line="20" column="0" lean-forward="false" selection-start-line="20" selection-start-column="0" selection-end-line="31" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vk2/static/js/send_massage.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="336">
+          <caret line="21" column="12" lean-forward="false" selection-start-line="21" selection-start-column="12" selection-end-line="21" selection-end-column="12" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/vk2/account/models.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="576">
-          <caret line="36" column="0" lean-forward="false" selection-start-line="36" selection-start-column="0" selection-end-line="36" selection-end-column="0" />
+        <state relative-caret-position="176">
+          <caret line="13" column="29" lean-forward="false" selection-start-line="13" selection-start-column="29" selection-end-line="13" selection-end-column="29" />
           <folding>
             <element signature="e#0#28#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/vk2/static/js/friends.js">
+    <entry file="file://$PROJECT_DIR$/vk2/account/templates/account/massages.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="339">
-          <caret line="26" column="9" lean-forward="false" selection-start-line="26" selection-start-column="9" selection-end-line="26" selection-end-column="9" />
+        <state relative-caret-position="-578">
+          <caret line="8" column="139" lean-forward="false" selection-start-line="8" selection-start-column="139" selection-end-line="8" selection-end-column="139" />
+          <folding>
+            <element signature="e#468#493#0#HTML" expanded="true" />
+            <element signature="e#14771#14789#0#HTML" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vk2/static/js/update_massages_list.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="388">
+          <caret line="102" column="37" lean-forward="false" selection-start-line="102" selection-start-column="37" selection-end-line="102" selection-end-column="37" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vk2/account/templates/account/dialogs.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="149">
+          <caret line="94" column="122" lean-forward="false" selection-start-line="94" selection-start-column="122" selection-end-line="94" selection-end-column="122" />
+          <folding>
+            <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <marker date="1551454153847" expanded="false" signature="132:164" ph="..." />
+            <marker date="1551454153847" expanded="false" signature="264:310" ph="..." />
+            <marker date="1551454153847" expanded="false" signature="394:411" ph="..." />
+            <marker date="1551454153847" expanded="false" signature="767:781" ph="..." />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/vk2/account/views.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="16">
-          <caret line="112" column="33" lean-forward="false" selection-start-line="112" selection-start-column="33" selection-end-line="112" selection-end-column="33" />
+          <caret line="147" column="37" lean-forward="false" selection-start-line="147" selection-start-column="37" selection-end-line="147" selection-end-column="37" />
           <folding>
-            <element signature="e#0#9#0" expanded="true" />
+            <element signature="e#0#50#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vk2/templates/base_page.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="315">
+          <caret line="54" column="7" lean-forward="false" selection-start-line="54" selection-start-column="7" selection-end-line="54" selection-end-column="7" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vk2/static/css/style.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="16">
+          <caret line="383" column="0" lean-forward="false" selection-start-line="383" selection-start-column="0" selection-end-line="383" selection-end-column="0" />
+          <folding>
+            <element signature="e#107955#108228#1" expanded="true" />
+            <element signature="e#111147#111561#1" expanded="true" />
+            <element signature="e#112776#113260#1" expanded="true" />
+            <element signature="e#113711#114152#1" expanded="true" />
+            <element signature="e#121187#121837#2" expanded="true" />
+            <element signature="e#123584#124298#1" expanded="true" />
+            <element signature="e#125259#126189#2" expanded="true" />
+            <element signature="e#126812#128413#1" expanded="true" />
+            <element signature="e#134844#135567#1" expanded="true" />
+            <element signature="e#135971#136508#1" expanded="true" />
+            <element signature="e#144583#146041#2" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vk2/account/templates/account/make_post.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="16">
+          <caret line="18" column="54" lean-forward="false" selection-start-line="18" selection-start-column="54" selection-end-line="18" selection-end-column="54" />
+          <folding />
         </state>
       </provider>
     </entry>

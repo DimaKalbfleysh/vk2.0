@@ -1,0 +1,55 @@
+<div id='page_header_cont' class="page_header_cont">
+    <div class="back"></div>
+    <div id="page_header_wrap" class="page_header_wrap" style="width: 100%;; margin-left: 0px;">
+        <div id="page_header" class="p_head p_head_l0" style="width: 960px;">
+            <div class="content">
+                <div id="top_nav" class="head_nav">
+                    <div class="head_nav_item fl_l">
+                        <a class="top_home_link fl_l" href="/id{{ main_user.pk }}" aria-label="На главную" accesskey="1">
+                            <div class="top_home_logo"></div>
+                        </a>
+                    </div>
+                    <div class="head_nav_item fl_l">
+                        <div id="ts_wrap" class="ts_wrap">
+                            <input name="disable-autofill" style="display: none;" title="">
+                            <div class="input_back_wrap no_select">
+                                <div class="input_back" style="margin: 7px 0px 7px 8px; padding: 6px 6px 6px 19px;">
+                                    <div class="input_back_content" style="width: 210px;">Поиск</div>
+                                </div>
+                            </div>
+                            <input type="text" class="text ts_input" id="ts_input" autocomplete="off" name="disable-autofill" aria-label="Поиск" title="">
+                        </div>
+                    </div>
+                    <div class="head_nav_item fl_l head_nav_btns">
+                        <a id="top_notify_btn" class="top_nav_btn" href="">
+                            <span class="blind_label">Уведомления</span>
+                            <div class="top_nav_btn_icon"></div>
+                            <div id="top_notify_count" class="top_notify_count">0</div>
+                        </a>
+                        <span id="top_audio_layer_place"></span>
+                        <div id="top_audio_btn_group" class="top_nav_btn_audio_group" style="">
+                            <a id="top_audio" class="top_nav_btn _top_nav_audio_btn" href="">
+                                <span class="blind_label">Аудиоплеер</span>
+                                <div class="top_nav_btn_icon"></div>
+                            </a>
+                            <div class="top_audio_play" id="top_audio_play">
+                                <button class="top_audio_play__button" aria-label="Воспроизвести "></button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="head_nav_item fl_r">
+                        <a id="top_profile_link" class="top_nav_link top_profile_link" href="/id{{ main_user.pk }}">
+                        <span class="blind_label">Настройки страницы</span>
+                        <div class="top_profile_name">Виктор</div>
+                        <img class="top_profile_img"
+                             src="{{ main_user.main_photo.url }}" alt="Виктор">
+                        <div class="top_profile_arrow"></div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+

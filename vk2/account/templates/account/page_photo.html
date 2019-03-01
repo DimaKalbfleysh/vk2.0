@@ -1,0 +1,38 @@
+<div class="page_block page_photo">
+    <div class="owner_photo_wrap actions_with_effects" id="owner_photo_wrap">
+        <div class="page_avatar_wrap no_stickers_1april" id="page_avatar_wrap">
+            <aside aria-label="Фотография">
+                <div id="page_avatar" class="page_avatar">
+                    <a id="profile_photo_link" href="{{ user.main_photo.url }}">
+                        <img class="page_avatar_img" src="{{ user.main_photo.url }}"
+                             alt="{{ user.get_full_name }}" width="200" height="258">
+                    </a>
+                </div>
+            </aside>
+        </div>
+    </div>
+    {% if not user.is_another_user %}
+        <aside aria-label="Действия со страницей">
+            <div class="profile_actions">
+                <div class="page_actions_wide clear_fix no_actions edit">
+                    <div class="page_action_left fl_l">
+                        <a id="profile_edit_act" href="/edit"
+                           class="flat_button button_wide secondary">Редактировать</a>
+                    </div>
+                </div>
+            </div>
+        </aside>
+    {% else %}
+        {% if request_is_send and not accept_request %}
+            <button type="submit" class="vk-button btn">Запрос отправлен</button>
+        {% elif not request_is_send and accept_request %}
+            <a href="?friendship=accept" class="flat_button button_wide">Принять запрос</a>
+        {% elif not request_is_send and not accept_request and not is_friend %}
+            <a href="?friendship=request" class="flat_button button_wide">Добавить в друзья</a>
+        {% elif request_is_send and accept_request %}
+            <a href="?friendship=accept" class="flat_button button_wide">Принять запрос</a>
+        {% elif is_friend %}
+            <a href="{% url 'im' %}?sel={{ user.pk }}" class="flat_button button_wide">Отправить сообщение</a>
+        {% endif %}
+    {% endif %}
+</div>

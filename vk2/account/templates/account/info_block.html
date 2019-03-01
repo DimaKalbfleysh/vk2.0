@@ -1,0 +1,49 @@
+<div class="page_block">
+    <div id="page_info_wrap" class="page_info_wrap ">
+        <div class="page_top">
+            {% if another_user %}
+                <h2 class="page_name">{{ other_user.get_full_name }}</h2>
+            {% endif %}
+            {% if not another_user %}
+                <h2 class="page_name">{{ user.get_full_name }}</h2>
+            {% endif %}
+        </div>
+        <div class="profile_info profile_info_short" id="profile_short">
+            {% if user.date_of_birth %}
+                <div class="profile_info_row ">
+                    <div class="label column_left">День рождения:</div>
+                    <div class="labeled">{{ user.date_of_birth }}</div>
+                </div>
+            {% endif %}
+            {% if user.education %}
+                <div class="profile_info_row ">
+                    <div class="label fl_l">Образование:</div>
+                    <div class="labeled"></div>
+                </div>
+            {% endif %}
+        </div>
+    </div>
+    <div class="counts_module">
+        <a class="page_counter" id='url_friends' href="{% url 'friends' pk=user.pk %}">
+            {#                <a class="page_counter" id='url_friends' href="#">#}
+            <div class="count">{{ count_friends }}</div>
+            <div class="label">друзей</div>
+        </a>
+        <a class="page_counter">
+            <div class="count">4</div>
+            <div class="label">подписчика</div>
+        </a>
+        <a class="page_counter" href="{% url 'albums' pk=user.pk %}">
+            <div class="count">{{ count_photo }}</div>
+            <div class="label">фотографии</div>
+        </a>
+        <a class="page_counter" href="/videos483686337">
+            <div class="count">1</div>
+            <div class="label">видеозапись</div>
+        </a>
+        <a class="page_counter" href="/audios483686337">
+            <div class="count">79</div>
+            <div class="label">аудиозаписей</div>
+        </a>
+    </div>
+</div>

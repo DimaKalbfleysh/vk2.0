@@ -1,0 +1,56 @@
+<div class="page_block" id="page_block_submit_post">
+    <div id="submit_post_box" class="submit_post_box clear_fix _submit_post_box test_posting_experiment"
+         data-from-oid="483686337" data-oid="483686337" data-owner-name="" data-owner-photo="" data-owner-href="" style="min-height: 52px;
+    max-height: 52px;">
+        <a class="post_field_user_link _post_field_author" href="/id{{ main_user.pk }}">
+            <img class="post_field_user_image _post_field_image"
+                 src="{{ main_user.main_photo.url }}">
+            <img class="post_field_user_image post_field_image_secondary _post_field_image"
+                 src="{{ main_user.main_photo.url }}">
+        </a>
+        <div class="post_field_wrap _emoji_field_wrap">
+
+            <div class="post_upload_wrap fl_r" style="display: none;">
+                <div id="post_field_upload" class="post_upload">
+                    <input class="file" type="file" size="28" multiple="true" accept="image/jpeg,image/png,image/gif" name="photo" style="cursor: pointer;">
+                </div>
+            </div>
+            <div id="post_field" class="submit_post_field dark submit_post_inited" contenteditable="true" role="textbox" aria-multiline="true"></div>
+            <div class="placeholder" id="placeholder1">
+                <div class="ph_input">
+                    <div class="ph_content">Напишите что-нибудь</div>
+                </div>
+            </div>
+        </div>
+
+        <div id="submit_post" class="submit_post clear_fix">
+            <div class="addpost_button_wrap">
+                <button class="flat_button addpost_button" id="send_post">Отправить</button>
+            </div>
+            <div id="page_add_media" class="page_add_media">
+                <div class="media_selector clear_fix">
+                    <a class="ms_item ms_item_photo _type_photo" tabindex="0" data-title="Фотография" aria-label="Фотография" role="link">
+                        <span class="blind_label">Фотография</span>
+                    </a>
+                    <a class="ms_item ms_item_video _type_video" tabindex="0" data-title="Видеозапись" aria-label="Видеозапись" role="link">
+                        <span class="blind_label">Видеозапись</span>
+                    </a>
+                    <a class="ms_item ms_item_audio _type_audio" tabindex="0" data-title="Аудиозапись" aria-label="Аудиозапись" role="link">
+                        <span class="blind_label">Аудиозапись</span>
+                    </a>
+                    <a class="ms_item ms_item_article _type_article" tabindex="0" data-title="Статья" aria-label="Статья" role="link">
+                        <span class="blind_label">Статья</span>
+                    </a>
+                </div>
+                <div class="tt_w tt_black tt_down"
+                     style="position: absolute; opacity: 0.0157084; top: -28px; left: -9px; pointer-events: auto; display: none;">
+                    <div class="tt_text">Фотография</div>
+                </div>
+                <div class="tt_w tt_black tt_down"
+                     style="position: absolute; opacity: 0.0475865; top: -28px; left: 17px; pointer-events: auto; display: none;">
+                    <div class="tt_text">Видеозапись</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

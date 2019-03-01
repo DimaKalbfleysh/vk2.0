@@ -1,0 +1,46 @@
+<div class="page_block">
+    <aside aria-label="Друзья">
+        <div class="module clear people_module _module" id="profile_friends">
+            <a href="{% url 'friends' pk=user.pk %}" class="module_header">
+                <div class="header_top clear_fix">
+                    <span class="header_label fl_l">Друзья</span>
+                    <span class="header_count fl_l">{{ count_friends }}</span>
+                </div>
+            </a>
+            <div class="module_body clear_fix">
+                <div class="people_row">
+                    {% for friend in friends_row.0 %}
+                        <div class="people_cell">
+                            <a class="people_cell_ava" href="/id{{ friend.pk }}" title="{{ friend.get_full_name }}">
+                                <img class="people_cell_img" src="{{ friend.main_photo.url }}"
+                                     alt="{{ friend.get_full_name }}">
+                                <span class="blind_label">.</span>
+                            </a>
+                            <div class="people_cell_name">
+                                <a href="/id{{ friend.pk }}" title="{{ friend.get_full_name }}">
+                                    {{ friend.first_name }}
+                                </a>
+                            </div>
+                        </div>
+                    {% endfor %}
+                </div>
+                <div class="people_row">
+                    {% for friend in friends_row.1 %}
+                        <div class="people_cell">
+                            <a class="people_cell_ava" href="/id{{ friend.pk }}" title="{{ friend.get_full_name }}">
+                                <img class="people_cell_img" src="{{ friend.main_photo.url }}"
+                                     alt="friend.get_full_name">
+                                <span class="blind_label">.</span>
+                            </a>
+                            <div class="people_cell_name">
+                                <a href="/id{{ friend.pk }}" title="{{ friend.get_full_name }}">
+                                    {{ friend.first_name }}
+                                </a>
+                            </div>
+                        </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </aside>
+</div>

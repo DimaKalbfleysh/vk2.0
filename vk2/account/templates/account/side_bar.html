@@ -1,0 +1,113 @@
+<div id="side_bar" class="side_bar fl_l sticky_top" style="top: 0px;">
+    <div id="side_bar_inner" class="side_bar_inner">
+        <nav>
+            <ol>
+                <li id="l_pr" class="">
+                    <a href="{% url 'account' pk=main_user.pk %}" class="left_row">
+                                    <span class="left_fixer">
+                                      <span class="left_count_wrap fl_r left_void">
+                                          <span class="inl_bl left_count_sign">0</span>
+                                      </span>
+                                      <span class="left_icon fl_l"></span>
+                                      <span class="left_label inl_bl">Моя Страница</span>
+                                    </span>
+                    </a>
+                    <div class="left_settings" onclick="menuSettings(0)">
+                        <div class="left_settings_inner"></div>
+                    </div>
+                </li>
+                <li id="l_nwsf" class="">
+                    <a href="/feed" class="left_row">
+                                    <span class="left_fixer">
+                                      <span class="left_count_wrap fl_r left_void"><span class="inl_bl left_count_sign">0</span></span>
+                                      <span class="left_icon fl_l"></span>
+                                      <span class="left_label inl_bl">Новости</span>
+                                    </span>
+                    </a>
+                    <div class="left_settings" onclick="menuSettings(0)">
+                        <div class="left_settings_inner"></div>
+                    </div>
+                </li>
+                <li id="l_msg" class="">
+                    <a href="/di" class="left_row">
+                        <span class="left_fixer">
+                            <span class="left_count_wrap fl_r left_void" id="count_not_readed_massages_span">
+                                <span class="inl_bl left_count_sign " id="count_not_readed_massages">{{ main_user.count_not_readed_massages}}</span>
+                            </span>
+                            <span class="left_icon fl_l"></span>
+                            <span class="left_label inl_bl">Сообщения</span>
+                        </span>
+                    </a>
+                    <div class="left_settings" onclick="menuSettings(0)">
+                        <div class="left_settings_inner"></div>
+                    </div>
+                </li>
+                <li id="l_fr" class="">
+                    <a href="{% url 'friends' pk=main_user.pk %}" class="left_row">
+                                    <span class="left_fixer">
+                                        <object type="internal/link">
+                                         <a href="/friends?section=requests"
+                                            class="left_count_wrap fl_r left_void left_count_wrap_hovered">
+                                             <span class="inl_bl left_count_sign">0</span>
+                                         </a>
+                                        </object>
+                                        <span class="left_icon fl_l"></span>
+                                        <span class="left_label inl_bl">Друзья</span>
+                                    </span>
+                    </a>
+                    <div class="left_settings" onclick="menuSettings(0)">
+                        <div class="left_settings_inner"></div>
+                    </div>
+                </li>
+                <li id="l_gr" class="">
+                    <a href="/groups" class="left_row">
+                                    <span class="left_fixer">
+                                      <span class="left_count_wrap fl_r left_void"><span class="inl_bl left_count_sign">0</span></span>
+                                      <span class="left_icon fl_l"></span>
+                                      <span class="left_label inl_bl">Группы</span>
+                                    </span>
+                    </a>
+                    <div class="left_settings" onclick="menuSettings(0)">
+                        <div class="left_settings_inner"></div>
+                    </div>
+                </li>
+                <li id="l_ph" class="">
+                    <a href="{% url 'albums' pk=main_user.pk %}" class="left_row">
+                                    <span class="left_fixer">
+                                      <span class="left_count_wrap fl_r left_void"><span class="inl_bl left_count_sign">0</span></span>
+                                      <span class="left_icon fl_l"></span>
+                                      <span class="left_label inl_bl">Фотографии</span>
+                                    </span>
+                    </a>
+                    <div class="left_settings" onclick="menuSettings(0)">
+                        <div class="left_settings_inner"></div>
+                    </div>
+                </li>
+                <li id="l_aud" class="">
+                    <a href="/audios483686337" class="left_row">
+                                    <span class="left_fixer">
+                                      <span class="left_count_wrap fl_r left_void"><span class="inl_bl left_count_sign">0</span></span>
+                                      <span class="left_icon fl_l"></span>
+                                      <span class="left_label inl_bl">Музыка</span>
+                                    </span>
+                    </a>
+                    <div class="left_settings" onclick="menuSettings(0)">
+                        <div class="left_settings_inner"></div>
+                    </div>
+                </li>
+                <li id="l_vid" class="">
+                    <a href="/video" class="left_row">
+                                    <span class="left_fixer">
+                                      <span class="left_count_wrap fl_r left_void"><span class="inl_bl left_count_sign">0</span></span>
+                                      <span class="left_icon fl_l"></span>
+                                      <span class="left_label inl_bl">Видео</span>
+                                    </span>
+                    </a>
+                    <div class="left_settings" onclick="menuSettings(0)">
+                        <div class="left_settings_inner"></div>
+                    </div>
+                </li>
+            </ol>
+        </nav>
+    </div>
+</div>

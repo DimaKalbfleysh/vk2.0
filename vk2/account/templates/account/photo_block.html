@@ -1,0 +1,18 @@
+<div class="page_block">
+    <div class="module clear photos_module" id="profile_photos_module">
+        <div class="header_right_link fl_r">
+        </div>
+        <a href="{% url 'albums' pk=user.pk %}" class="module_header">
+            <div class="header_top clear_fix">
+                <span class="header_label fl_l">Мои фотографии</span>
+                <span class="header_count fl_l">{{ count_photo }}</span>
+            </div>
+        </a>
+        <div id="page_photos_module" class="page_photos_module">
+            {% for i in all_photo %}
+                <a class="page_square_photo crisp_image" href="{{ i.photo.url }}" aria-label="фотография"
+                   style="background-image: url({{ i.photo.url }});"><span class="blind_label">фотография</span></a>
+            {% endfor %}
+        </div>
+    </div>
+</div>

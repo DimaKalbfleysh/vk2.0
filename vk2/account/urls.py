@@ -6,5 +6,7 @@ urlpatterns = [
     path('albums<str:pk>/', AlbumsView.as_view(), name='albums'),
     path('friends<str:pk>/', FriendsView.as_view(), name='friends'),
     path('di/', DialogView.as_view(), name='di'),
-    path('im/', MassageView.as_view(), name='im')
+    path('im/', MassageView.as_view(), name='im'),
+    path('up/', UpdateMassagesView.as_view(), name='up'),
+    path('ps/', PostView.as_view(), name='ps')
 ]

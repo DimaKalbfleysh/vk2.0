@@ -11,12 +11,28 @@ class Account(User):
     is_another_user = models.BooleanField(blank=True, null=True)
     date_of_birth = models.DateField(verbose_name="DOB", blank=True, null=True)
     main_photo = models.ImageField(upload_to=user_directory_path, blank=True, null=True, default='defult-photo.png')
+    count_not_readed_massages = models.IntegerField(null=True, default=0)
+
+
+class Post(models.Model):
+    author = models.ForeignKey(Account, on_delete=models.CASCADE, related_name='posts', null=True)
+    pub_date = models.DateTimeField(blank=False, null=True, default=timezone.now)
+    content = models.CharField(max_length=1500, blank=False, null=True)
+    likes = models.IntegerField(null=True, default=0)
+    views = models.IntegerField(null=True, default=0)
+
+    class Meta:
+        ordering = ['-pub_date']
 
 
 class Photo(models.Model):
     id_photo = models.IntegerField(null=True, unique=True)
     photo = models.ImageField(upload_to=user_directory_path, blank=True, null=True, default='defult-photo.png')
     account = models.ForeignKey(Account, on_delete=models.CASCADE, related_name='images', null=True)
+    post = models.ManyToManyField(Post, related_name='images', blank=True, null=True)
+
+    def get_new_id_photo(self):
+        return int(self.objects.all()[0].id_photo) + 1
 
     class Meta:
         ordering = ['-id']
@@ -34,3 +50,15 @@ class Massage(models.Model):
     dialog = models.ForeignKey(Dialog, on_delete=models.CASCADE, related_name='massages', null=True)
     pub_date = models.DateTimeField(blank=False, null=True, default=timezone.now)
     is_readed = models.BooleanField(blank=False, null=True, default=False)
+
+    def get_count_not_readed(self):
+        count_not_readed = 0
+        for massage in Massage.objects.all():
+            if not massage.is_readed:
+                count_not_readed += 1
+        return count_not_readed
+
+
+class Audio(models.Model):
+    post = models.ForeignKey(Post, on_delete=models.CASCADE, related_name='audios', blank=True, null=True)
+
