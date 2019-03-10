@@ -6,7 +6,14 @@ urlpatterns = [
     path('albums<str:pk>/', AlbumsView.as_view(), name='albums'),
     path('friends<str:pk>/', FriendsView.as_view(), name='friends'),
     path('di/', DialogView.as_view(), name='di'),
-    path('im/', MassageView.as_view(), name='im'),
-    path('up/', UpdateMassagesView.as_view(), name='up'),
-    path('ps/', PostView.as_view(), name='ps')
+    path('im/', MessageView.as_view(), name='im'),
+    path('up/', UpdateMessagesView.as_view(), name='up'),
+    path('ps/', PostView.as_view(), name='ps'),
+    path('groups/', GroupsView.as_view(), name='groups'),
+    path('public<str:pk>/', GroupView.as_view(), name='group'),
+    path('dl/', DeletePhotoView.as_view()),
+    path('mk/', MakeMainPhoto.as_view()),
+    path('dlp/', DeletePostView.as_view()),
+    path('lkp/', PutLikePost.as_view()),
+    path('lkph/', PutLikePhoto.as_view()),
 ]

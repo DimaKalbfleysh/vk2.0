@@ -16,19 +16,14 @@ class EditUser(View):
                                                                'photo_form': photo_form})
 
     def post(self, request):
-        user = Account.objects.get(username=request.user)
-        form = EditUserForm(request.POST, instance=user)
-        all_photo_user = list(Photo.objects.all())
-        new_id_photo = all_photo_user[0].id_photo + 1
-        new_photo = Photo.objects.create(id_photo=new_id_photo)
+        main_user = Account.objects.get(pk=request.user.pk)
+        form = EditUserForm(request.POST, instance=main_user)
+        new_photo = Photo.objects.create(account=main_user, photo=request.FILES['photo'])
         if form.is_valid():
             try:
                 form.save()
             except:
-                user.date_of_birth = None
+                main_user.date_of_birth = None
                 form.save()
-            new_photo.photo = request.FILES['photo']
-            new_photo.account = user
-            new_photo.save()
-            user.images.add(new_photo)
-        return redirect('account', pk=user.pk)
+            main_user.images.add(new_photo)
+        return redirect('account', pk=main_user.pk)

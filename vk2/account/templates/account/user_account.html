@@ -1,23 +1,27 @@
 {% extends 'base_page.html' %}
 {% load static %}
 
-    {%block title%}
-    {{user.get_full_name}}
-    {% endblock %}
+{% block title %}
+    {{ user.get_full_name }}
+{% endblock %}
 
 {% block content %}
-    <div class="narrow_column_wrap">
-        <div class="narrow_column" id="narrow_column" style="margin-top: 0px;">
-            {% include 'account/page_photo.html' %}
-            {% include 'account/friends_block.html' %}
-            {% include 'account/audios_block.html' %}
+    <div id="profile" class="profile_content" style="">
+        <div class="wide_column_right" style="">
+            <div class="narrow_column_wrap">
+                <div class="narrow_column" id="narrow_column" style="margin-top: 0px;">
+                    {% include 'account/page_photo.html' %}
+                    {% include 'account/friends_block.html' %}
+                    {% include 'account/audios_block.html' %}
+                </div>
+            </div>
+            <div class="wide_column_wrap">
+                {% include 'account/info_block.html' %}
+                {% include 'account/photo_block.html' %}
+                {% include 'account/make_post.html' %}
+                {% include 'account/user_wall.html' %}
+            </div>
         </div>
-    </div>
-    <div class="wide_column_wrap">
-        {% include 'account/info_block.html' %}
-        {% include 'account/photo_block.html' %}
-        {% include 'account/make_post.html' %}
-        {% include 'account/wall.html' %}
     </div>
 {% endblock %}
 

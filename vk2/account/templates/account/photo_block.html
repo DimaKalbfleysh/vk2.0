@@ -10,7 +10,8 @@
         </a>
         <div id="page_photos_module" class="page_photos_module">
             {% for i in all_photo %}
-                <a class="page_square_photo crisp_image" href="{{ i.photo.url }}" aria-label="фотография"
+                <a class="page_square_photo crisp_image" href="?z=photo{{ user.pk }}-{{ i.pk }}" id="{{ i.pk }}"
+                   onclick="photo_for_groups(this.id)" aria-label="фотография"
                    style="background-image: url({{ i.photo.url }});"><span class="blind_label">фотография</span></a>
             {% endfor %}
         </div>

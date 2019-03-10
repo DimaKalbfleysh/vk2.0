@@ -1,11 +1,11 @@
-<div class="page_block page_photo">
+<div class="page_block page_photo" style="margin-top: 0px;">
     <div class="owner_photo_wrap actions_with_effects" id="owner_photo_wrap">
         <div class="page_avatar_wrap no_stickers_1april" id="page_avatar_wrap">
             <aside aria-label="Фотография">
                 <div id="page_avatar" class="page_avatar">
                     <a id="profile_photo_link" href="{{ user.main_photo.url }}">
-                        <img class="page_avatar_img" src="{{ user.main_photo.url }}"
-                             alt="{{ user.get_full_name }}" width="200" height="258">
+                        <img class="page_avatar_img" id="main_photo" src="{{ user.main_photo.url }}"
+                             alt="{{ user.get_full_name }}" onclick="photo_for_main_photo(this.id)" width="200" height="258">
                     </a>
                 </div>
             </aside>

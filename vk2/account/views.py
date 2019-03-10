@@ -1,14 +1,15 @@
-from django.http import HttpResponse, JsonResponse
+from django.http import JsonResponse
 from django.shortcuts import render, redirect
 from django.views import View
 from account.models import Account
 from friendship.models import Friend
 from friendship.models import FriendshipRequest
 from account.models import Photo
-from account.models import Massage
+from account.models import Message
 from account.models import Dialog
-from account.models import Post
+from account.models import Post, Group, Like, GroupMessages
 import random
+from edit.forms import PhotoForm
 
 
 def get_all_friends(user):
@@ -36,11 +37,8 @@ class MainView(View):
     def get(self, request, pk):
         if request.user.is_authenticated:
             main_user = Account.objects.get(pk=request.user.pk)
-            print(main_user.count_not_readed_massages)
             user = Account.objects.get(pk=pk)
             posts = user.posts.all()
-            main_photo = list(user.images.all())[0]
-            user.main_photo = main_photo.photo
             all_photo = list(user.images.all())[:3]
             count_photo = len(user.images.all())
             request_is_send = Friend.objects.can_request_send(request.user, user)
@@ -79,6 +77,7 @@ class MainView(View):
 class AlbumsView(View):
     def get(self, request, pk):
         main_user = Account.objects.get(pk=request.user.pk)
+        photo_form = PhotoForm(instance=main_user)
         user = Account.objects.get(pk=pk)
         all_photo = user.images.all()
         count_photo = len(all_photo)
@@ -87,7 +86,31 @@ class AlbumsView(View):
         context['main_user'] = main_user
         context['all_photo'] = all_photo
         context['count_photo'] = count_photo
+        context['photo_form'] = photo_form
         return render(request, 'account/albums.html', context=context)
+
+    def post(self, request, pk):
+        main_user = Account.objects.get(pk=request.user.pk)
+        new_photo = Photo.objects.create(photo=request.FILES['photo'], account=main_user)
+        main_user.images.add(new_photo)
+        return redirect('albums', pk=main_user.pk)
+
+
+class DeletePhotoView(View):
+    def get(self, request):
+        main_user = Account.objects.get(pk=request.user.pk)
+        photo = main_user.images.get(pk=request.GET['pk'])
+        photo.delete()
+        return JsonResponse({})
+
+
+class MakeMainPhoto(View):
+    def get(self, request):
+        main_user = Account.objects.get(pk=request.user.pk)
+        main_photo = Photo.objects.get(pk=request.GET['pk'])
+        main_user.main_photo = main_photo.photo
+        main_user.save()
+        return JsonResponse({})
 
 
 class FriendsView(View):
@@ -130,7 +153,7 @@ def create_dialog(main_user, interlocutor):
         dialog.users.add(main_user, interlocutor)
 
 
-class MassageView(View):
+class MessageView(View):
     def get(self, request):
         pk = request.GET['sel']
         main_user = Account.objects.get(pk=request.user.pk)
@@ -143,16 +166,17 @@ class MassageView(View):
                     dialog.interlocutor = user
                     dialog.save()
         dialog = main_user.dialogs.get(id_dialog=main_user.pk + interlocutor.pk)
-        massages = dialog.massages.all()
-        for massage in massages:
-            if not massage.is_readed:
-                main_user.count_not_readed_massages -= 1
-                massage.is_readed = True
-                main_user.save()
-                massage.save()
-        return render(request, 'account/massages.html', context={'main_user': main_user,
+        groups_messages = dialog.group_messages.all()
+        for group_messages in groups_messages:
+            for message in group_messages.messages.all():
+                if not message.is_readed:
+                    main_user.count_not_readed_messages -= 1
+                    message.is_readed = True
+                    main_user.save()
+                    message.save()
+        return render(request, 'account/messages.html', context={'main_user': main_user,
                                                                  'to_user': interlocutor,
-                                                                 'massages': massages,
+                                                                 'groups_messages': groups_messages,
                                                                  'url': request.get_full_path().split('?')[0]})
 
     def post(self, request):
@@ -160,53 +184,148 @@ class MassageView(View):
         to_user = Account.objects.get(pk=request.GET['sel'])
         to_user.save()
         dialog = main_user.dialogs.get(id_dialog=main_user.pk + to_user.pk)
-        Massage.objects.create(massage=request.POST['massage'], dialog=dialog, author=main_user)
+        message = Message.objects.create(message=request.POST['message'], dialog=dialog, author=main_user)
+        if not dialog.group_messages.filter(user=main_user).last():
+            group_messages = GroupMessages.objects.create(user=main_user, dialog=dialog)
+            group_messages.messages.add(message)
+            return JsonResponse({})
+        else:
+            group_messages = dialog.group_messages.last()
+            if group_messages.user == main_user:
+                difference = ((message.pub_date - group_messages.messages.last().pub_date).seconds % 3600) // 60
+            else:
+                group_messages = GroupMessages.objects.create(user=main_user, dialog=dialog)
+                group_messages.messages.add(message)
+                return JsonResponse({})
+
+        if difference > 5:
+            group_messages = GroupMessages.objects.create(user=main_user, dialog=dialog)
+            group_messages.messages.add(message)
+            return JsonResponse({})
+        group_messages.messages.add(message)
         return JsonResponse({})
 
 
-class UpdateMassagesView(View):
+class UpdateMessagesView(View):
     def get(self, request):
         if 'sel' in request.GET:
             pk = request.GET['sel']
             main_user = Account.objects.get(pk=request.user.pk)
             interlocutor = Account.objects.get(pk=pk)
             dialog = main_user.dialogs.get(id_dialog=main_user.pk + interlocutor.pk)
-            massages = list(dialog.massages.all())
-            massages_values = list(dialog.massages.all().values())
+            messages = dialog.messages.all()
+            messages_values = list(dialog.messages.all().values())
             data = dict()
-            data['massages'] = massages_values
-            data['first_name'] = massages[-1].author.first_name
-            data['url_photo'] = massages[-1].author.main_photo.url
-            data['pub_time'] = massages[-1].pub_date.time()
+            data['messages'] = messages_values
+            data['first_name'] = messages.last().author.first_name
+            data['url_photo'] = messages.last().author.main_photo.url
+            data['pub_time'] = messages.last().pub_date.time()
             return JsonResponse(data)
         elif 'cou' in request.GET:
             main_user = Account.objects.get(pk=request.user.pk)
             dialogs = main_user.dialogs.all()
-            count_not_readed_massages = 0
+            count_not_readed_messages = 0
             for dialog in dialogs:
                 for user in dialog.users.all():
                     if user != main_user:
-                        massages = dialog.massages.filter(author=user)
-                        for massage in massages:
-                            if not massage.is_readed:
-                                count_not_readed_massages += 1
-            main_user.count_not_readed_massages = count_not_readed_massages
+                        messages = dialog.messages.filter(author=user)
+                        for message in messages:
+                            if not message.is_readed:
+                                count_not_readed_messages += 1
+            main_user.count_not_readed_messages = count_not_readed_messages
             main_user.save()
-            print(main_user.count_not_readed_massages)
+            print( count_not_readed_messages)
             data = dict()
-            data['count_not_readed_massages'] = count_not_readed_massages
+            data['count_not_readed_messages'] = count_not_readed_messages
             return JsonResponse(data)
 
 
 class PostView(View):
-    def get(self, request):
-        pass
-
     def post(self, request):
-        main_user = Account.objects.get(pk=request.user.pk)
-        content = request.POST['content']
-        photo1 = Photo.objects.all()[5]
-        photo2 = Photo.objects.all()[4]
-        post = Post.objects.create(author=main_user, content=content)
-        post.images.add(photo1, photo2)
+        if request.POST['url'] == '/id{}/'.format(request.user.pk):
+            main_user = Account.objects.get(pk=request.user.pk)
+            content = request.POST['content']
+            photo1 = Photo.objects.all()[5]
+            photo2 = Photo.objects.all()[4]
+            post = Post.objects.create(author=main_user, content=content)
+            post.images.add(photo1, photo2)
+            return JsonResponse({})
+        if request.POST['url'] == '/public{}/'.format(request.POST['public_pk']):
+            group = Group.objects.get(pk=request.POST['public_pk'])
+            content = request.POST['content']
+            photo1 = Photo.objects.all()[5]
+            photo2 = Photo.objects.all()[4]
+            post = Post.objects.create(group=group, content=content)
+            post.images.add(photo1, photo2)
+            return JsonResponse({})
+
+
+class DeletePostView(View):
+    def get(self, request):
+        post = Post.objects.get(pk=request.GET['pk'])
+        post.delete()
         return JsonResponse({})
+
+
+class GroupsView(View):
+    def get(self, request):
+        main_user = Account.objects.get(pk=request.user.pk)
+        groups = Group.objects.all()
+        return render(request, 'account/groups.html', context={'main_user': main_user, 'groups': groups})
+
+
+class GroupView(View):
+    def get(self, request, pk):
+        main_user = Account.objects.get(pk=request.user.pk)
+        group = Group.objects.get(pk=pk)
+        posts = group.posts.all()
+        for post in posts:
+            if post.fixed_post:
+                fixed_post = post
+                break
+        else:
+            fixed_post = None
+        return render(request, 'account/public.html', context={'main_user': main_user,
+                                                               'group': group,
+                                                               'posts': posts,
+                                                               'fixed_post': fixed_post})
+
+
+class PutLikePost(View):
+    def get(self, request):
+        main_user = Account.objects.get(pk=request.user.pk)
+        post = Post.objects.get(pk=request.GET['pk'])
+        try:
+            like = post.likes.get(user=main_user)
+            like.delete()
+            count_likes = post.likes.all().count()
+            likes_put = False
+        except:
+            like = Like.objects.create(user=main_user, post=post)
+            main_user.likes.add(like)
+            post.likes.add(like)
+            count_likes = post.likes.all().count()
+            likes_put = True
+        return JsonResponse({'likes_put': likes_put,
+                             'count_likes': count_likes})
+
+
+class PutLikePhoto(View):
+    def get(self, request):
+        main_user = Account.objects.get(pk=request.user.pk)
+        photo = Photo.objects.get(pk=request.GET['pk'])
+        try:
+            like = photo.likes.get(user=main_user)
+            like.delete()
+            count_likes = photo.likes.all().count()
+            photo.like_put = False
+            photo.save()
+        except:
+            like = Like.objects.create(user=main_user, photo=photo)
+            main_user.likes.add(like)
+            photo.likes.add(like)
+            count_likes = photo.likes.all().count()
+            photo.like_put = True
+            photo.save()
+        return JsonResponse({'likes_put': photo.like_put,
+                             'count_likes': count_likes})

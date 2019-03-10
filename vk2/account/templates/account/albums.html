@@ -8,6 +8,19 @@
 <div class="block-content" id="photos_all_block">
     <h2 class="page_block_h2">
         <div class="page_block_header clear_fix">
+            <div class="page_block_header_extra _header_extra">
+                <div class="upload_btn_wrap">
+                    {%  if user == main_user %}
+                    <div id="photos_upload_area_wrap" style="position: relative">
+                        <form action="{% url 'albums' pk=main_user.pk%}" method="post" enctype="multipart/form-data">
+                            {% csrf_token %}
+                            {{ photo_form }}
+                            <button type="submit">13</button>
+                        </form>
+                    </div>
+                    {% endif %}
+                </div>
+            </div>
             <div class="page_block_header_extra_left _header_extra_left"></div>
             <div class="page_block_header_extra _header_extra"></div>
             <div class="page_block_header_inner _header_inner">
@@ -20,12 +33,8 @@
             <div class="photos_period_delimiter photos_period_delimiter_2019" data-year="2019">2019 год</div>
             <div class="photos_row_wrap" style="height: 230px;">
                 {% for i in all_photo%}
-                <div id="photo_row_483686337_456239432" data-id="483686337_456239432" class="photos_row "
-                     style="background-image: url({{i.photo.url}}); width: 200px; height: 200px"
-                     aria-label="Фотография">
-                    <a href="{{i.photo.url}}"
-                       onclick="if (cur.cancelClick) return (cur.cancelClick = false); return showPhoto('483686337_456239432', 'photos483686337', {img: this  }, event)"></a>
-                </div>
+                    <a class="photos_row " href="?z=photo{{ user.pk }}-{{ i.pk }}" id="{{ i.pk }}" onclick="photo_for_groups(this.id)"
+                        style="background-image: url({{i.photo.url}}); width: 200px; height: 200px"></a>
                 {% endfor %}
             </div>
         </div>

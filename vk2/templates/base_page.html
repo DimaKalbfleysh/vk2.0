@@ -14,7 +14,268 @@
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
     <title>{% block title%}{%endblock%}</title>
 </head>
-<body style="background: #edeef0">
+<body style="background: #edeef0; overflow: auto;">
+<div id="layer_bg" class="fixed" style="height: 100%; display: none;"></div>
+<div id="layer_wrap" class="scroll_fix_wrap fixed layer_wrap pv_layer_wrap pv_mouse_out_layer" style="width: 1165px; height: 760px; display: none;">
+    <div id="layer" style="width: 1200px; margin-top: 15px;">
+        <div class="pv_cont" style="width: 1137px; padding-left: 15px;">
+            <div id="pv_box" class="_scroll_node pv_box" tabindex="0" >
+                <div style="display: none" class="box_title_wrap box_grey">
+                    <div class="box_x_button"></div>
+                    <div class="box_title_controls"></div>
+                    <div class="box_title"></div>
+                </div>
+                <div class="clear_fix pv_photo_wrap" style="">
+                    <div class="pv_close_btn" id="pv_close_btn" style="display: block;"></div>
+                    <div class="no_select pv_left_wrap">
+                        <div class="no_select pv_image_wrap">
+                            <div id="pv_tag_info" class="clear_fix" style="width: 784px; display: none;">
+                                <div class="pv_tag_info_buttons_wrap">
+                                    <button class="flat_button secondary black">
+                                        Восстановить
+                                    </button>
+                                </div>
+                                <div class="pv_tag_info_text">Фотография удалена.</div>
+                            </div>
+                            <div class="pv_img_area_wrap">
+                                <div class="pv_img_progress_wrap">
+                                    <div class="pr " id="pv_image_progress"
+                                         style="margin-top: 340.448px; display: none;">
+                                        <div class="pr_bt"></div>
+                                        <div class="pr_bt"></div>
+                                        <div class="pr_bt"></div>
+                                    </div>
+                                </div>
+                                <a href="/photo-29573241_456564056" id="pv_photo" style="width: 750px; height: 610px;">
+                                    <img id="img" style="width: 750px; height: 610px; margin-top: 0px;">
+                                </a>
+                                <div class="pv_nav_btn" id="pv_nav_btn_left" style="display: block;">
+                                    <div class="pv_nav_btn_icon"></div>
+                                </div>
+                                <div class="pv_nav_btn" id="pv_nav_btn_right" style="display: block;">
+                                    <div class="pv_nav_btn_icon"></div>
+                                </div>
+                            </div>
+                        </div>
+                        {% if main_user == user %}
+                            <div class="pv_bottom_info clear_fix pv_with_line_break">
+                                <div>
+                                    <div class="pv_bottom_info_left">
+                                        <span class="pv_album_name" onmouseover="setTitle(this)">
+                                            <a href="/album483686337_0" onclick="return nav.go(this, event)">Фотографии с моей страницы</a>
+                                        </span>
+                                        <span class="pv_counter">1 из 3</span>
+                                    </div>
+                                    <div class="pv_bottom_actions">
+                                        <a id="pv_share" onclick="Photoview.sendPhoto()">Поделиться</a>
+                                        <span class="divider"></span>
+                                        <a id="pv_tag_link" onclick="make_main_photo()  ">Сделать фотографией профиля</a>
+                                        <span class="divider"></span>
+                                        <a id="pv_delete" onclick="delete_photo()">Удалить</a>
+                                        <span class="divider"></span>
+                                    </div>
+                                </div>
+                            </div>
+                        {% else %}
+                            <div class="pv_bottom_info clear_fix">
+                                <div>
+                                    <div class="pv_bottom_info_left">
+                                        <span class="pv_album_name">
+                                            <a href="/album-29573241_00">Фотографии на стене сообщества</a>
+                                        </span>
+                                        <span class="pv_counter">131 из 34182</span>
+                                    </div>
+                                    <div class="pv_bottom_actions">
+                                        <a id="pv_share">Поделиться</a>
+                                        <span class="divider"></span>
+                                        <a id="pv_save_to_me">Сохранить к себе</a>
+                                        <span class="divider"></span>
+                                    </div>
+                                </div>
+                            </div>
+                        {% endif %}
+                    </div>
+                    <div class="pv_narrow_column_wrap">
+                        <div class="pv_narrow_column_cont wall_module">
+                            <div class="narrow_column ui_scroll_container ui_scroll_default_theme ui_scroll_unnecessary"
+                                 id="pv_narrow" style="height: 676.891px; width: 310px;">
+                                <div class="ui_scroll_overflow">
+                                    <div class="ui_scroll_blocker" style="">
+                                        <div class="ui_scroll_outer" style="margin: 500px 0px;">
+                                            <div class="ui_scroll_inner tt_noappend">
+                                                <div class="ui_scroll_content clear_fix">
+                                                    <div class="pv_author_block clear_fix">
+                                                        <a class="pv_author_img fl_l" href="/public{{ group.pk }}">
+                                                            <div class="ow_ava ow_ava_comm" style="background-image: url({{ group.main_photo.url }});"></div>
+                                                        </a>
+                                                        <div class="pv_author_info">
+                                                            <div id="pv_author_name">
+                                                                <a href="/public{{ group.pk}}" class="group_link">{{ group.name }}</a>
+                                                            </div>
+                                                            <div class="pv_date_info_wrap">
+                                                                <span id="pv_date_info">
+                                                                    <span class="rel_date">4 мар в 18:24</span>
+                                                                </span>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="like_wrap _like_photo-29573241_456564056 ">
+                                                        <div class="like_cont ">
+                                                            <div class="like_btns">
+                                                                <a class="like_btn like _like  like_photo" id='' onclick="like_photo(this.id)" title="Нравится">
+                                                                    <div class="like_button_icon"></div>
+                                                                    <div class="like_button_label"></div>
+                                                                    <div class="like_button_count">6_892</div>
+                                                                    <span class="blind_label">Нравится</span>
+                                                                </a>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div id="pv_desc" class="pv_right_block" style="">
+                                                        <div class="pv_cant_edit pv_desc_cont"><a
+                                                                href="/rapnewrap/news">#news@rapnewrap</a><br><br><a
+                                                                href="/feed?section=search&amp;q=%23NR">#NR</a> <a
+                                                                href="/feed?section=search&amp;q=%23%D0%9A%D0%B8%D1%82%D0%A4%D0%BB%D0%B8%D0%BD%D1%82">#КитФлинт</a><br><br>Подписка
+                                                            (ВК): <a href="http://vk.com/rapnewrap">vk.com/rapnewrap</a>
+                                                        </div>
+                                                    </div>
+                                                    <div id="pv_place" class="pv_right_block"></div>
+                                                    <div id="pv_rotate">
+                                                        <form method="POST" target="pv_rotate_frame" name="pv_rotate_form" id="pv_rotate_form"></form>
+                                                    </div>
+                                                </div>
+                                                <div class="ui_scroll_resize_sensor">
+                                                    <div class="ui_scroll_resize_sensor ui_scroll_resize_expand">
+                                                        <div style="width: 320px; height: 575px;"></div>
+                                                    </div>
+                                                    <div class="ui_scroll_resize_sensor ui_scroll_resize_shrink">
+                                                        <div></div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="ui_scroll_resize_sensor">
+                                        <div class="ui_scroll_resize_sensor ui_scroll_resize_expand">
+                                            <div style="width: 320px; height: 687px;"></div>
+                                        </div>
+                                        <div class="ui_scroll_resize_sensor ui_scroll_resize_shrink">
+                                            <div></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="ui_scroll_bar_container">
+                                    <div class="ui_scroll_bar_outer">
+                                        <div class="ui_scroll_bar_inner"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div id="pv_reply_form_wrap" class="pv_reply_form_wrap">
+                                <div id="pv_reply_form" class="pv_reply_form wall_module _post_wrap">
+                                    <div id="reply_box-29573241_photo456564056"
+                                         class="submit_post_box reply_box clear_fix _submit_post_box"
+                                         data-from-oid="483686337" data-oid="-29573241" data-owner-name=""
+                                         data-owner-photo="" data-owner-href="">
+                                        <div class="reply_form">
+                                            <div class="reply_text_wrapper">
+                                                <input type="hidden" id="reply_to-29573241_photo456564056" value="">
+                                                <a class="post_field_user_link _post_field_author" href="/id483686337">
+                                                    <img class="post_field_user_image _post_field_image"
+                                                         src="https://pp.userapi.com/c844417/v844417433/1b5f84/U27lEeEv5AM.jpg?ava=1">
+                                                    <img class="post_field_user_image post_field_image_secondary _post_field_image"
+                                                         src="https://pp.userapi.com/c844417/v844417433/1b5f84/U27lEeEv5AM.jpg?ava=1">
+                                                </a>
+                                                <div class="reply_field_wrap _emoji_field_wrap">
+                                                    <div id="reply_field-29573241_photo456564056"
+                                                         class="reply_field submit_post_field"
+                                                         contenteditable="true" role="textbox"
+                                                         aria-multiline="true"></div>
+                                                    <div class="placeholder">
+                                                        <div class="ph_input">
+                                                            <div class="ph_content">Написать комментарий...</div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div id="submit_reply-29573241_photo456564056"
+                                                 class="submit_post clear_fix">
+                                                <div class="submit_reply_wrapper">
+                                                    <div class="reply_warn clear"
+                                                         id="reply_warn-29573241_photo456564056"></div>
+                                                    <div id="reply_media_preview-29573241_photo456564056"
+                                                         class="reply_media_preview clear_fix media_preview"></div>
+                                                    <div class="addpost_button_wrap">
+                                                        <button class="flat_button addpost_button" id="reply_button-29573241_photo456564056">
+                                                            Отправить
+                                                        </button>
+                                                    </div>
+                                                    <div class="pv_reply_cancel_button button_cancel fl_r">
+                                                        <div class="flat_button secondary">Отмена</div>
+                                                    </div>
+                                                    <div class="page_add_media" id="reply_add_media_-29573241_photo456564056"></div>
+                                                    <div id="reply_to_title-29573241_photo456564056" class="reply_to_title addpost_popt"></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="photo_tooltip" style="display: none;">
+            <div class="photo_tooltip__content">
+                <div class="photo_tooltip__name" style="display: none;"></div>
+                <div></div>
+                <div class="photo_tooltip__suggestion">
+                    <div class="friends_dropdown__list"><input class="friends_dropdown__list_input"
+                                                               placeholder="Отметить человека...">
+                        <div class="friends_dropdown__list_dropdown">
+                            <div class="friends_dropdown__list_content ui_scroll_container ui_scroll_default_theme">
+                                <div class="ui_scroll_overflow">
+                                    <div class="ui_scroll_blocker" style="">
+                                        <div class="ui_scroll_outer" style="margin: 500px 0px;">
+                                            <div class="ui_scroll_inner tt_noappend">
+                                                <div class="ui_scroll_content clear_fix">
+                                                    <div class="friends_dropdown__list_item system_message">
+                                                        Загрузка...
+                                                    </div>
+                                                </div>
+                                                <div class="ui_scroll_resize_sensor">
+                                                    <div class="ui_scroll_resize_sensor ui_scroll_resize_expand">
+                                                        <div></div>
+                                                    </div>
+                                                    <div class="ui_scroll_resize_sensor ui_scroll_resize_shrink">
+                                                        <div></div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="ui_scroll_resize_sensor">
+                                        <div class="ui_scroll_resize_sensor ui_scroll_resize_expand">
+                                            <div></div>
+                                        </div>
+                                        <div class="ui_scroll_resize_sensor ui_scroll_resize_shrink">
+                                            <div></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="ui_scroll_bar_container">
+                                    <div class="ui_scroll_bar_outer">
+                                        <div class="ui_scroll_bar_inner"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 <div class="page">
     {% include 'account/header.html' %}
     {% if main_user.is_authenticated %}
@@ -33,12 +294,8 @@
                     <div id="wrap2">
                          <div id="wrap1">
                             <div id="content" class="" style="">
-                                <div id="profile" class="profile_content" style="">
-                                    <div class="wide_column_right" style="">
                                         {%block content%}
                                         {%endblock%}
-                                    </div>
-                                </div>
                             </div>
                          </div>
                     </div>
@@ -55,5 +312,7 @@
 </body>
     {% block javascript_code %}
     {% endblock %}
-    <script src="{% static 'js/update_massages_list.js' %}"></script>
+    <script src="{% static 'js/update_messages_list.js' %}"></script>
+    <script src="{% static 'js/photo.js' %}"></script>
+    <script src="{% static 'js/post.js' %}"></script>
 </html>

@@ -36,7 +36,7 @@ $('#im-send-btn_send').on('click', (function () {
         $.ajax({
         type: 'POST',
         url: '/im/?sel='+pk,
-        data: {massage: $('#im_editable0').text()},
+        data: {message: $('#im_editable0').text()},
         dataType: 'json',
         contentType: 'application/x-www-form-urlencoded',
         cache: false,

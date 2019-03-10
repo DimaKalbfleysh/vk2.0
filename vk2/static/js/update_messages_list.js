@@ -1,5 +1,5 @@
 if (document.location.pathname === '/im/') {
-    countLi = document.getElementById('massages_list').getElementsByTagName('li').length / 2;
+    countLi = document.getElementsByClassName('message_li').length;
     function updateList() {
         let pk = document.location.search.split('=')[1];
         $.ajax({
@@ -8,19 +8,20 @@ if (document.location.pathname === '/im/') {
             dataType: 'json',
             success: function (json) {
                 let data = JSON.parse(json.content);
-                let countElem = data.massages.length;
+                console.log(data);
+                let countElem = data.messages.length;
                 if (countElem !== countLi) {
-                    let lastMassage = data.massages[data.massages.length - 1];
+                    let lastMessage = data.messages[data.messages.length - 1];
                     let firstName = data.first_name;
                     let urlPhoto = data.url_photo;
                     let pubTime = data.pub_time;
-                    let newElem = `<li id="massage_element" class="im-mess im_in _im_mess _im_mess_9085">
+                    let newElem = `<li id="message_element" class="im-mess im_in _im_mess _im_mess_9085">
                                                         <div class="im-mess-stack _im_mess_stack " data-peer="483686337" data-admin="">
                                                             <div class="im-mess-stack--photo">
                                                                 <div class="nim-peer nim-peer_small fl_l">
                                                                     <div class="nim-peer--photo-w">
                                                                         <div class="nim-peer--photo">
-                                                                            <a target="_blank" class="im_grid" href="/id${ lastMassage.author_id } ">
+                                                                            <a target="_blank" class="im_grid" href="/id${ lastMessage.author_id } ">
                                                                                 <img alt="${ firstName }" src="${ urlPhoto }">
                                                                             </a>
                                                                         </div>
@@ -30,7 +31,7 @@ if (document.location.pathname === '/im/') {
                                                             <div class="im-mess-stack--content">
                                                                 <div class="im-mess-stack--info">
                                                                     <div class="im-mess-stack--pname">
-                                                                        <a href="/id${ lastMassage.author_id }" class="im-mess-stack--lnk" title="" target="_blank">${ firstName }</a>
+                                                                        <a href="/id${ lastMessage.author_id }" class="im-mess-stack--lnk" title="" target="_blank">${ firstName }</a>
                                                                         <span class="im-mess-stack--tools">
                                                                             <a href="/im?sel=483686337&amp;msgid=9085" class="_im_mess_link">
                                                                                 ${ pubTime }
@@ -49,7 +50,7 @@ if (document.location.pathname === '/im/') {
                                                                         </div>
                                                                         <div class="im-mess--check fl_l"></div>
                                                                         <div class="im-mess--text wall_module _im_log_body">
-                                                                            ${ lastMassage.massage }
+                                                                            ${ lastMessage.message }
                                                                         </div>
                                                                         <span tabindex="0" role="link" aria-label="Выделить сообщение" class="blind_label im-mess--blind-select _im_mess_blind_label_select"></span>
                                                                         <span class="blind_label im-mess--blind-read _im_mess_blind_unread_marker"></span>
@@ -59,7 +60,7 @@ if (document.location.pathname === '/im/') {
                                                             </div>
                                                         </div>
                                                     </li>`;
-                    document.getElementById('massages_list').insertAdjacentHTML('beforeEnd', newElem);
+                    document.getElementById('messages_list').insertAdjacentHTML('beforeEnd', newElem);
                     countLi = countElem;
                     $(window).scrollTop($(document).height());
                 }
@@ -76,11 +77,12 @@ if (document.location.pathname === '/im/') {
             dataType: 'json',
             success: function (json) {
                 let data = JSON.parse(json.content);
-                if(data.count_not_readed_massages === 0) {
-                    $('#count_not_readed_massages_span').addClass('left_void');
+                console.log(data);
+                if(data.count_not_readed_messages === 0) {
+                    $('#count_not_readed_messages_span').addClass('left_void');
                 }else {
-                    $('#count_not_readed_massages_span').removeClass('left_void');
-                    document.getElementById('count_not_readed_massages').innerHTML = data.count_not_readed_massages;
+                    $('#count_not_readed_messages_span').removeClass('left_void');
+                    document.getElementById('count_not_readed_messages').innerHTML = data.count_not_readed_messages;
                 }
             }
         })

@@ -12,7 +12,7 @@
     </div>
     <div id="page_wall_posts" class="wall_posts all mark_top ">
         {% for post in posts %}
-            <div id="post" class="_post post page_block all own deep_active">
+            <div id="post{{ post.pk }}" class="_post post page_block all own deep_active">
                 <div class="_post_content">
                     <div class="post_header">
                         <a class="post_image" href="/id{{ main_user.pk }}">
@@ -27,6 +27,14 @@
                                     {{ post.pub_date }}
                                 </span>
                             </div>
+                            <div class="ui_actions_menu_wrap _ui_menu_wrap" id="actions_menu" onmouseover="show_actions_menu()" onmouseout="hide_actions_menu()">
+                                <div class="ui_actions_menu_icons" tabindex="0" aria-label="Действия" role="button">
+                                    <span class="blind_label">Действия</span>
+                                </div>
+                                <div class="ui_actions_menu _ui_menu">
+                                    <a class="ui_actions_menu_item" id="{{ post.pk }}" onclick="delete_post(this.id)" tabindex="0" role="link">Удалить запись</a>
+                                </div>
+                            </div>
                         </div>
                     </div>
                     <div class="post_content">
@@ -38,7 +46,7 @@
                                         {% for image in post.images.all %}
                                             <div class="page_post_sized_thumbs  clear_fix"
                                                  style="width: 382px; height: 510px;">
-                                                <a href="{{ image.photo.url }}"
+                                                <a href="?z=photo{{ user.pk }}-{{ image.pk }}" id="{{ image.pk }}" onclick="photo_for_groups(this.id)"
                                                    style="width: 382px; height: 510px; background-image: url({{ image.photo.url }});"
                                                    class="page_post_thumb_wrap image_cover  page_post_thumb_last_column page_post_thumb_last_row"></a>
                                             </div>
@@ -81,17 +89,25 @@
                             <div class="like_wrap _like_wall483686337_21 ">
                                 <div class="like_cont ">
                                     <div class="like_btns">
-                                        <a class="like_btn like _like empty"
-                                           data-count="0" href="#" title="Нравится">
+                                        {% if post.like_put %}
+                                        <a class="like_btn like _like animate active" id="like_post{{ post.pk }}"
+                                           data-count="0" href="#" onclick="like_post({{ post.pk }})" title="Нравится">
                                             <div class="like_button_icon"></div>
                                             <div class="like_button_label"></div>
-                                            <div class="like_button_count"></div>
+                                            <div class="like_button_count" id="count_like_post{{ post.pk }}">{{ post.likes.all.count }}</div>
                                             <span class="blind_label">Нравится</span>
                                         </a>
+                                        {% else %}
+                                        <a class="like_btn like _like animate " id="like_post{{ post.pk }}"
+                                           data-count="0" href="#" onclick="like_post({{ post.pk }})" title="Нравится">
+                                            <div class="like_button_icon"></div>
+                                            <div class="like_button_label"></div>
+                                            <div class="like_button_count" id="count_like_post{{ post.pk }}">{{ post.likes.all.count }}</div>
+                                            <span class="blind_label">Нравится</span>
+                                        </a>
+                                        {% endif %}
                                     </div>
-                                    <div class="like_views _views" onmouseover="Likes.updateViews('wall483686337_18');"
-                                         data-count="27" title="27 просмотров">27
-                                    </div>
+                                    <div class="like_views _views">27</div>
                                 </div>
                             </div>
                         </div>

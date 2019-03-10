@@ -1,0 +1,116 @@
+{% extends 'base_page.html' %}
+
+{% block content %}
+    <div class="wide_column_left">
+    <div class="narrow_column_wrap"></div>
+        <div class="wide_column_wrap">
+            <div class="wide_column" id="wide_column">
+                <div class="page_block">
+                    <h2 class="page_block_h2 ">
+                        <ul class="ui_tabs clear_fix ui_tabs_header">
+                            <li id="groups_groups_tab" style="float: left;">
+                                <a href="/groups" class="ui_tab ui_tab_sel">
+                                    Все сообщества<span class="ui_tab_count" dir="auto">13</span>
+                                </a>
+                            </li>
+                            <li id="groups_admin_tab" style="float: left;">
+                                <a href="/groups?tab=admin" class="ui_tab">
+                                    Управление<span class="ui_tab_count" dir="auto">1</span>
+                                </a>
+                            </li>
+                            <a href="/groups_create" class="flat_button groups_list_create_button">Создать сообщество</a>
+                            <div class="ui_tabs_slider _ui_tabs_slider"></div>
+                        </ul>
+                    </h2>
+                    <div id="group_u_search_input_wrap" class="search_query_wrap">
+                        <div class="ui_search_new ui_search ui_search_field_empty groups_list_search _wrap">
+                            <div class="ui_search_input_block">
+                                <button class="ui_search_button_search _ui_search_button_search"></button>
+                                <div class="ui_search_input_inner">
+                                    <div class="ui_search_progress"></div>
+                                    <div class="ui_search_controls">
+                                        <button class="ui_search_reset_button ui_search_button_control"></button>
+                                    </div>
+                                    <div class="ui_search_suggester_shadow _ui_search_suggester_shadow"></div>
+                                    <input type="text" class="ui_search_field _field" id="groups_list_search" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" placeholder="Поиск по сообществам">
+                                </div>
+                            </div>
+                            <div class="ui_search_sugg_list _ui_search_sugg_list"></div>
+                            <div class="ui_search_filters_pane" style="display: none;">
+                                <div class="ui_search_filters"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="msg ok_msg" id="group_edit_msg" style="display: none;">
+                        <div class="msg_text"></div>
+                    </div>
+                    <div id="groups_list_content" class="clear_fix">
+                        <div id="groups_list_tab_groups" style="">
+                            <div id="groups_list_groups" class="groups_list">
+                                {% for group in groups %}
+                                <div id="gl_groups29573241" class="group_list_row clear_fix _gl_row ">
+                                    <a href="/public{{ group.pk }}" class="group_row_photo">
+                                        <img class="group_row_img" src="{{ group.main_photo.url }}">
+                                    </a>
+                                    <div class="group_row_actions">
+                                        <div class="ui_actions_menu_wrap _ui_menu_wrap groups_actions_menu _actions_menu">
+                                            <div class="ui_actions_menu_icons" tabindex="0" aria-label="Действия" role="button">
+                                                <span class="blind_label">Действия</span>
+                                                <div class="groups_actions_icons"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="group_row_info">
+                                        <div class="group_row_labeled">
+                                            <a class="group_row_title" href="/public{{ group.pk }}">{{ group.name }}</a>
+                                        </div>
+                                        <div class="group_row_labeled">{{ group.description }}</div>
+                                        <div class="group_row_labeled">{{ group.count_subscribers }}</div>
+                                    </div>
+                                </div>
+                                {% endfor %}
+                            </div>
+                        </div>
+                        <div id="groups_list_tab_admin" style="display: none">
+                            <div id="groups_list_admin" class="groups_list">
+                                <div id="gl_admin175580649" class="group_list_row clear_fix _gl_row  adminned">
+                                    <a href="/public175580649" class="group_row_photo">
+                                        <img class="group_row_img"
+                                             src="https://pp.userapi.com/c852120/v852120128/70d4d/_GTZWzxRpJk.jpg?ava=1">
+                                    </a>
+                                    <div class="group_row_actions">
+                                        <div class="ui_actions_menu_wrap _ui_menu_wrap groups_actions_menu _actions_menu">
+                                            <div class="ui_actions_menu_icons" tabindex="0" aria-label="Действия" role="button">
+                                                <span class="blind_label">Действия</span>
+                                                <div class="groups_actions_icons"></div>
+                                            </div>
+                                            <div class="ui_actions_menu _ui_menu"><a class="ui_actions_menu_item"
+                                                                                     tabindex="0" role="link">Отписаться</a>
+                                                <div class="ui_actions_menu_sep"></div>
+                                                <a class="ui_actions_menu_item"
+                                                   data-value="0" tabindex="0" role="link">Уведомлять о записях</a><a
+                                                        class="ui_actions_menu_item"
+                                                        data-value="0" tabindex="0" role="link">Сохранить в закладках</a><a
+                                                        class="ui_actions_menu_item group_menu_action"
+                                                        data-value="0" tabindex="0" role="link">Добавить в левое меню</a></div>
+                                        </div>
+                                    </div>
+                                    <div class="group_row_info">
+                                        <div class="group_row_labeled"><a class="group_row_title"
+                                                                          href="/public175580649">Живой?</a></div>
+                                        <div class="group_row_labeled">Зоомагазин</div>
+                                        <div class="group_row_labeled">5 подписчиков</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div id="ui_admin_load_more"
+                                 class="flat_button secondary ui_load_more_btn _ui_load_more_btn _ui_admin_load_more " style="display: none" data-type="admin">
+                                Показать больше групп
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
