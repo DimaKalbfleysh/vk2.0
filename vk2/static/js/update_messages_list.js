@@ -78,11 +78,20 @@ if (document.location.pathname === '/im/') {
             success: function (json) {
                 let data = JSON.parse(json.content);
                 console.log(data);
-                if(data.count_not_readed_messages === 0) {
-                    $('#count_not_readed_messages_span').addClass('left_void');
+                if(data.number_not_read_messages === 0) {
+                    $('#number_not_read_messages_span').addClass('left_void');
                 }else {
-                    $('#count_not_readed_messages_span').removeClass('left_void');
-                    document.getElementById('count_not_readed_messages').innerHTML = data.count_not_readed_messages;
+                    $('#number_not_read_messages_span').removeClass('left_void');
+                    document.getElementById('number_not_read_messages').innerHTML = data.number_not_read_messages;
+                    if (document.location.pathname === '/di/'){
+                        console.log(data.dialogs_values);
+                        for(let i=0; i<data.dialogs_values.length; i++){
+                            if(data.dialogs_values[i].number_not_read_messages !==0) {
+                                document.getElementById('dialog' + data.dialogs_values[i].id).setAttribute('class', 'nim-dialog _im_dialog _im_dialog_512227035 nim-dialog_classic nim-dialog_unread ');
+                                document.getElementById('number' + data.dialogs_values[i].id).innerHTML = data.dialogs_values[i].number_not_read_messages;
+                            }
+                        }
+                    }
                 }
             }
         })

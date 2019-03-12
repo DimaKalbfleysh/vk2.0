@@ -62,7 +62,7 @@
                                 <div class="im-page--chat-body-wrap-inner _im_peer_history_w" style="border-bottom-width: 61px;">
                                     <div class="_im_peer_history im-page-chat-contain" aria-live="polite" aria-relevant="additions">
                                         <ul id="messages_list" class="ui_clean_list im-mess-stack--mess _im_stack_messages">
-                                        {% for group_messages in groups_messages %}
+                                        {% for group_messages in dialog.group_messages.all %}
                                                     <li id="message_element" class="im-mess im_in _im_mess _im_mess_9085">
                                                         <div class="im-mess-stack _im_mess_stack " data-peer="483686337" data-admin="">
                                                             <div class="im-mess-stack--photo">

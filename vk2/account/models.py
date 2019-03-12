@@ -11,7 +11,7 @@ class Account(User):
     is_another_user = models.BooleanField(blank=True, null=True)
     date_of_birth = models.DateField(verbose_name="DOB", blank=True, null=True)
     main_photo = models.ImageField(upload_to=user_directory_path, blank=True, null=True, default='defult-photo.png')
-    count_not_readed_messages = models.IntegerField(null=True, default=0)
+    number_not_read_messages = models.IntegerField(null=True, default=0)
 
 
 class Group(models.Model):
@@ -55,6 +55,25 @@ class Dialog(models.Model):
     id_dialog = models.IntegerField(null=True, unique=True)
     users = models.ManyToManyField(Account, blank=True, related_name='dialogs')
     interlocutor = models.ForeignKey(Account, on_delete=models.CASCADE, related_name='dialogs_for_interlocutor', null=True)
+    pub_date = models.DateTimeField(blank=False, null=True, default=timezone.now)
+    number_not_read_messages = models.IntegerField(null=True)
+
+    def set_pub_date(self):
+        self.pub_date = self.messages.last().pub_date
+        self.save()
+
+    def set_interlocutor(self, main_user):
+        for user in self.users.all():
+            if user != main_user:
+                self.interlocutor = user
+                self.save()
+
+    def count_not_read_messages(self):
+        self.number_not_read_messages = 0
+        for message in self.messages.all():
+            if not message.is_read:
+                self.number_not_read_messages += 1
+        self.save()
 
 
 class GroupMessages(models.Model):
@@ -69,7 +88,13 @@ class Message(models.Model):
     group_messages = models.ForeignKey(GroupMessages, on_delete=models.CASCADE, related_name='messages', null=True)
     dialog = models.ForeignKey(Dialog, on_delete=models.CASCADE, related_name='messages', null=True)
     pub_date = models.DateTimeField(blank=False, null=True, default=timezone.now)
-    is_readed = models.BooleanField(blank=False, null=True, default=False)
+    is_read = models.BooleanField(blank=False, null=True, default=False)
+
+    def set_read(self, main_user):
+        main_user.number_not_read_messages -= 1
+        self.is_read = True
+        main_user.save()
+        self.save()
 
 
 class Audio(models.Model):

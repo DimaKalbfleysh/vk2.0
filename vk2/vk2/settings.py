@@ -42,6 +42,9 @@ INSTALLED_APPS = [
     'friendship',
     'post',
     'django_ajax',
+    'photo',
+    'message',
+    'group'
 
 ]
 

@@ -5859,3 +5859,115 @@ a {
     -ms-flex: 0 0 auto;
     flex: 0 0 auto;
 }
+
+.top_nav_link.active {
+    background-color: #335e8f;
+    text-decoration: none;
+}
+
+#top_profile_menu {
+    position: relative;
+    position: absolute;
+    visibility: hidden;
+    width: 160px;
+    top: 58px;
+    right: 9px;
+    background: #fff;
+    z-index: 800;
+    border: 1px solid #c5d0db;
+    padding: 4px 0;
+    border-radius: 4px;
+    box-shadow: 0 1px 3px rgba(0,0,0,.1);
+    opacity: 0;
+    filter: alpha(opacity=0);
+    -o-transition: opacity 100ms linear, top 100ms linear, visibility 100ms linear;
+    transition: opacity 100ms linear, top 100ms linear, visibility 100ms linear;
+    pointer-events: none;
+}
+
+#top_profile_menu.shown {
+    visibility: visible;
+    opacity: 1;
+    filter: none;
+    top: 48px;
+    pointer-events: auto;
+}
+
+.top_profile_mrow:hover {
+    text-decoration: none;
+    background-color: #e4eaf0;
+}
+
+.top_profile_mrow {
+    display: block;
+    white-space: nowrap;
+    position: relative;
+    height: 30px;
+    line-height: 30px;
+    padding: 0 15px;
+    color: #2a5885;
+}
+
+.top_profile_sep {
+    margin: 4px 13px;
+    border-top: 1px solid #dbe4ec;
+}
+
+.page_info_wrap .page_top {
+    padding: 0 0 15px;
+}
+
+.nim-dialog:not(.nim-dialog_deleted).nim-dialog.nim-dialog_classic.nim-dialog_unread, .nim-dialog:not(.nim-dialog_deleted).nim-dialog.nim-dialog_hovered, .nim-dialog:not(.nim-dialog_deleted).nim-dialog:hover, .nim-dialog:not(.nim-dialog_deleted).nim-dialog_hovered+.im-search-results-head, .nim-dialog:not(.nim-dialog_deleted).nim-dialog_hovered+.nim-dialog, .nim-dialog:not(.nim-dialog_deleted).nim-dialog_selected+.im-search-results-head, .nim-dialog:not(.nim-dialog_deleted).nim-dialog_selected+.nim-dialog, .nim-dialog:not(.nim-dialog_deleted).nim-dialog_unread.nim-dialog_classic+.im-search-results-head, .nim-dialog:not(.nim-dialog_deleted).nim-dialog_unread.nim-dialog_classic+.nim-dialog, .nim-dialog:not(.nim-dialog_deleted):hover+.im-search-results-head, .nim-dialog:not(.nim-dialog_deleted):hover+.nim-dialog {
+    border-top: solid 1px #e7e8ec;
+}
+
+.nim-dialog:not(.nim-dialog_deleted).nim-dialog_hovered, .nim-dialog:not(.nim-dialog_deleted).nim-dialog_unread.nim-dialog_classic, .nim-dialog:not(.nim-dialog_deleted):hover {
+    background: #f5f7fa;
+}
+
+.nim-dialog.nim-dialog_classic {
+    height: 71px;
+    padding-left: 20px;
+}
+
+.blind_label, div#utils {
+    position: absolute;
+    overflow: hidden;
+}
+
+.blind_label {
+    height: 1px;
+    width: 1px;
+    clip: rect(1px, 1px, 1px, 1px);
+    opacity: 0;
+    outline: none;
+}
+
+.nim-dialog.nim-dialog_classic .nim-dialog--unread {
+    right: 15px;
+    bottom: 17px;
+}
+
+.nim-dialog.nim-dialog_failed .nim-dialog--unread, .nim-dialog.nim-dialog_unread .nim-dialog--unread, .nim-dialog.nim-dialog_unread.nim-dialog_prep-injected .nim-dialog--unread {
+    display: block;
+    opacity: 1;
+    padding: 0 6px;
+    margin-top: -17px;
+    border-radius: 18px;
+    background: #5181b8;
+}
+
+.nim-dialog .nim-dialog--unread {
+    display: none;
+    position: absolute;
+    right: 0;
+    color: #fff;
+    font-size: 11px;
+    font-weight: 500;
+    -webkit-font-smoothing: subpixel-antialiased;
+    -moz-osx-font-smoothing: auto;
+    text-align: center;
+    height: 18px;
+    line-height: 19px;
+    min-width: 6px;
+}

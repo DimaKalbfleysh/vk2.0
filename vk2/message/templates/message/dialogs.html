@@ -23,7 +23,7 @@
                 </div>
                 <ul id="im_dialogs" class="im-page--dcontent ui_clean_list _im_page_dcontent">
                     {% for dialog in dialogs %}
-                        <li class="nim-dialog _im_dialog nim-dialog_classic" style="">
+                        <li class="nim-dialog _im_dialog nim-dialog_classic" id="dialog{{ dialog.pk }}" style="">
                             <div class="nim-dialog--photo">
                                 <div class="nim-peer _online _im_peer_online">
                                     <div class="nim-peer--photo-w">
@@ -62,22 +62,22 @@
                                     </div>
                                     {% if dialog.group_messages.last.messages.last.author != main_user %}
                                         <div class="nim-dialog--text-preview">
-                                    <span class="nim-dialog--preview _dialog_body" tabindex="0">
-                                        {{ dialog.group_messages.last.messages.last.message }}
-                                    </span>
+                                            <span class="nim-dialog--preview _dialog_body" tabindex="0">
+                                                {{ dialog.group_messages.last.messages.last.message }}
+                                            </span>
                                         </div>
                                     {% else %}
                                         <div class="nim-dialog--text-preview">
-                                    <span class="nim-dialog--preview _dialog_body" tabindex="0">
-                                        <span class="nim-dialog--who">
-                                            <div class="im-prebody">
-                                                <img alt="" src="{{ dialog.group_messages.last.messages.last.author.main_photo.url }}">
-                                            </div>
-                                        </span>
-                                        <span class="nim-dialog--inner-text">
-                                            {{ dialog.group_messages.last.messages.last.message }}
-                                        </span>
-                                    </span>
+                                            <span class="nim-dialog--preview _dialog_body" tabindex="0">
+                                                <span class="nim-dialog--who">
+                                                    <div class="im-prebody">
+                                                        <img alt="" src="{{ dialog.group_messages.last.messages.last.author.main_photo.url }}">
+                                                    </div>
+                                                </span>
+                                                <span class="nim-dialog--inner-text">
+                                                    {{ dialog.group_messages.last.messages.last.message }}
+                                                </span>
+                                            </span>
                                             <span class="nim-dialog--typing _im_dialog_typing"></span>
                                             <span class="nim-dialog--typer-el"></span>
                                         </div>
@@ -86,7 +86,7 @@
                                     <span class="nim-dialog--typer-el"></span>
                                 </div>
                                 <label class="blind_label _im_unread_blind_label"></label>
-                                <div class="nim-dialog--unread _im_dialog_unread_ct" aria-hidden="true"></div>
+                                <div class="nim-dialog--unread _im_dialog_unread_ct" id="number{{ dialog.pk }}" aria-hidden="true"></div>
                             </div>
                         </li>
                     {% endfor %}

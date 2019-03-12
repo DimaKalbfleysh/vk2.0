@@ -1,3 +1,7 @@
+from photo.views import AlbumsView, DeletePhotoView, MakeMainPhoto, PutLikePhoto
+from message.views import DialogView, MessageView, UpdateMessagesView
+from post.views import PostView, PutLikePost, DeletePostView
+from group.views import GroupsView, GroupView
 from .views import *
 from django.urls import path
 

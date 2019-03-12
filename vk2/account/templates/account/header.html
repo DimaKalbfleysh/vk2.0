@@ -38,13 +38,21 @@
                         </div>
                     </div>
                     <div class="head_nav_item fl_r">
-                        <a id="top_profile_link" class="top_nav_link top_profile_link" href="/id{{ main_user.pk }}">
-                        <span class="blind_label">Настройки страницы</span>
-                        <div class="top_profile_name">Виктор</div>
-                        <img class="top_profile_img"
-                             src="{{ main_user.main_photo.url }}" alt="Виктор">
-                        <div class="top_profile_arrow"></div>
+                        <a id="top_profile_link"  onclick="show_top_profile_menu()" class="top_nav_link top_profile_link" href="/id{{ main_user.pk }}">
+                            <span class="blind_label">Настройки страницы</span>
+                            <div class="top_profile_name">{{ main_user.first_name }}</div>
+                            <img class="top_profile_img" src="{{ main_user.main_photo.url }}" alt="Виктор">
+                            <div class="top_profile_arrow"></div>
                         </a>
+                        <div id="top_profile_menu" class="">
+                            <a class="top_profile_mrow" id="top_myprofile_link" href="/id{{ main_user.pk }}" style="">Моя страница</a>
+                            <div class="top_profile_sep" style=""></div>
+                            <a class="top_profile_mrow" id="top_edit_link" href="/edit" style="">Редактировать</a>
+                            <a class="top_profile_mrow" id="top_settings_link" href="/settings" style="">Настройки</a>
+                            <a class="top_profile_mrow" id="top_support_link" href="/support?act=home" >Помощь</a>
+                            <div class="top_profile_sep" style=""></div>
+                            <a class="top_profile_mrow" id="top_logout_link" href="/login/logout">Выйти</a>
+                        </div>
                     </div>
                 </div>
             </div>
