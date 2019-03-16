@@ -1,24 +1,70 @@
 {% extends 'base_page.html' %}
 
-{% block edit %}
-<div class="wrap3">
-    <div class="wrap2">
-        <div class="wrap1">
-            <div class="content">
-                <div id="index_rcolumn" class="index_rcolumn">
-                    <div id="index_login" class="block-content index_login">
-                        <form action="{% url 'edit' %}" method="post" enctype="multipart/form-data">
-                            {% csrf_token %}
-                            {{form.first_name}}
-                            {{form.last_name}}
-                            {{form.date_of_birth}}
-                            {{photo_form.photo}}
-                            <button type="submit" class="index_login_button flat_button">Далее</button>
-                        </form>
+{% block content %}
+    <div class="wide_column_left">
+        <div class="narrow_column_wrap">
+            <div class="narrow_column" id="narrow_column" style="margin-top: 0px;">\</div>
+        </div>
+        <div class="wide_column_wrap">
+            <div class="wide_column" id="wide_column">
+                <div id="profile_editor" class="page_block clear_fix">
+                    <div class="page_block_header">
+                        Основное
+                    </div>
+                    <div id="pedit_result" class="pedit_result"></div>
+                    <form action="{% url 'edit' %}" method="post">
+                        {% csrf_token %}
+                        <div id="pedit_general" class="pedit_content">
+
+                        <div class="pedit_row clear_fix">
+                            <div class="pedit_label">Имя:</div>
+                            <div class="pedit_labeled">
+                                {{ form.first_name }}
+                            </div>
+                        </div>
+                        <div class="pedit_row clear_fix">
+                            <div class="pedit_label">Фамилия:</div>
+                            <div class="pedit_labeled">
+                                {{ form.last_name }}
+                            </div>
+                            <div class="fl_l" id="pedit_name_tt_place"></div>
+                        </div>
+                        <div class="pedit_row clear_fix">
+                            <div class="pedit_label">Пол:</div>
+                            <div class="pedit_labeled">
+                                {{ form.sex }}
+                            </div>
+                        </div>
+                        <div id="pedit_status_row" style="">
+                            <div class="pedit_row clear_fix">
+                                <div class="pedit_label">Семейное положение:</div>
+                                <div class="pedit_labeled">
+                                    {{ form.marital_status }}
+                                </div>
+                            </div>
+                        <div class="pedit_row clear_fix" style="display: none;">
+                            <div class="pedit_label">&nbsp;</div>
+                            <div class="pedit_labeled">
+                                <div id="pedit_lovers_content" class="pedit_row_notice"></div>
+                            </div>
+                        </div>
+                        <div class="pedit_row clear_fix _birthday_settings">
+                            <div class="pedit_label">День рождения:</div>
+                            <div class="pedit_labeled">
+                                {{ form.birth_day }} {{ form.month_birth }} {{ form.year_birth }}
+                            </div>
+                        </div>
+                        <div class="pedit_separator"></div>
+                        <div class="pedit_controls clear_fix">
+                            <button class="flat_button button_big_width">
+                                Сохранить
+                            </button>
+                        </div>
                     </div>
                 </div>
+                    </form>
             </div>
         </div>
+        </div>
     </div>
-</div>
-{% endblock%}
+{% endblock %}

@@ -279,6 +279,7 @@
 <div class="page">
     {% include 'account/header.html' %}
     {% if main_user.is_authenticated %}
+        {% include 'account/header.html' %}
         <div id="page_layout">
             {% include 'account/side_bar.html' %}
             <div id="page_body" class="fl_r" style="width: 795px;">
@@ -306,8 +307,6 @@
         {% block login %}
         {% endblock %}
     {% endif %}
-    {% block edit %}
-    {% endblock %}
 </div>
 </body>
     {% block javascript_code %}

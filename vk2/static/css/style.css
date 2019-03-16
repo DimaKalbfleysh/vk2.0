@@ -5971,3 +5971,143 @@ a {
     line-height: 19px;
     min-width: 6px;
 }
+
+.ui_rmenu {
+    padding: 6px 0;
+    position: relative;
+}
+
+.ui_rmenu_item_sel, .ui_rmenu_item_sel:hover {
+    color: #000;
+    font-weight: 500;
+    -webkit-font-smoothing: subpixel-antialiased;
+    -moz-osx-font-smoothing: auto;
+    padding-left: 18px;
+    border-left: 2px solid #5181b8;
+}
+
+.ui_rmenu_item:hover, .ui_rmenu_subitem:hover, .ui_rmenu_item_sel, .ui_rmenu_item_sel:hover {
+    text-decoration: none;
+    background-color: #f0f2f5;
+}
+
+.ui_rmenu_item, .ui_rmenu_subitem {
+    display: block;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    height: 32px;
+    line-height: 31px;
+    padding: 0 5px 0 20px;
+    color: #2a5885;
+    -ms-user-select: none;
+    user-select: none;
+    -o-user-select: none;
+    -moz-user-select: none;
+    -khtml-user-select: none;
+    -webkit-user-select: none;
+    outline: none;
+    cursor: pointer;
+}
+
+.pedit_content {
+    margin: 20px 0;
+}
+
+.pedit_row {
+    padding-bottom: 15px;
+}
+
+.pedit_label, .pedit_label_box {
+    color: #656565;
+    width: 170px;
+    padding: 6px 10px 0 0;
+    line-height: 16px;
+    float: left;
+    text-align: right;
+}
+
+.pedit_labeled {
+    float: left;
+    line-height: 16px;
+}
+
+#profile_editor input.dark, #profile_editor textarea, .pedit_dropdown {
+    width: 300px;
+}
+
+#profile_editor select.dark, #profile_editor textarea, .pedit_dropdown {
+    width: 300px;
+}
+
+#profile_editor select.day, #profile_editor textarea, .pedit_dropdown {
+    width: 50px; !important;
+}
+
+#profile_editor select.month, #profile_editor textarea, .pedit_dropdown {
+    width: 120px; !important;
+}
+
+input.dark {
+    height: 30px;
+}
+
+select.dark {
+    height: 30px;
+}
+
+
+
+.fakeinput.dark, .fakeinput.dark~.placeholder .ph_input, div[contenteditable=true], div[contenteditable=true]~.placeholder .ph_input, input.dark, input.dark~.placeholder .ph_input, textarea.dark, textarea.dark~.placeholder .ph_input {
+    padding: 5px 9px 7px;
+    border-radius: 2px;
+    box-sizing: border-box;
+}
+
+.fakeinput.dark, .fakeinput.dark~.placeholder .ph_input, div[contenteditable=true], div[contenteditable=true]~.placeholder .ph_input, select.dark, select.dark~.placeholder .ph_input, textarea.dark, textarea.dark~.placeholder .ph_input {
+    padding: 5px 9px 7px;
+    border-radius: 2px;
+    box-sizing: border-box;
+}
+
+.fakeinput, .fakeinput~.placeholder .ph_input, div[contenteditable=true], div[contenteditable=true]~.placeholder .ph_input, input.big_text, input.big_text~.placeholder .ph_input, input.dark, input.dark~.placeholder .ph_input, input.search, input.search~.placeholder .ph_input, input.text, input.text~.placeholder .ph_input, textarea, textarea~.placeholder .ph_input {
+    color: #000;
+    padding: 3px 5px;
+    margin: 0;
+    border: 1px solid #d3d9de;
+}
+
+.fakeinput, .fakeinput~.placeholder .ph_input, div[contenteditable=true], div[contenteditable=true]~.placeholder .ph_input, select.big_text, select.big_text~.placeholder .ph_input, select.dark, select.dark~.placeholder .ph_input, select.search, select.search~.placeholder .ph_input, select.text, select.text~.placeholder .ph_input, textarea, textarea~.placeholder .ph_input {
+    color: #000;
+    padding: 3px 5px;
+    margin: 0;
+    border: 1px solid #d3d9de;
+}
+
+.fakeinput, div[contenteditable=true], input.big_text, input.dark, input.search, input.text, textarea {
+    background: #fff;
+    -webkit-appearance: none;
+    border-radius: 0;
+}
+
+.fakeinput, div[contenteditable=true], select.big_text, select.dark, select.search, select.text, textarea {
+    background: #fff;
+    -webkit-appearance: none;
+    border-radius: 0;
+}
+
+.pedit_separator {
+    width: 512px;
+    margin: 5px auto 20px;
+    height: 0;
+    border-top: 1px solid #e7e8ec;
+}
+
+.pedit_controls {
+    padding: 0 0 0 180px;
+}
+
+.button_big_width.flat_button {
+    padding-left: 32px;
+    padding-right: 32px;
+}

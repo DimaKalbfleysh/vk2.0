@@ -1,10 +1,10 @@
 from django.shortcuts import render, redirect
 from django.views import View
-from account.models import Account, Store, Purchase
+from account.models import Account
 from friendship.models import Friend
 from friendship.models import FriendshipRequest
 import random
-from django.db.models import Count, F
+
 
 def get_all_friends(user):
     """ Since there are no fields in the main User model that will be useful for us in the template, we convert each 

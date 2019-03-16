@@ -68,7 +68,7 @@ if (document.location.pathname === '/im/') {
         })
     }
 
-    setInterval(updateList, 1000);
+    setInterval(updateList, 100000);
 } else {
     function update_count_not_readed() {
         $.ajax({
@@ -97,7 +97,7 @@ if (document.location.pathname === '/im/') {
         })
     }
     setTimeout(update_count_not_readed, 100);
-    setInterval(update_count_not_readed, 5000);
+    setInterval(update_count_not_readed, 500000);
 }
 
 window.onscroll = function () {

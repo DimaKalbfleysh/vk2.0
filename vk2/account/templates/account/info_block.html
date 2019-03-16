@@ -4,16 +4,20 @@
             <h2 class="page_name">{{ user.get_full_name }}</h2>
         </div>
         <div class="profile_info profile_info_short" id="profile_short">
-            {% if user.date_of_birth %}
                 <div class="profile_info_row ">
                     <div class="label column_left">День рождения:</div>
-                    <div class="labeled">{{ user.date_of_birth }}</div>
+                    <div class="labeled">{{ user.birth_day }} {{ user.month_birth|lower }} {{ user.year_birth }}</div>
                 </div>
-            {% endif %}
             {% if user.education %}
                 <div class="profile_info_row ">
                     <div class="label fl_l">Образование:</div>
                     <div class="labeled"></div>
+                </div>
+            {% endif %}
+            {% if user.marital_status and user.marital_status != 'Не выбрано'%}
+                <div class="profile_info_row ">
+                    <div class="label fl_l">Семейное положение:</div>
+                    <div class="labeled">{{ user.marital_status }}</div>
                 </div>
             {% endif %}
         </div>

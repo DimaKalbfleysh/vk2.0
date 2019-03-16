@@ -3,6 +3,7 @@
     <div id="page_header_wrap" class="page_header_wrap" style="width: 100%;; margin-left: 0px;">
         <div id="page_header" class="p_head p_head_l0" style="width: 960px;">
             <div class="content">
+                {% if main_user.is_authenticated %}
                 <div id="top_nav" class="head_nav">
                     <div class="head_nav_item fl_l">
                         <a class="top_home_link fl_l" href="/id{{ main_user.pk }}" aria-label="На главную" accesskey="1">
@@ -37,7 +38,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="head_nav_item fl_r">
+                        <div class="head_nav_item fl_r">
                         <a id="top_profile_link"  onclick="show_top_profile_menu()" class="top_nav_link top_profile_link" href="/id{{ main_user.pk }}">
                             <span class="blind_label">Настройки страницы</span>
                             <div class="top_profile_name">{{ main_user.first_name }}</div>
@@ -54,6 +55,14 @@
                             <a class="top_profile_mrow" id="top_logout_link" href="/login/logout">Выйти</a>
                         </div>
                     </div>
+                    {% else %}
+                        <div class="head_nav_item fl_l">
+                            <a class="top_home_link fl_l" href="#" aria-label="На главную"
+                               accesskey="1">
+                                <div class="top_home_logo"></div>
+                            </a>
+                        </div>
+                    {% endif %}
                 </div>
             </div>
         </div>

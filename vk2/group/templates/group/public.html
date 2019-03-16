@@ -11,32 +11,40 @@
                             <aside aria-label="Фотография">
                                 <div id="page_avatar" class="page_avatar">
                                     <a href="{{ group.main_photo.url }}">
-                                        <img class="page_avatar_img" id='page_avatar_img' src="{{ group.main_photo.url }}" alt="{{ group.name }}"
-                                        onclick="photo_for_main_photo(this.id)">
+                                        <img class="page_avatar_img" id='page_avatar_img'
+                                             src="{{ group.main_photo.url }}" alt="{{ group.name }}"
+                                             onclick="photo_for_main_photo(this.id)">
                                     </a>
                                 </div>
                             </aside>
                         </div>
-                        <div id="public_actions_wrap" class="group_actions_wrap group_actions_wrap_redesign">
-                            <aside aria-label="Действия">
-                                <div id="page_actions" class="page_actions" style="">
-                                    <div class="page_actions_wide clear_fix no_actions redesign">
+                        {% if user == group.admin %}
+                            <aside aria-label="Действия со страницей">
+                                <div class="profile_actions">
+                                    <div class="page_actions_wide clear_fix no_actions edit">
                                         <div class="page_action_left fl_l">
-                                            <div id="page_actions_btn" class="flat_button button_wide secondary page_actions_btn" tabindex="0" role="button">
-                                                <span class="page_actions_dd_label">Вы подписаны</span>
-                                            </div>
+                                            <a id="profile_edit_act" href="/edit"
+                                               class="flat_button button_wide secondary">Редактировать</a>
                                         </div>
                                     </div>
                                 </div>
                             </aside>
-                        </div>
+                        {% else %}
+                            {% if user in group.subscribers.all %}
+                                <button type="submit" class="vk-button btn">Вы подписаны</button>
+                            {% else %}
+                                <a href="?friendship=accept" class="flat_button button_wide">Подписаться</a>
+                            {% endif %}
+                        {% endif %}
                     </div>
                     <div id="group_moder_info"></div>
                     <aside aria-label="Подписаны 5 друзей">
                         <div class="group_friends page_block clear_fix">
                             <div class="group_friends_images">
-                                <a class="group_friends_image" href="/antihype000" title="Никита Бобровский" style="background-image: url('https://sun3-1.userapi.com/c845417/v845417819/173bdc/OZI-mVkzb7Y.jpg?ava=1')"></a>
-                                <a class="group_friends_image" href="/lobanooov01" title="Влад Лобанов" style="background-image: url('https://pp.userapi.com/c849336/v849336232/740fd/a-47_Q4RqJU.jpg?ava=1')"></a>
+                                <a class="group_friends_image" href="/antihype000" title="Никита Бобровский"
+                                   style="background-image: url('https://sun3-1.userapi.com/c845417/v845417819/173bdc/OZI-mVkzb7Y.jpg?ava=1')"></a>
+                                <a class="group_friends_image" href="/lobanooov01" title="Влад Лобанов"
+                                   style="background-image: url('https://pp.userapi.com/c849336/v849336232/740fd/a-47_Q4RqJU.jpg?ava=1')"></a>
                             </div>
                             <div class="group_friends_text">Подписаны 5 друзей</div>
                         </div>
@@ -151,135 +159,145 @@
                 </div>
             </div>
             <div class="wide_column_wrap">
-            <div class="wide_column" id="wide_column">
-                <div class="page_block" id="page_block_group_main_info">
-                    <div class="page_top">
-                        <h2 class="page_name">{{ group.name }}</h2>
-                        <div class="page_current_info" id="page_current_info">
-                            <span class="current_text">{{ group.status }}</span>
+                <div class="wide_column" id="wide_column">
+                    <div class="page_block" id="page_block_group_main_info">
+                        <div class="page_top">
+                            <h2 class="page_name">{{ group.name }}</h2>
+                            <div class="page_current_info" id="page_current_info">
+                                <span class="current_text">{{ group.status }}</span>
+                            </div>
                         </div>
-                    </div>
-                    <div id="page_block_group_submain_info">
-                        <h2 class="page_block_h2 page_info_header_tabs">
-                            <ul class="ui_tabs clear_fix page_info_tabs">
-                                <li class="ui_tab_default">
-                                    <div class="ui_tab_plain" role="link">
-                                        Информация
-                                    </div>
-                                </li>
-                                <div class="ui_tabs_slider _ui_tabs_slider"></div>
-                            </ul>
-                        </h2>
-                        <div id="page_info_wrap" class="page_info_wrap info info_redesign">
-                            <div class="group_info_block info">
-                                <div class="group_info_rows group_info_rows_redesign">
-                                    <div class="group_info_row info" title="Описание">
-                                        <div class="line_value">
-                                            {{ group.description }}
+                        <div id="page_block_group_submain_info">
+                            <h2 class="page_block_h2 page_info_header_tabs">
+                                <ul class="ui_tabs clear_fix page_info_tabs">
+                                    <li class="ui_tab_default">
+                                        <div class="ui_tab_plain" role="link">
+                                            Информация
+                                        </div>
+                                    </li>
+                                    <div class="ui_tabs_slider _ui_tabs_slider"></div>
+                                </ul>
+                            </h2>
+                            <div id="page_info_wrap" class="page_info_wrap info info_redesign">
+                                <div class="group_info_block info">
+                                    <div class="group_info_rows group_info_rows_redesign">
+                                        <div class="group_info_row info" title="Описание">
+                                            <div class="line_value">
+                                                {{ group.description }}
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                </div>
-                {% if fixed_post %}
-                <div class="page_block page_info_fixed_post_wrap">
-                    <div id="wall_fixed" class="wall_post wall_fixed">
-                        <div class="wall_module">
-                            <div class="wall_posts own ">
-                                <div id="post-29573241_11190929" class="_post post all own post_fixed deep_active" >
-                                    <div class="_post_content">
-                                        <div class="post_header">
-                                            <a class="post_image" href="/public{{ group.pk }}">
-                                                <img src="{{ group.main_photo.url }}" width="50" height="50" class="post_img">
-                                                <span class="blind_label">.</span>
-                                            </a>
-                                            <div class="post_header_info">
-                                                <h5 class="post_author">
-                                                    <a class="author" href="/public{{ group.pk }}" data-post-click-type="post_owner_link">{{ group.name }}</a>
-                                                    <span class="explain">
+                    {% if group.fixed_post %}
+                        <div class="page_block page_info_fixed_post_wrap">
+                            <div id="wall_fixed" class="wall_post wall_fixed">
+                                <div class="wall_module">
+                                    <div class="wall_posts own ">
+                                        <div id="post-29573241_11190929"
+                                             class="_post post all own post_fixed deep_active">
+                                            <div class="_post_content">
+                                                <div class="post_header">
+                                                    <a class="post_image" href="/public{{ group.pk }}">
+                                                        <img src="{{ group.main_photo.url }}" width="50" height="50"
+                                                             class="post_img">
+                                                        <span class="blind_label">.</span>
+                                                    </a>
+                                                    <div class="post_header_info">
+                                                        <h5 class="post_author">
+                                                            <a class="author" href="/public{{ group.pk }}"
+                                                               data-post-click-type="post_owner_link">{{ group.name }}</a>
+                                                            <span class="explain">
                                                         <span class="wall_fixed_label"> запись закреплена</span>
                                                     </span>
-                                                </h5>
-                                                <div class="post_date">
-                                                    <a class="post_link" href="/wall-29573241_11190929">
-                                                        <span class="rel_date">{{ fixed_post.pub_date }}</span>
-                                                    </a>
-                                                </div>
-                                                <div class="ui_actions_menu_wrap _ui_menu_wrap "></div>
-                                            </div>
-                                        </div>
-                                        <div class="post_content">
-                                            <div class="post_info">
-                                                <div class="wall_text">
-                                                    <div id="wpt-29573241_11190929" class="wall_post_cont _wall_post_cont">
-                                                        <div class="wall_post_text">{{ fixed_post.content }}</div>
-                                                        {% if fixed_post.images.all %}
-                                                            {% for image in fixed_post.images.all %}
-                                                                <div class="page_post_sized_thumbs  clear_fix" style="width: 510px; height: 419px;">
-                                                                    <a style="width: 510px; height: 420px; background-image: url({{ image.photo.url }});"
-                                                                        class="page_post_thumb_wrap image_cover  page_post_thumb_last_column page_post_thumb_last_row"></a>
-                                                                </div>
-                                                            {% endfor %}
-                                                        {% endif %}
-                                                        {% if fixed_post.audios.all %}
-                                                            <div class="wall_audio_rows _wall_audio_rows">
-                                                                {% for audio in fixed_post.audios.all %}
-                                                                    <div tabindex="0" class="audio_row audio_row_with_cover _audio_row _audio_row_2000249516_456242314 audio_can_add audio_has_thumb audio_row2">
-                                                                        <div class="audio_row_content _audio_row_content">
-                                                                            <button class="blind_label _audio_row__play_btn" aria-label="Воспроизвести "></button>
-                                                                            <div class="audio_row__cover" style="background-image:url(https://pp.userapi.com/c851132/v851132214/9ba9d/xlLsZ2q27Ws.jpg)"></div>
-                                                                            <div class="audio_row__cover_back _audio_row__cover_back"></div>
-                                                                            <div class="audio_row__cover_icon _audio_row__cover_icon"></div>
-                                                                            <div class="audio_row__counter"></div>
-                                                                            <div class="audio_row__play_btn"></div>
-                                                                            <div class="audio_row__inner">
-                                                                                <div class="audio_row__performer_title">
-                                                                                    <div class="audio_row__performers">
-                                                                                        <a href="/audio?performer=1&amp;q=The%20Prodigy">
-                                                                                            {{ audio.author }}
-                                                                                        </a>
-                                                                                    </div>
-                                                                                    <div class="audio_row__title _audio_row__title">
-                                                                                        <span class="audio_row__title_inner _audio_row__title_inner">{{ audio.name }}</span>
-                                                                                        <span class="audio_row__title_inner_subtitle _audio_row__title_inner_subtitle"></span>
-                                                                                    </div>
-                                                                                </div>
-                                                                                <div class="audio_row__info _audio_row__info">
-                                                                                    <div class="audio_row__duration audio_row__duration-s _audio_row__duration">
-                                                                                        {{ audio.length }}
-                                                                                    </div>
-                                                                                </div>
-                                                                            </div>
-                                                                            <div class="audio_player__place _audio_player__place"></div>
-                                                                        </div>
-                                                                    </div>
-                                                                {% endfor %}
-                                                            </div>
-                                                        {% endif %}
-                                                    </div>
-                                                </div>
-                                                <div class="like_wrap _like_wall-29573241_11190929 ">
-                                                    <div class="like_cont ">
-                                                        <div class="like_btns">
-                                                            <a class="like_btn like _like"
-                                                               onclick="Likes.toggle(this, event, 'wall-29573241_11190929', 'fc74f839d95e492589');"
-                                                               onmouseover="Likes.showLikes(this, 'wall-29573241_11190929', {})"
-                                                               data-count="16292" href="#" title="Нравится">
-                                                                <div class="like_button_icon"></div>
-                                                                <div class="like_button_label"></div>
-                                                                <div class="like_button_count">16<span
-                                                                        class="num_delim"> </span>292
-                                                                </div>
-                                                                <span class="blind_label">Нравится</span>
+                                                        </h5>
+                                                        <div class="post_date">
+                                                            <a class="post_link" href="/wall-29573241_11190929">
+                                                                <span class="rel_date">{{ group.fixed_post.pub_date }}</span>
                                                             </a>
                                                         </div>
-                                                        <div class="like_views _views"
-                                                             onmouseover="Likes.updateViews('wall-29573241_11190929');">
-                                                            1.1M
+                                                        <div class="ui_actions_menu_wrap _ui_menu_wrap "></div>
+                                                    </div>
+                                                </div>
+                                                <div class="post_content">
+                                                    <div class="post_info">
+                                                        <div class="wall_text">
+                                                            <div id="wpt-29573241_11190929"
+                                                                 class="wall_post_cont _wall_post_cont">
+                                                                <div class="wall_post_text">{{ group.fixed_post.content }}</div>
+                                                                {% if group.fixed_post.images.all %}
+                                                                    {% for image in fixed_post.images.all %}
+                                                                        <div class="page_post_sized_thumbs  clear_fix"
+                                                                             style="width: 510px; height: 419px;">
+                                                                            <a style="width: 510px; height: 420px; background-image: url({{ image.photo.url }});"
+                                                                               class="page_post_thumb_wrap image_cover  page_post_thumb_last_column page_post_thumb_last_row"></a>
+                                                                        </div>
+                                                                    {% endfor %}
+                                                                {% endif %}
+                                                                {% if group.fixed_post.audios.all %}
+                                                                    <div class="wall_audio_rows _wall_audio_rows">
+                                                                        {% for audio in group.fixed_post.audios.all %}
+                                                                            <div tabindex="0"
+                                                                                 class="audio_row audio_row_with_cover _audio_row _audio_row_2000249516_456242314 audio_can_add audio_has_thumb audio_row2">
+                                                                                <div class="audio_row_content _audio_row_content">
+                                                                                    <button class="blind_label _audio_row__play_btn"
+                                                                                            aria-label="Воспроизвести "></button>
+                                                                                    <div class="audio_row__cover"
+                                                                                         style="background-image:url(https://pp.userapi.com/c851132/v851132214/9ba9d/xlLsZ2q27Ws.jpg)"></div>
+                                                                                    <div class="audio_row__cover_back _audio_row__cover_back"></div>
+                                                                                    <div class="audio_row__cover_icon _audio_row__cover_icon"></div>
+                                                                                    <div class="audio_row__counter"></div>
+                                                                                    <div class="audio_row__play_btn"></div>
+                                                                                    <div class="audio_row__inner">
+                                                                                        <div class="audio_row__performer_title">
+                                                                                            <div class="audio_row__performers">
+                                                                                                <a href="/audio?performer=1&amp;q=The%20Prodigy">
+                                                                                                    {{ audio.author }}
+                                                                                                </a>
+                                                                                            </div>
+                                                                                            <div class="audio_row__title _audio_row__title">
+                                                                                                <span class="audio_row__title_inner _audio_row__title_inner">{{ audio.name }}</span>
+                                                                                                <span class="audio_row__title_inner_subtitle _audio_row__title_inner_subtitle"></span>
+                                                                                            </div>
+                                                                                        </div>
+                                                                                        <div class="audio_row__info _audio_row__info">
+                                                                                            <div class="audio_row__duration audio_row__duration-s _audio_row__duration">
+                                                                                                {{ audio.length }}
+                                                                                            </div>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                    <div class="audio_player__place _audio_player__place"></div>
+                                                                                </div>
+                                                                            </div>
+                                                                        {% endfor %}
+                                                                    </div>
+                                                                {% endif %}
+                                                            </div>
                                                         </div>
+                                                        <div class="like_wrap _like_wall-29573241_11190929 ">
+                                                            <div class="like_cont ">
+                                                                <div class="like_btns">
+                                                                    <a class="like_btn like _like"
+                                                                       onclick="Likes.toggle(this, event, 'wall-29573241_11190929', 'fc74f839d95e492589');"
+                                                                       onmouseover="Likes.showLikes(this, 'wall-29573241_11190929', {})"
+                                                                       data-count="16292" href="#" title="Нравится">
+                                                                        <div class="like_button_icon"></div>
+                                                                        <div class="like_button_label"></div>
+                                                                        <div class="like_button_count">16<span
+                                                                                class="num_delim"> </span>292
+                                                                        </div>
+                                                                        <span class="blind_label">Нравится</span>
+                                                                    </a>
+                                                                </div>
+                                                                <div class="like_views _views"
+                                                                     onmouseover="Likes.updateViews('wall-29573241_11190929');">
+                                                                    1.1M
+                                                                </div>
 
+                                                            </div>
+                                                        </div>
                                                     </div>
                                                 </div>
                                             </div>
@@ -288,13 +306,11 @@
                                 </div>
                             </div>
                         </div>
-                    </div>
+                    {% endif %}
+                    {% include 'group/make_post.html' %}
+                    {% include 'group/group_wall.html' %}
                 </div>
-                {% endif %}
-                {% include 'group/make_post.html' %}
-                {% include 'group/group_wall.html' %}
             </div>
-        </div>
         </div>
     </div>
 {% endblock %}

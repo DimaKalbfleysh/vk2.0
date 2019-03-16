@@ -16,13 +16,6 @@ class GroupView(View):
         main_user = Account.objects.get(pk=request.user.pk)
         group = Group.objects.get(pk=pk)
         posts = group.posts.all()
-        for post in posts:
-            if post.fixed_post:
-                fixed_post = post
-                break
-        else:
-            fixed_post = None
         return render(request, 'group/public.html', context={'main_user': main_user,
                                                              'group': group,
-                                                             'posts': posts,
-                                                             'fixed_post': fixed_post})
+                                                             'posts': posts})

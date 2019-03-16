@@ -1,10 +1,11 @@
 from django.contrib.auth import authenticate, login
+from django.http import Http404
 from django.shortcuts import render, redirect
 from django.views import View
 from register.forms import InitRegisterUserForm
 from register.forms import FinalRegisterUserForm
-
 from account.models import Account
+from edit.forms import EditUserForm
 
 
 class InitRegisterUser(View):
@@ -21,19 +22,28 @@ class InitRegisterUser(View):
 
 class FinalRegisterUser(View):
     def get(self, request, username):
-        form = FinalRegisterUserForm
+        form = EditUserForm
         return render(request, 'register/final_register_user.html', context={'form': form,
                                                                              'usnm': username})
 
     def post(self, request, username):
-        user = Account.objects.get(username=username    )
-        form = FinalRegisterUserForm(request.POST, instance=user)
+        user = Account.objects.get(username=username)
+        form = EditUserForm(request.POST, instance=user)
         if form.is_valid():
-            try:
-                form.save()
-            except:
-                user.date_of_birth = None
-                form.save()
+            form.save()
         authenticate(username=username, password=user.password)
         login(request, user)
-        return redirect('account', pk=request.user.pk)
+        return render(request, 'register/verify.html', context={'form': form,
+                                                                             'usnm': username})
+
+
+class Verify(View):
+    def get(self, request, uuid):
+        try:
+            user = Account.objects.get(verification_uuid=uuid, is_verified=False)
+        except Account.DoesNotExist:
+            raise Http404("User does not exist or is already verified")
+
+        user.is_verified = True
+        user.save()
+        return redirect('account', pk=user.pk)
