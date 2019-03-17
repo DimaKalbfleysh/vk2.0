@@ -15,7 +15,7 @@ def send_verification_email(user_id):
         send_mail(
             'Verify your Vk2 account',
             'Follow this link to verify your account: '
-            'http://localhost:8000/verify'+user_id,
+            'http://localhost:8000/register/verify/{}'.format(user_id),
             settings.EMAIL_HOST_USER,
             [user.email],
             fail_silently=False,
