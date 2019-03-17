@@ -38,9 +38,9 @@ class FinalRegisterUser(View):
 
 
 class Verify(View):
-    def get(self, request, uuid):
+    def get(self, request, pk):
         try:
-            user = Account.objects.get(verification_uuid=uuid, is_verified=False)
+            user = Account.objects.get(pk=pk, is_verified=False)
         except Account.DoesNotExist:
             raise Http404("User does not exist or is already verified")
 
