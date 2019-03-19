@@ -47,6 +47,7 @@ INSTALLED_APPS = [
     'group',
     'like',
     'audio',
+    'news'
 
 ]
 
