@@ -3,17 +3,17 @@ from django.shortcuts import render, redirect
 from django.views import View
 from account.models import Account
 from edit.forms import PhotoForm
-from account.models import Photo
-from account.models import Like
+from photo.models import Photo
+from like.models import Like
 
 
 class AlbumsView(View):
     def get(self, request, pk):
         main_user = Account.objects.get(pk=request.user.pk)
         photo_form = PhotoForm(instance=main_user)
-        user = Account.objects.get(pk=pk)
+        user = Account.objects.select_related().get(pk=pk)
         all_photo = user.images.all()
-        count_photo = len(all_photo)
+        count_photo = all_photo.count()
         context = dict()
         context['user'] = user
         context['main_user'] = main_user
@@ -31,8 +31,8 @@ class AlbumsView(View):
 
 class DeletePhotoView(View):
     def get(self, request):
-        main_user = Account.objects.get(pk=request.user.pk)
-        photo = main_user.images.get(pk=request.GET['pk'])
+        main_user = Account.objects.select_related().get(pk=request.user.pk)
+        photo = main_user.images.select_related().get(pk=request.GET['pk'])
         photo.delete()
         return JsonResponse({})
 
@@ -50,18 +50,16 @@ class PutLikePhoto(View):
     def get(self, request):
         main_user = Account.objects.get(pk=request.user.pk)
         photo = Photo.objects.get(pk=request.GET['pk'])
-        try:
-            like = photo.likes.get(user=main_user)
+        like, created = Like.objects.get_or_create(user=main_user, photo=photo, defaults={'user': main_user})
+        if not created:
             like.delete()
-            count_likes = photo.likes.all().count()
+            count_likes = photo.likes.count()
             photo.like_put = False
             photo.save()
-        except:
-            like = Like.objects.create(user=main_user, photo=photo)
-            main_user.likes.add(like)
-            photo.likes.add(like)
-            count_likes = photo.likes.all().count()
-            photo.like_put = True
-            photo.save()
-        return JsonResponse({'likes_put': photo.like_put,
-                             'count_likes': count_likes})
+            return JsonResponse({'likes_put': photo.like_put, 'count_likes': count_likes})
+        main_user.likes.add(like)
+        photo.likes.add(like)
+        count_likes = photo.likes.count()
+        photo.like_put = True
+        photo.save()
+        return JsonResponse({'likes_put': photo.like_put, 'count_likes': count_likes})

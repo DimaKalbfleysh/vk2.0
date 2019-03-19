@@ -30,11 +30,14 @@ def get_friends_row(all_friends):
 class MainView(View):
     def get(self, request, pk):
         if request.user.is_authenticated:
-            main_user = Account.objects.get(pk=request.user.pk)
-            user = Account.objects.get(pk=pk)
+            main_user = Account.objects.select_related().get(pk=request.user.pk)
+            if request.user.pk != pk:
+                user = Account.objects.select_related().get(pk=pk)
+            else:
+                user = main_user
             posts = user.posts.all()
             all_photo = list(user.images.all())[:3]
-            count_photo = len(user.images.all())
+            count_photo = user.images.count()
             request_is_send = Friend.objects.can_request_send(request.user, user)
             accept_request = Friend.objects.can_request_send(user, request.user)
             is_friend = Friend.objects.are_friends(request.user, user)

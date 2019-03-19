@@ -44,7 +44,9 @@ INSTALLED_APPS = [
     'django_ajax',
     'photo',
     'message',
-    'group'
+    'group',
+    'like',
+    'audio',
 
 ]
 

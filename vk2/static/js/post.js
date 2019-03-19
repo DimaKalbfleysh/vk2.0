@@ -18,7 +18,7 @@ function delete_post(pk){
     event.preventDefault();
     $.ajax({
         type: 'GET',
-        url: '/dlp/?post='+pk,
+        url: '/post/delete/?id='+pk,
         data: {'pk': pk},
         dataType: 'json',
         contentType: 'application/x-www-form-urlencoded',
@@ -33,7 +33,7 @@ function like_post(pk){
     event.preventDefault();
     $.ajax({
         type: 'GET',
-        url: '/lkp/?post='+pk,
+        url: '/post/put-like/?id='+pk,
         data: {'pk': pk},
         dataType: 'json',
         contentType: 'application/x-www-form-urlencoded',

@@ -29,10 +29,11 @@ $('#pv_close_btn').on('click', (function () {
 
 function delete_photo() {
     let pk = document.location.search.split('-')[1];
+    console.log(pk);
     event.preventDefault();
     $.ajax({
         type: 'GET',
-        url: '/dl/?photo='+pk,
+        url: '/photo/delete/?id='+pk,
         data: {'pk': pk},
         dataType: 'json',
         contentType: 'application/x-www-form-urlencoded',
@@ -49,7 +50,7 @@ function make_main_photo(){
     event.preventDefault();
     $.ajax({
         type: 'GET',
-        url: '/mk/?photo='+pk,
+        url: '/photo/make-main/?id='+pk,
         data: {'pk': pk},
         dataType: 'json',
         contentType: 'application/x-www-form-urlencoded',
@@ -65,7 +66,7 @@ function like_photo(pk){
     event.preventDefault();
     $.ajax({
         type: 'GET',
-        url: '/lkph/?photo='+pk,
+        url: '/photo/put-like/?id='+pk,
         data: {'pk': pk},
         dataType: 'json',
         contentType: 'application/x-www-form-urlencoded',

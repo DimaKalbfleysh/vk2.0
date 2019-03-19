@@ -18,22 +18,22 @@
                                 </div>
                             </aside>
                         </div>
-                        {% if user == group.admin %}
+                        {% if main_user in group.admin.all %}
                             <aside aria-label="Действия со страницей">
                                 <div class="profile_actions">
                                     <div class="page_actions_wide clear_fix no_actions edit">
                                         <div class="page_action_left fl_l">
-                                            <a id="profile_edit_act" href="/edit"
+                                            <a id="profile_edit_act" href="{% url 'group' pk=group.pk %}edit"
                                                class="flat_button button_wide secondary">Редактировать</a>
                                         </div>
                                     </div>
                                 </div>
                             </aside>
                         {% else %}
-                            {% if user in group.subscribers.all %}
+                            {% if main_user in group.subscribers.all %}
                                 <button type="submit" class="vk-button btn">Вы подписаны</button>
                             {% else %}
-                                <a href="?friendship=accept" class="flat_button button_wide">Подписаться</a>
+                                <a href="{% url 'subscribe-to-group' pk=group.pk %}" class="flat_button button_wide">Подписаться</a>
                             {% endif %}
                         {% endif %}
                     </div>
@@ -52,104 +52,47 @@
                     <div class="page_block">
                         <aside aria-label="Подписчики">
                             <div class="module clear people_module _module" id="public_followers">
-                                <div class="header_right_link fl_r"
-                                "="">
+                                <div class="header_right_link fl_r">
                             </div>
-                            <a href="/search?c[section]=people&amp;c[group]=29573241"
-                               onclick="return page.showPageMembers(event, -29573241, 'members')" class="module_header">
+                            <a href="/search?c[section]=people&amp;c[group]=29573241" class="module_header">
                                 <div class="header_top clear_fix">
                                     <span class="header_label fl_l">Подписчики</span>
-                                    <span class="header_count fl_l">4<span class="num_delim"> </span>784<span
-                                            class="num_delim"> </span>880</span>
+                                    <span class="header_count fl_l">{{ group.count_subscribers }}</span>
                                 </div>
                             </a>
                             <div class="module_body clear_fix">
                                 <div class="people_row">
-                                    <div class="people_cell">
-                                        <a class="people_cell_ava" href="/id483686337"
-                                           onclick="return nav.go(this, event, {cl_id: 0})" title="Виктор Александров">
-                                            <img class="people_cell_img"
-                                                 src="https://pp.userapi.com/c844417/v844417433/1b5f84/U27lEeEv5AM.jpg?ava=1"
-                                                 alt="Виктор Александров">
-                                            <span class="blind_label">.</span>
-                                        </a>
-                                        <div class="people_cell_name">
-                                            <a href="/id483686337" title="Виктор Александров">
-                                                Виктор
+                                    {% for subscriber in group.subscribers.all%}
+                                        <div class="people_cell">
+                                            <a class="people_cell_ava" href="/id{{ subscriber.pk }}" title="{{ subscriber.get_full_name }}">
+                                                <img class="people_cell_img"
+                                                     src="{{ subscriber.main_photo.url }}"
+                                                     alt="{{ subscriber.get_full_name }}">
+                                                <span class="blind_label">.</span>
                                             </a>
+                                            <div class="people_cell_name">
+                                                <a href="/id{{ subscriber.pk }}" title="{{ subscriber.get_full_name }}">
+                                                    {{ subscriber.first_name }}
+                                                </a>
+                                            </div>
                                         </div>
-                                    </div>
-                                    <div class="people_cell">
-                                        <a class="people_cell_ava" href="/lobanooov01"
-                                           onclick="return nav.go(this, event, {cl_id: 0})" title="Влад Лобанов">
-                                            <img class="people_cell_img"
-                                                 src="https://pp.userapi.com/c849336/v849336232/740fd/a-47_Q4RqJU.jpg?ava=1"
-                                                 alt="Влад Лобанов">
-                                            <span class="blind_label">.</span>
-                                        </a>
-                                        <div class="people_cell_name">
-                                            <a href="/lobanooov01" title="Влад Лобанов">
-                                                Влад
-                                            </a>
-                                        </div>
-                                    </div>
-                                    <div class="people_cell">
-                                        <a class="people_cell_ava" href="/antihype000"
-                                           onclick="return nav.go(this, event, {cl_id: 0})" title="Никита Бобровский">
-                                            <img class="people_cell_img"
-                                                 src="https://sun3-1.userapi.com/c845417/v845417819/173bdc/OZI-mVkzb7Y.jpg?ava=1"
-                                                 alt="Никита Бобровский">
-                                            <span class="blind_label">.</span>
-                                        </a>
-                                        <div class="people_cell_name">
-                                            <a href="/antihype000" title="Никита Бобровский">
-                                                Никита
-                                            </a>
-                                        </div>
-                                    </div>
-                                </div>
+                                    {% endfor %}
                                 <div class="people_row">
-                                    <div class="people_cell">
-                                        <a class="people_cell_ava" href="/artemyasb"
-                                           onclick="return nav.go(this, event, {cl_id: 0})" title="Тёма Якшибаев">
-                                            <img class="people_cell_img"
-                                                 src="https://sun3-4.userapi.com/c850436/v850436661/b8d33/Wd6w0SYojkM.jpg?ava=1"
-                                                 alt="Тёма Якшибаев">
-                                            <span class="blind_label">.</span>
-                                        </a>
-                                        <div class="people_cell_name">
-                                            <a href="/artemyasb" title="Тёма Якшибаев">
-                                                Тёма
+                                    {% for subscriber in group.subscribers.all %}
+                                        <div class="people_cell">
+                                            <a class="people_cell_ava" href="/id{{ subscriber.pk }}" title="{{ subscriber.get_full_name }}">
+                                                <img class="people_cell_img"
+                                                     src="{{ subscriber.main_photo.url }}"
+                                                     alt="{{ subscriber.get_full_name }}">
+                                                <span class="blind_label">.</span>
                                             </a>
+                                            <div class="people_cell_name">
+                                                <a href="/id{{ subscriber.pk }}" title="{{ subscriber.get_full_name }}">
+                                                    {{ subscriber.first_name }}
+                                                </a>
+                                            </div>
                                         </div>
-                                    </div>
-                                    <div class="people_cell">
-                                        <a class="people_cell_ava" href="/illuminatxr"
-                                           onclick="return nav.go(this, event, {cl_id: 0})" title="Илья Селянин">
-                                            <img class="people_cell_img"
-                                                 src="https://pp.userapi.com/c621511/v621511286/867dc/0u02XgVad0w.jpg?ava=1"
-                                                 alt="Илья Селянин">
-                                            <span class="blind_label">.</span>
-                                        </a>
-                                        <div class="people_cell_name">
-                                            <a href="/illuminatxr" title="Илья Селянин">
-                                                Илья
-                                            </a>
-                                        </div>
-                                    </div>
-                                    <div class="people_cell">
-                                        <a class="people_cell_ava" href="/id101161368"
-                                           onclick="return nav.go(this, event, {cl_id: 0})" title="Сергей Старыгин">
-                                            <img class="people_cell_img" src="/images/camera_50.png?ava=1"
-                                                 alt="Сергей Старыгин">
-                                            <span class="blind_label">.</span>
-                                        </a>
-                                        <div class="people_cell_name">
-                                            <a href="/id101161368" title="Сергей Старыгин">
-                                                Сергей
-                                            </a>
-                                        </div>
-                                    </div>
+                                    {% endfor %}
                                 </div>
                             </div>
                         </aside>

@@ -1,9 +1,6 @@
-import datetime
 from django import forms
 from account.models import Account
-from django.forms import DateInput
-
-from account.models import Photo
+from photo.models import Photo
 
 
 class EditUserForm(forms.ModelForm):

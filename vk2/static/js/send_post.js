@@ -35,13 +35,13 @@ jQuery(function($){
 $('#send_post').on('click', (function () {
     event.preventDefault();
     let url = document.location.pathname;
-    if(url.split('public')){
+    if(url.split('')[1] !== 'i'){
         public_pk = url.split('/public')[1].split('/')[0];
         console.log(public_pk)
-    }
+    }else {public_pk = 0}
     $.ajax({
         type: 'POST',
-        url: '/ps/',
+        url: '/post/create/',
         data: {content: $('#post_field').text(), url: url, public_pk: public_pk},
         dataType: 'json',
         contentType: 'application/x-www-form-urlencoded',

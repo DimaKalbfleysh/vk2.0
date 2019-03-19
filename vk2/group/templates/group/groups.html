@@ -10,16 +10,18 @@
                         <ul class="ui_tabs clear_fix ui_tabs_header">
                             <li id="groups_groups_tab" style="float: left;">
                                 <a href="/groups" class="ui_tab ui_tab_sel">
-                                    Все сообщества<span class="ui_tab_count" dir="auto">13</span>
+                                    Все сообщества<span class="ui_tab_count" dir="auto">{{ groups.count }}</span>
                                 </a>
                             </li>
+                            {% if groups_under_management %}
                             <li id="groups_admin_tab" style="float: left;">
                                 <a href="/groups?tab=admin" class="ui_tab">
-                                    Управление<span class="ui_tab_count" dir="auto">1</span>
+                                    Управление<span class="ui_tab_count" dir="auto">{{ groups_under_management.count }}</span>
                                 </a>
                             </li>
-                            <a href="/groups_create" class="flat_button groups_list_create_button">Создать сообщество</a>
+                            <a href="{% url 'group-create' %}" class="flat_button groups_list_create_button">Создать сообщество</a>
                             <div class="ui_tabs_slider _ui_tabs_slider"></div>
+                            {% endif %}
                         </ul>
                     </h2>
                     <div id="group_u_search_input_wrap" class="search_query_wrap">
@@ -65,7 +67,7 @@
                                             <a class="group_row_title" href="/public{{ group.pk }}">{{ group.name }}</a>
                                         </div>
                                         <div class="group_row_labeled">{{ group.description }}</div>
-                                        <div class="group_row_labeled">{{ group.count_subscribers }}</div>
+                                        <div class="group_row_labeled">{{ group.count_subscribers }} подписчиков</div>
                                     </div>
                                 </div>
                                 {% endfor %}

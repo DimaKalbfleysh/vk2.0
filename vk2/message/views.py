@@ -2,12 +2,12 @@ from django.http import JsonResponse
 from django.shortcuts import render
 from django.views import View
 from account.models import Account
-from account.models import Dialog, Message, GroupMessages
+from message.models import Dialog, Message, GroupMessages
 
 
-class DialogView(View):
+class DialogsView(View):
     def get(self, request):
-        main_user = Account.objects.get(pk=request.user.pk)
+        main_user = Account.objects.select_related().get(pk=request.user.pk)
         dialogs = main_user.dialogs.all()
 
         for dialog in dialogs:
@@ -15,7 +15,7 @@ class DialogView(View):
             dialog.set_interlocutor(main_user)
 
         context = dict()
-        context['dialogs'] = main_user.dialogs.order_by('-pub_date')
+        context['dialogs'] = dialogs.order_by('-pub_date')
         context['main_user'] = main_user
         context['url'] = request.get_full_path()
         return render(request, 'message/dialogs.html', context=context)
@@ -27,16 +27,16 @@ def create_dialog(main_user, interlocutor):
         if interlocutor not in dialog.users.all():
             count_dialogs_without_interlocutor += 1
 
-    if count_dialogs_without_interlocutor == len(main_user.dialogs.all()):
+    if count_dialogs_without_interlocutor == main_user.dialogs.count():
         dialog = Dialog.objects.create(id_dialog=main_user.pk + interlocutor.pk)
         dialog.users.add(main_user, interlocutor)
 
 
-class MessageView(View):
+class MessagesView(View):
     def get(self, request):
         pk = request.GET['sel']
-        main_user = Account.objects.get(pk=request.user.pk)
-        interlocutor = Account.objects.get(pk=pk)
+        main_user = Account.objects.select_related().get(pk=request.user.pk)
+        interlocutor = Account.objects.select_related().get(pk=pk)
         create_dialog(main_user, interlocutor)
         dialogs = main_user.dialogs.all()
 
@@ -46,8 +46,9 @@ class MessageView(View):
         dialog = main_user.dialogs.get(id_dialog=main_user.pk + interlocutor.pk)
 
         for message in dialog.messages.all():
-            if not message.is_read:
-                message.set_read(main_user)
+            if message.author != main_user:
+                if not message.is_read:
+                    message.set_read(main_user)
 
         context = dict()
         context['main_user'] = main_user
@@ -57,8 +58,8 @@ class MessageView(View):
         return render(request, 'message/messages.html', context=context)
 
     def post(self, request):
-        main_user = Account.objects.get(pk=request.user.pk)
-        to_user = Account.objects.get(pk=request.GET['sel'])
+        main_user = Account.objects.select_related().get(pk=request.user.pk)
+        to_user = Account.objects.select_related().get(pk=request.GET['sel'])
         dialog = main_user.dialogs.get(id_dialog=main_user.pk + to_user.pk)
         created_message = Message.objects.create(message=request.POST['message'], dialog=dialog, author=main_user)
 
@@ -83,34 +84,40 @@ class MessageView(View):
 
 class UpdateMessagesView(View):
     def get(self, request):
-        if 'sel' in request.GET:
-            pk = request.GET['sel']
-            main_user = Account.objects.get(pk=request.user.pk)
-            interlocutor = Account.objects.get(pk=pk)
-            dialog = main_user.dialogs.get(id_dialog=main_user.pk + interlocutor.pk)
-            messages = dialog.messages.all()
-            messages_values = list(dialog.messages.all().values())
-            data = dict()
-            data['messages'] = messages_values
-            data['first_name'] = messages.last().author.first_name
-            data['url_photo'] = messages.last().author.main_photo.url
-            data['pub_time'] = messages.last().pub_date.time()
-            return JsonResponse(data)
-        elif 'cou' in request.GET:
-            main_user = Account.objects.get(pk=request.user.pk)
-            dialogs = main_user.dialogs.all()
-            number_not_read_messages = 0
-            for dialog in dialogs:
-                dialog.count_not_read_messages()
-                for user in dialog.users.all():
-                    if user != main_user:
-                        messages = dialog.messages.filter(author=user)
-                        for message in messages:
-                            if not message.is_read:
-                                number_not_read_messages += 1
-            main_user.number_not_read_messages = number_not_read_messages
-            main_user.save()
-            data = dict()
-            data['number_not_read_messages'] = number_not_read_messages
-            data['dialogs_values'] = list(dialogs.values())
-            return JsonResponse(data)
+        main_user = Account.objects.select_related().get(pk=request.user.pk)
+        interlocutor = Account.objects.get(pk=request.GET['sel'])
+        dialog = main_user.dialogs.get(id_dialog=main_user.pk + interlocutor.pk)
+        messages = dialog.messages.select_related()
+        for message in messages:
+            if message.author != main_user:
+                if not message.is_read:
+                    message.set_read(main_user)
+        messages_values = list(dialog.messages.all().values())
+        data = dict()
+        data['messages'] = messages_values
+        data['first_name'] = messages.last().author.first_name
+        data['url_photo'] = messages.last().author.main_photo.url
+        data['pub_time'] = messages.last().pub_date.time()
+        return JsonResponse(data)
+
+
+class UpdateDialogsView(View):
+    def get(self, request):
+        main_user = Account.objects.select_related().get(pk=request.user.pk)
+        dialogs = main_user.dialogs.select_related()
+        number_not_read_messages = 0
+        for dialog in dialogs:
+            dialog.count_not_read_messages()
+            for user in dialog.users.all():
+                if user != main_user:
+                    messages = dialog.messages.filter(author=user)
+                    for message in messages:
+                        if not message.is_read:
+                            number_not_read_messages += 1
+        main_user.number_not_read_messages = number_not_read_messages
+        main_user.save()
+        data = dict()
+        data['number_not_read_messages'] = number_not_read_messages
+        data['dialogs_values'] = list(dialogs.values())
+        return JsonResponse(data)
+
