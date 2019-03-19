@@ -67,5 +67,4 @@ class SubscribeToGroup(View):
         group = Group.objects.select_related().get(pk=pk)
         group.subscribers.add(main_user)
         group.save()
-        print(main_user.group.all())
         return redirect('group', pk=group.pk)

@@ -1,0 +1,226 @@
+{% extends 'base_page.html' %}
+{% load static %}
+
+{% block content %}
+    <div class="wide_column_left">
+        <div class="narrow_column_wrap">
+            <div class="narrow_column" id="narrow_column" style="margin-top: 0px;">
+                <div class="page_block ui_rmenu ui_rmenu_pr _ui_rmenu_auto_expand" id="feed_rmenu" role="list">
+                    <a id="ui_rmenu_news" href="/feed"
+                       class="ui_rmenu_item _ui_item_news ui_rmenu_item_sel feed_section_news"
+                       onclick="return nav.go(this, event);">
+  <span><div class="ui_actions_menu_wrap _ui_menu_wrap feed_lists_icon ui_actions_menu_sublist" id="feed_add_list_icon"
+             onmousedown="Feed.toggleTabsMenu(event);" onclick="return cancelEvent(event)">
+  <div class="ui_actions_menu_icons" tabindex="0" aria-label="Действия" role="button"
+       onclick="uiActionsMenu.keyToggle(this, event);"><span class="blind_label">Действия</span></div>
+  <div class="ui_actions_menu _ui_menu" onmousedown="event.cancelBubble = true;"><div
+          class="ui_actions_menu_item  checked" onclick="feed.checkTabsFilter(this, 'photos');">Фотографии</div><div
+          class="ui_actions_menu_item  checked" onclick="feed.checkTabsFilter(this, 'videos');"> Видеозаписи</div><div
+          class="ui_actions_menu_item  " onclick="feed.checkTabsFilter(this, 'friends');">Друзья</div><div
+          class="ui_actions_menu_item  " onclick="feed.checkTabsFilter(this, 'groups');">Сообщества</div><div
+          class="ui_actions_menu_item  checked" onclick="feed.checkTabsFilter(this, 'podcasts');">Подкасты</div><div
+          class="ui_actions_menu_item _feed_custom_krsk2019 checked" onclick="feed.checkTabsFilter(this, 'krsk2019');">Универсиада-2019</div><div
+          class="ui_actions_menu_sep"></div><div class="ui_actions_menu_item feed_new_list"
+                                                 onclick="feed.checkTabsFilter(this, 'newlist');">Добавить вкладку</div></div>
+</div><div class="feed_filter_icon" onclick="cancelEvent(event); return feed.editHidden();"></div>Новости</span>
+                    </a>
+                    <div id="ui_rmenu_news_list" data-sublist-id="news" class="_ui_rmenu_sublist _ui_rmenu_news_list ">
+                        <a id="ui_rmenu_photos" href="/feed?section=photos"
+                           class="ui_rmenu_subitem _ui_rmenu_subitem _ui_item_photos feed_section_photos "
+                           onclick="return nav.go(this, event);">
+                            <span>Фотографии</span>
+                        </a><a id="ui_rmenu_videos" href="/feed?section=videos"
+                               class="ui_rmenu_subitem _ui_rmenu_subitem _ui_item_videos feed_section_videos "
+                               onclick="return nav.go(this, event);">
+                        <span> Видеозаписи</span>
+                    </a><a id="ui_rmenu_friends" href="/feed?section=friends"
+                           class="ui_rmenu_subitem _ui_rmenu_subitem _ui_item_friends feed_section_friends ui_rmenu_item_hidden"
+                           onclick="return nav.go(this, event);">
+                        <span>Друзья</span>
+                    </a><a id="ui_rmenu_groups" href="/feed?section=groups"
+                           class="ui_rmenu_subitem _ui_rmenu_subitem _ui_item_groups feed_section_groups ui_rmenu_item_hidden"
+                           onclick="return nav.go(this, event);">
+                        <span>Сообщества</span>
+                    </a><a id="ui_rmenu_podcasts" href="/feed?section=podcasts"
+                           class="ui_rmenu_subitem _ui_rmenu_subitem _ui_item_podcasts feed_section_podcasts "
+                           onclick="return nav.go(this, event);">
+                        <span>Подкасты</span>
+                    </a><a id="ui_rmenu_krsk2019" href="/feed?section=krsk2019"
+                           class="ui_rmenu_subitem _ui_rmenu_subitem _ui_item_krsk2019 feed_section_krsk2019 "
+                           onclick="return nav.go(this, event);">
+                        <span>Универсиада-2019</span>
+                    </a>
+                    </div>
+                    <a id="ui_rmenu_recommended" href="/feed?section=recommended"
+                       class="ui_rmenu_item _ui_item_recommended feed_section_recommended"
+                       onclick="return nav.go(this, event);">
+                        <span>Рекомендации</span>
+                    </a><a id="ui_rmenu_search" href="/feed?section=search"
+                           class="ui_rmenu_item _ui_item_search feed_section_search"
+                           onclick="return nav.go(this, event);">
+                    <span>Поиск</span>
+                </a>
+                    <div class="ui_rmenu_sep"></div>
+                    <a id="ui_rmenu_likes" href="/feed?section=likes"
+                       class="ui_rmenu_item _ui_item_likes feed_section_likes" onclick="return nav.go(this, event);">
+                        <span>Понравилось</span>
+                    </a><a id="ui_rmenu_updates" href="/feed?section=updates"
+                           class="ui_rmenu_item _ui_item_updates feed_section_updates"
+                           onclick="return nav.go(this, event);">
+                    <span>Обновления</span>
+                </a><a id="ui_rmenu_comments" href="/feed?section=comments"
+                       class="ui_rmenu_item _ui_item_comments feed_section_comments"
+                       onclick="return nav.go(this, event);">
+                    <span>Комментарии</span>
+                </a>
+                    <div class="ui_rmenu_slider _ui_rmenu_slider"></div>
+                </div>
+
+            </div>
+        </div>
+        <div class="wide_column_wrap">
+            <div class="wide_column" id="wide_column">
+                <div id="main_feed" class="feed_wrap  feed_submit_shown mark_top_verified">
+                    {% include 'group/make_post.html' %}
+                    <div id="feed_new_posts" class="feed_new_posts page_block"></div>
+                    <div class="wall_wrap clear_fix">
+                        <div id="feed_wall" class="clear_fix ">
+                            <div class="wall_module">
+                                <div id="feed_rows" class="_feed_rows">
+                                    {% for post in news %}
+                                        <div class="feed_row ">
+                                        <div id="post-24946565_1337445" class="_post post page_block deep_active">
+                                            <div class="_post_content">
+                                                <div class="post_header">
+                                                    <a class="post_image" href="/public{{ post.group.pk }}">
+                                                        <img src="{{ post.group.main_photo.url }}" width="50" height="50" class="post_img">
+                                                        <span class="blind_label">.</span>
+                                                    </a>
+                                                    <div class="post_header_info">
+                                                        <h5 class="post_author">
+                                                            <a class="author" href="/varlamov">{{ post.group.name }}</a>
+                                                            <a href="/public{{ post.group.pk }}" class="page_verified "></a>
+                                                            {% if post.group.fixed_post == post %}
+                                                                <span class="explain">
+                                                                    <span class="wall_fixed_label"> запись закреплена</span>
+                                                                </span>
+                                                            {% endif %}
+                                                        </h5>
+                                                        <div class="post_date">
+                                                            <span class="rel_date rel_date_needs_update">{{ post.pub_date }}</span>
+                                                        </div>
+                                                        <div class="ui_actions_menu_wrap _ui_menu_wrap"
+                                                             id="actions_menu" onmouseover="show_actions_menu()"
+                                                             onmouseout="hide_actions_menu()">
+                                                            <div class="ui_actions_menu_icons" tabindex="0"
+                                                                 aria-label="Действия" role="button">
+                                                                <span class="blind_label">Действия</span>
+                                                            </div>
+                                                            <div class="ui_actions_menu _ui_menu">
+                                                                <a class="ui_actions_menu_item" id="{{ post.pk }}"
+                                                                   onclick="delete_post(this.id)" tabindex="0"
+                                                                   role="link">Удалить запись</a>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="post_content">
+                                                    <div class="post_info">
+                                                        <div class="wall_text">
+                                                            <div id="wpt-24946565_1337445" class="wall_post_cont _wall_post_cont">
+                                                                <div class="wall_post_text">
+                                                                    {{ post.content }}
+                                                                </div>
+                                                                {% if post.images.all %}
+                                                                    {% for image in post.images.all %}
+                                                                        <div class="page_post_sized_thumbs  clear_fix"
+                                                                             style="width: 382px; height: 510px;">
+                                                                            <a href="?z=photo{{ user.pk }}-{{ image.pk }}"
+                                                                               id="{{ image.pk }}"
+                                                                               onclick="photo_for_groups(this.id)"
+                                                                               style="width: 382px; height: 510px; background-image: url({{ image.photo.url }});"
+                                                                               class="page_post_thumb_wrap image_cover  page_post_thumb_last_column page_post_thumb_last_row"></a>
+                                                                        </div>
+                                                                    {% endfor %}
+                                                                {% endif %}
+                                                                {% if post.audios.all %}
+                                                                    <div class="wall_audio_rows _wall_audio_rows">
+                                                                        <div class="audio_row audio_row_with_cover _audio_row _audio_row_2000201689_456242875 audio_can_add audio_has_thumb audio_row2">
+                                                                            <div class="audio_row_content _audio_row_content">
+                                                                                <button class="blind_label _audio_row__play_btn"
+                                                                                        aria-label="Воспроизвести "></button>
+                                                                                <div class="audio_row__cover"
+                                                                                     style="background-image:url(https://pp.userapi.com/c840620/v840620741/44f59/3OatC1_aDrE.jpg)"></div>
+                                                                                <div class="audio_row__cover_back _audio_row__cover_back"></div>
+                                                                                <div class="audio_row__cover_icon _audio_row__cover_icon"></div>
+                                                                                <div class="audio_row__counter"></div>
+                                                                                <div class="audio_row__play_btn"></div>
+                                                                                <div class="audio_row__inner">
+                                                                                    <div class="audio_row__performer_title">
+                                                                                        <div class="audio_row__performers">
+                                                                                            <a href="/audio?performer=1&amp;q=%D0%B5%D0%B6%D0%B5%D0%BC%D0%B5%D1%81%D1%8F%D1%87%D0%BD%D1%8B%D0%B5">ежемесячные</a>
+                                                                                        </div>
+                                                                                        <div class="audio_row__title _audio_row__title">
+                                                                                            <span class="audio_row__title_inner _audio_row__title_inner">печенюшка</span>
+                                                                                            <span class="audio_row__title_inner_subtitle _audio_row__title_inner_subtitle"></span>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                    <div class="audio_row__info _audio_row__info">
+                                                                                        <div class="audio_row__duration audio_row__duration-s _audio_row__duration">
+                                                                                            2:45
+                                                                                        </div>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                {% endif %}
+                                                            </div>
+                                                        </div>
+                                                        <div class="like_wrap _like_wall483686337_21 ">
+                                                            <div class="like_cont ">
+                                                                <div class="like_btns">
+                                                                    {% if post.like_put %}
+                                                                        <a class="like_btn like _like animate active"
+                                                                           id="like_post{{ post.pk }}"
+                                                                           data-count="0" href="#"
+                                                                           onclick="like_post({{ post.pk }})"
+                                                                           title="Нравится">
+                                                                            <div class="like_button_icon"></div>
+                                                                            <div class="like_button_label"></div>
+                                                                            <div class="like_button_count"
+                                                                                 id="count_like_post{{ post.pk }}">{{ post.likes.all.count }}</div>
+                                                                            <span class="blind_label">Нравится</span>
+                                                                        </a>
+                                                                    {% else %}
+                                                                        <a class="like_btn like _like animate "
+                                                                           id="like_post{{ post.pk }}"
+                                                                           data-count="0" href="#"
+                                                                           onclick="like_post({{ post.pk }})"
+                                                                           title="Нравится">
+                                                                            <div class="like_button_icon"></div>
+                                                                            <div class="like_button_label"></div>
+                                                                            <div class="like_button_count"
+                                                                                 id="count_like_post{{ post.pk }}">{{ post.likes.all.count }}</div>
+                                                                            <span class="blind_label">Нравится</span>
+                                                                        </a>
+                                                                    {% endif %}
+                                                                </div>
+                                                                <div class="like_views _views">27</div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    {% endfor %}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
