@@ -13,12 +13,10 @@
                     <div class="head_nav_item fl_l">
                         <div id="ts_wrap" class="ts_wrap">
                             <input name="disable-autofill" style="display: none;" title="">
-                            <div class="input_back_wrap no_select">
-                                <div class="input_back" style="margin: 7px 0px 7px 8px; padding: 6px 6px 6px 19px;">
-                                    <div class="input_back_content" style="width: 210px;">Поиск</div>
-                                </div>
-                            </div>
-                            <input type="text" class="text ts_input" id="ts_input" autocomplete="off" name="disable-autofill" aria-label="Поиск" title="">
+                            <form action="/search/">
+                                <input type="text" class="text ts_input" id="ts_input" autocomplete="off" name="value" aria-label="Поиск" title=""
+                                placeholder="Поиск">
+                            </form>
                         </div>
                     </div>
                     <div class="head_nav_item fl_l head_nav_btns">

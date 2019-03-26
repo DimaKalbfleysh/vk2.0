@@ -1,0 +1,84 @@
+{% extends 'base_page.html' %}
+
+{% block content %}
+    <div class="wide_column_left">
+        <div class="narrow_column_wrap">
+            <div class="narrow_column" id="narrow_column" style="margin-top: 0px;">
+                <div class="page_block ui_rmenu ui_rmenu_pr _ui_rmenu_auto_expand ui_rmenu_sliding" id="search_menu" role="list">
+                    <a id="ui_rmenu_auto" href="/search/?value=" class="ui_rmenu_item _ui_item_auto search_menu_auto" onclick="return searcher.switchSection('auto', {updateStats: cur.section === 'auto', tab: 1}, event);">
+                        <span>Все</span>
+                    </a>
+                    <a id="ui_rmenu_people" href="/search/?value=" class="ui_rmenu_item _ui_item_people search_menu_people ui_rmenu_item_sel" onclick="return searcher.switchSection('people', {updateStats: cur.section === 'auto', tab: 1}, event);">
+                        <span>Люди</span>
+                    </a>
+                    <a id="ui_rmenu_communities" href="#" class="ui_rmenu_item _ui_item_communities search_menu_communities" onclick="return searcher.switchSection('communities', {updateStats: cur.section === 'auto', tab: 1}, event);">
+                        <span>Сообщества</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="wide_column_wrap">
+            <div class="wide_column" id="wide_column">
+                <div id="search_content" class="search_content page_block clear_fix">
+                    <h2 class="page_block_h2">
+                        <div class="page_block_header clear_fix" id="search_header">
+                            <div class="page_block_header_extra_left _header_extra_left"></div>
+                            <div class="page_block_header_extra _header_extra"></div>
+                            <div class="page_block_header_inner _header_inner">
+                                Люди<span class="page_block_header_count">{{ number_result }}</span>
+                            </div>
+                        </div>
+                    </h2>
+                    <div id="search_tabs_wrap" class="unshown" style="display: none;"> </div>
+                    <div id="search_query_wrap" class="search_query_wrap">
+                        <div class="ui_search _wrap ui_search_old">
+                            <div class="ui_search_input_block">
+                                <div class="ui_search_reset" onclick="return uiSearch.reset(this, false, event);">
+                                    <span class="blind_label">Отмена</span>
+                                </div>
+                                <form action="/search/">
+                                    <input type="text" name="value" class="ui_search_field _field" id="search_query" autocomplete="off"
+                                       autocorrect="off" autocapitalize="off" spellcheck="false" value="{{ value }}"
+                                       placeholder="Начните вводить любое имя, название или слово">
+                                </form>
+                            </div>
+                            <div class="ui_search_sugg_list _ui_search_sugg_list"></div>
+                            <div class="ui_search_filters_pane" style="display: none;">
+                                <div class="ui_search_filters"></div>
+                                <div class="ui_search_filters_reset"onclick="return uiSearch.removeAllFilters(this);"></div>
+                            </div>
+                            <div class="results_container" style="width: 552px;">
+                                <div class="result_list" style="display: none; opacity: 1; width: 552px;">
+                                    <ul id="list_options_container_1"></ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="search_auto_rows" class="search_auto_rows page_block"></div>
+                <div id="results" class="search_results search_people_results page_block mark_top_verified">
+                    {% for user in result %}
+                        <div class="people_row search_row clear_fix">
+                            <div class="img">
+                                <a href="/id{{ user.pk }}" class="search_item_img_link _online">
+                                    <img class="search_item_img" src="{{ user.main_photo.url }}" alt="{{ user.get_full_name }}">
+                                </a>
+                            </div>
+                            <div class="controls">
+                                <a href="/friendship{{ user.pk }}/request/" id="search_sub249338557" class="flat_button button_small button_wide">
+                                    Добавить в друзья
+                                </a>
+                            </div>
+                            <div class="info">
+                                <div class="labeled name">
+                                    <a href="/id{{ user.pk }}">{{ user.get_full_name }}</a>
+                                </div>
+                            </div>
+                        </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+{% endblock %}

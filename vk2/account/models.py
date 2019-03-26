@@ -3,6 +3,7 @@ import uuid
 from django.db import models
 from django.contrib.auth.models import User
 from account.fields_with_choices import SEX_CHOICES, MARITAL_STATUS, BIRTH_DAY, MONTH_BIRTH, YEAR_BIRTH
+from django.contrib.postgres.indexes import GinIndex
 from django.db.models import signals
 # from register.tasks import send_verification_email
 
@@ -25,7 +26,9 @@ class Account(User):
     verification_uuid = models.UUIDField('Unique Verification UUID', default=uuid.uuid4)
     unrejected_request_number = models.IntegerField(null=True, default=0)
     number_friends = models.IntegerField(null=True, default=0)
-
+    #
+    # class Meta:
+    #     indexes = [GinIndex(fields=['first_name', 'last_name'])]
 
 # def user_post_save(sender, instance, signal, *args, **kwargs):
 #     if not instance.is_verified:

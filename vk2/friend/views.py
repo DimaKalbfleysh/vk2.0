@@ -1,7 +1,5 @@
 from django.http import JsonResponse
 from django.shortcuts import render, redirect
-
-# Create your views here.
 from django.views import View
 from account.models import Account
 from friend.models import FriendshipRequest
@@ -12,7 +10,7 @@ class FriendsView(View):
     def get(self, request, pk):
         main_user = Account.objects.get(pk=request.user.pk)
         user = Account.objects.get(pk=pk)
-        f = Friend.objects.get(who=main_user)
+        f = Friend.objects.get(who=user)
         all_friends = f.users.all()
         user.number_friends = all_friends.count()
         user.save()

@@ -2785,10 +2785,9 @@ input.text.ts_input {
     border-radius: 14px;
     -o-transition: background-color 0.05s, color 0.05s;
     transition: background-color 0.05s, color 0.05s;
-    background: #224b7a url(/images/svg_icons/ic_head_loupe.svg) no-repeat;
     padding-left: 19px;
     border-left: 8px solid transparent;
-    background-position: left 8px;
+    background: #224b7a url(https://vk.com/images/svg_icons/ic_head_loupe.svg) no-repeat left 8px;
     color: #d9e2ec;
 }
 
@@ -6110,4 +6109,162 @@ select.dark {
 .button_big_width.flat_button {
     padding-left: 32px;
     padding-right: 32px;
+}
+
+.search_row {
+    border-top: 1px solid #e7e8ec;
+    padding: 15px 0;
+    clear: both;
+}
+
+.search_row .img {
+    float: left;
+    margin: 0 12px 0 0;
+    position: relative;
+    width: 80px;
+    height: 80px;
+    overflow: hidden;
+}
+
+.ui_zoom_wrap {
+    position: relative;
+    overflow: hidden;
+}
+
+.ui_zoom_wrap .online {
+    position: static;
+}
+
+.search_item_img_link {
+    display: block;
+    height: 80px;
+}
+
+.search_item_img {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    -moz-force-broken-image-icon: 0;
+    background-color: #fafbfc;
+}
+
+.search_row .controls {
+    margin: 11px 0 0 10px;
+    max-width: 155px;
+    float: right;
+    text-align: right;
+}
+
+.search_row .controls .flat_button {
+    width: 135px;
+}
+
+.button_wide button, .flat_button.button_wide {
+    width: 100%;
+    padding-left: 3px;
+    padding-right: 3px;
+}
+
+.button_small.flat_button {
+    line-height: 11px;
+}
+
+.button_wide {
+    display: block;
+}
+
+.search_row .info {
+    padding: 7px 0 0;
+    overflow: hidden;
+}
+
+.search_row .labeled.name {
+    margin-bottom: 5px;
+    font-weight: 700;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    color: #42648b;
+}
+
+.search_statuses_results .page_block:first-child, .search_results.page_block {
+    margin-top: 0;
+    border-radius: 0 0 4px 4px;
+}
+
+.search_people_results {
+    padding: 0 20px 18px;
+}
+
+h2.page_block_h2 {
+    margin: 0px;
+    font-size: inherit;
+    font-weight: inherit;
+    color: inherit;
+}
+
+.page_block_header_inner {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.search_content .page_block_header_count {
+    margin-left: 6px;
+}
+
+.page_block_header_count {
+    display: inline-block;
+    font-size: 14px;
+    color: #939393;
+    padding: 0 7px;
+}
+
+.ui_search {
+    z-index: 3;
+    border-bottom: 1px solid #e7e8ec;
+    background-color: #fff;
+    position: relative;
+}
+
+.ui_search_input_block {
+    position: relative;
+}
+
+.ui_search_reset {
+    position: absolute;
+    width: 38px;
+    background: url(https://vk.com/images/cross.png) no-repeat 50%;
+    top: 0;
+    bottom: 0;
+    right: 6px;
+    cursor: pointer;
+    z-index: 4;
+    opacity: 0.75;
+    filter: alpha(opacity=75);
+}
+
+.ui_search_filters_reset, .ui_search_reset {
+    -o-transition: opacity 0.15s ease, visibility 0.15s ease;
+    transition: opacity 0.15s ease, visibility 0.15s ease;
+}
+
+input.ui_search_field {
+    -ms-high-contrast-adjust: auto;
+    padding-left: 28px;
+    border-left: 20px solid transparent;
+    background: url(https://vk.com/images/search_icon.png) no-repeat 0;
+    color: #000;
+}
+
+input.ui_search_field, input.ui_search_field~.placeholder .ph_input {
+    padding: 14px 44px 13px 48px;
+    box-sizing: border-box;
+    width: 100%;
+    border: none;
+    margin: 0;
+    line-height: 18px;
+}
+
+::-webkit-input-placeholder { /* Chrome */
+  color: #e5ebf1;
 }

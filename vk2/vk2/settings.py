@@ -22,7 +22,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = open("vk2/secret_key.txt", "r").read()
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ['*']
 
@@ -48,7 +48,9 @@ INSTALLED_APPS = [
     'like',
     'audio',
     'news',
-    'friend'
+    'friend',
+    'search_users',
+
 
 ]
 

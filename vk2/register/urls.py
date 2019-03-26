@@ -1,7 +1,5 @@
 from django.urls import path
-from register.views import FinalRegisterUser
-from register.views import InitRegisterUser
-from register.views import Verify
+from .views import *
 
 urlpatterns = [
     path('', InitRegisterUser.as_view(), name='init_register'),
