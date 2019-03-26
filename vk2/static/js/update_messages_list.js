@@ -7,10 +7,10 @@ function updateList() {
         dataType: 'json',
         success: function (json) {
             let data = JSON.parse(json.content);
-            console.log(data);
             let countElem = data.messages.length;
             if (countElem !== countLi) {
                 let lastMessage = data.messages[data.messages.length - 1];
+                console.log(data);
                 let firstName = data.first_name;
                 let urlPhoto = data.url_photo;
                 let pubTime = data.pub_time;

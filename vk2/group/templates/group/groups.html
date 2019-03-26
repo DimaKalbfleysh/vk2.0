@@ -19,9 +19,9 @@
                                     Управление<span class="ui_tab_count" dir="auto">{{ groups_under_management.count }}</span>
                                 </a>
                             </li>
+                            {% endif %}
                             <a href="{% url 'group-create' %}" class="flat_button groups_list_create_button">Создать сообщество</a>
                             <div class="ui_tabs_slider _ui_tabs_slider"></div>
-                            {% endif %}
                         </ul>
                     </h2>
                     <div id="group_u_search_input_wrap" class="search_query_wrap">

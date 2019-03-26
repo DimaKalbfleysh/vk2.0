@@ -1,19 +1,9 @@
 from django.shortcuts import render, redirect
 from django.views import View
 from account.models import Account
-from friendship.models import Friend
-from friendship.models import FriendshipRequest
+from friend.models import FriendshipRequest, Friend
 import random
-
-
-def get_all_friends(user):
-    """ Since there are no fields in the main User model that will be useful for us in the template, we convert each 
-    friend to the Account model we created """
-    all_friends = []
-    for friend in Friend.objects.friends(user):
-        converted_friend = Account.objects.get(pk=friend.pk)
-        all_friends.append(converted_friend)
-    return all_friends
+from django.db.models import Q
 
 
 def get_friends_row(all_friends):
@@ -27,39 +17,38 @@ def get_friends_row(all_friends):
     return friends_row
 
 
+class MainPage(View):
+    def get(self, request):
+        if request.user.is_authenticated:
+            return redirect('account', pk=request.user.pk)
+        return redirect('login')
+
+
 class MainView(View):
     def get(self, request, pk):
         if request.user.is_authenticated:
             main_user = Account.objects.select_related().get(pk=request.user.pk)
-            if request.user.pk != pk:
+            if int(request.user.pk) != int(pk):
                 user = Account.objects.select_related().get(pk=pk)
+                try:
+                    friendship_request = FriendshipRequest.objects.get(Q(from_user=main_user, to_user=user)|Q(from_user=user, to_user=main_user))
+                except:
+                    friendship_request = None
             else:
                 user = main_user
+                friendship_request = None
             posts = user.posts.all()
             all_photo = list(user.images.all())[:3]
             count_photo = user.images.count()
-            request_is_send = Friend.objects.can_request_send(request.user, user)
-            accept_request = Friend.objects.can_request_send(user, request.user)
-            is_friend = Friend.objects.are_friends(request.user, user)
             user.is_another_user = (int(pk) != int(request.user.pk))
             user.save()
-            all_friends = get_all_friends(user)
-            friends_row = get_friends_row(all_friends)
-            count_friends = len(all_friends)
-            if request.GET.get('friendship') == 'request':
-                Friend.objects.add_friend(request.user, user)
-                return redirect('account', pk=user.pk)
-
-            if request.GET.get('friendship') == 'accept':
-                friend_request = FriendshipRequest.objects.get(from_user=pk, to_user=request.user.pk)
-                friend_request.accept()
-                return redirect('account', pk=pk)
+            all_friends = Friend.objects.get(who=user).users.all()
+            friends_row = get_friends_row(list(all_friends))
+            count_friends = all_friends.count()
             context = dict()
             context['user'] = user
             context['main_user'] = main_user
-            context['request_is_send'] = request_is_send
-            context['accept_request'] = accept_request
-            context['is_friend'] = is_friend
+            context['friendship_request'] = friendship_request
             context['all_photo'] = all_photo
             context['count_photo'] = count_photo
             context['all_friends'] = all_friends
@@ -69,16 +58,3 @@ class MainView(View):
             return render(request, 'account/user_account.html', context=context)
         else:
             return redirect('login')
-
-
-class FriendsView(View):
-    def get(self, request, pk):
-        main_user = Account.objects.get(pk=request.user.pk)
-        user = Account.objects.get(pk=pk)
-        all_friends = get_all_friends(user)
-        context = dict()
-        context['user'] = user
-        context['main_user'] = main_user
-        context['all_friends'] = all_friends
-        context['count_friends'] = len(all_friends)
-        return render(request, 'account/friends.html', context=context)

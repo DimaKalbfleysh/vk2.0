@@ -1,6 +1,10 @@
 {% extends 'base_page.html' %}
 {% load static %}
 
+{% block title %}
+    Новости
+{% endblock %}
+
 {% block content %}
     <div class="wide_column_left">
         <div class="narrow_column_wrap">
@@ -98,7 +102,7 @@
                                                     </a>
                                                     <div class="post_header_info">
                                                         <h5 class="post_author">
-                                                            <a class="author" href="/varlamov">{{ post.group.name }}</a>
+                                                            <a class="author" href="/public{{ post.group.pk }}">{{ post.group.name }}</a>
                                                             <a href="/public{{ post.group.pk }}" class="page_verified "></a>
                                                             {% if post.group.fixed_post == post %}
                                                                 <span class="explain">

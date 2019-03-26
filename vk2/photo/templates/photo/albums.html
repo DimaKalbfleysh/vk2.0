@@ -14,8 +14,8 @@
                     <div id="photos_upload_area_wrap" style="position: relative">
                         <form action="{% url 'albums' pk=main_user.pk%}" method="post" enctype="multipart/form-data">
                             {% csrf_token %}
-                            {{ photo_form }}
-                            <button type="submit">13</button>
+                            {{ photo_form.photo }}
+                            <button class="flat_button addpost_button" type="submit">Загрузить</button>
                         </form>
                     </div>
                     {% endif %}

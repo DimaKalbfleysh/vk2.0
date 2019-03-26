@@ -28,20 +28,20 @@
             <div class="count">{{ count_friends }}</div>
             <div class="label">друзей</div>
         </a>
-        <a class="page_counter">
-            <div class="count">4</div>
-            <div class="label">подписчика</div>
-        </a>
+{#        <a class="page_counter">#}
+{#            <div class="count">0</div>#}
+{#            <div class="label">подписчика</div>#}
+{#        </a>#}
         <a class="page_counter" href="{% url 'albums' pk=user.pk %}">
             <div class="count">{{ count_photo }}</div>
             <div class="label">фотографии</div>
         </a>
-        <a class="page_counter" href="/videos483686337">
-            <div class="count">1</div>
+        <a class="page_counter" href="/">
+            <div class="count">0</div>
             <div class="label">видеозапись</div>
         </a>
-        <a class="page_counter" href="/audios483686337">
-            <div class="count">79</div>
+        <a class="page_counter" href="/">
+            <div class="count">0</div>
             <div class="label">аудиозаписей</div>
         </a>
     </div>

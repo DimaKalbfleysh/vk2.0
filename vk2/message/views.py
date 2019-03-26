@@ -92,7 +92,7 @@ class UpdateMessagesView(View):
             if message.author != main_user:
                 if not message.is_read:
                     message.set_read(main_user)
-        messages_values = list(dialog.messages.all().values())
+        messages_values = list(messages.values())
         data = dict()
         data['messages'] = messages_values
         data['first_name'] = messages.last().author.first_name

@@ -27,6 +27,7 @@ urlpatterns = [
     path('', include('post.urls')),
     path('', include('group.urls')),
     path('', include('news.urls')),
+    path('', include('friend.urls')),
     path('login/', include('login.urls')),
     path('register/', include('register.urls')),
     path('edit/', include('edit.urls')),

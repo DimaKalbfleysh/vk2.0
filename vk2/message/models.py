@@ -50,3 +50,6 @@ class Message(models.Model):
         self.is_read = True
         main_user.save()
         self.save()
+
+    class Meta:
+        ordering = ['pub_date']

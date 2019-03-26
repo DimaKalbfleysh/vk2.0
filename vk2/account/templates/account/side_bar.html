@@ -46,10 +46,10 @@
                     <a href="{% url 'friends' pk=main_user.pk %}" class="left_row">
                                     <span class="left_fixer">
                                         <object type="internal/link">
-                                         <a href="/friends?section=requests"
-                                            class="left_count_wrap fl_r left_void left_count_wrap_hovered">
-                                             <span class="inl_bl left_count_sign">0</span>
-                                         </a>
+                                                 <a href="/friends?section=requests" id="number_unrejected_requests"
+                                                    class="left_count_wrap fl_r left_void left_count_wrap_hovered">
+                                                     <span class="inl_bl left_count_sign">{{ main_user.unrejected_request_number }}</span>
+                                                 </a>
                                         </object>
                                         <span class="left_icon fl_l"></span>
                                         <span class="left_label inl_bl">Друзья</span>
@@ -84,7 +84,7 @@
                     </div>
                 </li>
                 <li id="l_aud" class="">
-                    <a href="/audios483686337" class="left_row">
+                    <a href="/" class="left_row">
                                     <span class="left_fixer">
                                       <span class="left_count_wrap fl_r left_void"><span class="inl_bl left_count_sign">0</span></span>
                                       <span class="left_icon fl_l"></span>
@@ -96,7 +96,7 @@
                     </div>
                 </li>
                 <li id="l_vid" class="">
-                    <a href="/video" class="left_row">
+                    <a href="/" class="left_row">
                                     <span class="left_fixer">
                                       <span class="left_count_wrap fl_r left_void"><span class="inl_bl left_count_sign">0</span></span>
                                       <span class="left_icon fl_l"></span>

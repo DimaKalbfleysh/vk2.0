@@ -48,3 +48,24 @@ $('#im-send-btn_send').on('click', (function () {
     });
     }
 }));
+
+document.getElementById('im-send-btn_send').addEventListener('touchend', function(){
+    event.preventDefault();
+    let pk = document.location.search.split('=')[1];
+    if(($('#im_editable0').text() !== '')){
+        $.ajax({
+        type: 'POST',
+        url: '/im/?sel='+pk,
+        data: {message: $('#im_editable0').text()},
+        dataType: 'json',
+        contentType: 'application/x-www-form-urlencoded',
+        cache: false,
+        success: function () {
+            $(window).scrollTop($(document).height());
+            document.getElementById('im_editable0').textContent = '';
+            document.getElementById('placeholder').setAttribute('style', 'display: ;');
+        }
+    });
+    }
+})
+;

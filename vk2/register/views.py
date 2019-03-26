@@ -7,6 +7,8 @@ from register.forms import FinalRegisterUserForm
 from account.models import Account
 from edit.forms import EditUserForm
 
+from friend.models import Friend
+
 
 class InitRegisterUser(View):
     def get(self, request):
@@ -33,8 +35,8 @@ class FinalRegisterUser(View):
             form.save()
         authenticate(username=username, password=user.password)
         login(request, user)
-        return render(request, 'register/verify.html', context={'form': form,
-                                                                             'usnm': username})
+        Friend.objects.create(who=user)
+        return redirect('account', pk=user.pk)
 
 
 class Verify(View):

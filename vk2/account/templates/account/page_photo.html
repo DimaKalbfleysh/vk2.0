@@ -23,16 +23,20 @@
             </div>
         </aside>
     {% else %}
-        {% if request_is_send and not accept_request %}
-            <button type="submit" class="vk-button btn">Запрос отправлен</button>
-        {% elif not request_is_send and accept_request %}
-            <a href="?friendship=accept" class="flat_button button_wide">Принять запрос</a>
-        {% elif not request_is_send and not accept_request and not is_friend %}
-            <a href="?friendship=request" class="flat_button button_wide">Добавить в друзья</a>
-        {% elif request_is_send and accept_request %}
-            <a href="?friendship=accept" class="flat_button button_wide">Принять запрос</a>
-        {% elif is_friend %}
-            <a href="{% url 'im' %}?sel={{ user.pk }}" class="flat_button button_wide">Отправить сообщение</a>
+        {% if friendship_request.from_user == main_user %}
+            {% if not friendship_request.is_accept %}
+                <button type="submit" class="vk-button btn">Запрос отправлен</button>
+            {% else %}
+                <a href="{% url 'im' %}?sel={{ user.pk }}" class="flat_button button_wide">Отправить сообщение</a>
+            {% endif %}
+        {% elif friendship_request.from_user == user %}
+            {% if not friendship_request.is_accept %}
+                <a href="/friendship{{ user.pk }}/accept" class="flat_button button_wide">Принять запрос</a>
+            {% else %}
+                <a href="{% url 'im' %}?sel={{ user.pk }}" class="flat_button button_wide">Отправить сообщение</a>
+            {% endif %}
+        {% else %}
+            <a href="/friendship{{ user.pk }}/request" class="flat_button button_wide">Добавить в друзья</a>
         {% endif %}
     {% endif %}
 </div>
