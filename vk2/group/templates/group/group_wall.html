@@ -12,7 +12,7 @@
     </div>
     <div id="page_wall_posts" class="wall_posts all mark_top ">
         {% for post in posts %}
-            <div id="post" class="_post post page_block all own deep_active">
+            <div id="post{{ post.pk }}" class="_post post page_block all own deep_active">
                 <div class="_post_content">
                     <div class="post_header">
                         <a class="post_image" href="/id{{ group.pk }}">
@@ -32,11 +32,14 @@
                                     <span class="blind_label">Действия</span>
                                 </div>
                                 <div class="ui_actions_menu _ui_menu">
-                                    <a class="ui_actions_menu_item" onclick="wall.markAsSpam(this, '-29573241_11252357', 'bbb4d584f49cc7dde9');"
-                                                                         tabindex="0" role="link">Пожаловаться</a>
-                                    <a class="ui_actions_menu_item" onclick="bookmarkPost(this, -29573241, 11252357, 'post', '60453f6bf8c2f93cf7', '', 'club')"
-                                        data-add="Сохранить в закладках" data-remove="Удалить из закладок"
-                                        data-state="0" tabindex="0" role="link">Сохранить в закладках</a></div>
+                                    {% if main_user in group.admin.all %}
+                                        <a class="ui_actions_menu_item" tabindex="0" id="{{ post.pk }}" role="link" onclick="delete_post(this.id)">Удалить пост</a>
+                                        <a class="ui_actions_menu_item" tabindex="0" id="{{ post.pk }}" role="link" onclick="to_pin_post(this.id)">Закрепить пост</a>
+                                    {% endif %}
+                                    <a class="ui_actions_menu_item" tabindex="0" role="link">Пожаловаться</a>
+                                    <a class="ui_actions_menu_item" data-add="Сохранить в закладках" data-remove="Удалить из закладок"
+                                        data-state="0" tabindex="0" role="link">Сохранить в закладках</a>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -99,7 +102,7 @@
                             <div class="like_wrap _like_wall483686337_21 ">
                                 <div class="like_cont ">
                                     <div class="like_btns">
-                                        {% if post.like_put %}
+                                        {% if main_user in post.who_liked.all %}
                                         <a class="like_btn like _like animate active" id="like_post{{ post.pk }}"
                                            data-count="0" href="#" onclick="like_post({{ post.pk }})" title="Нравится">
                                             <div class="like_button_icon"></div>

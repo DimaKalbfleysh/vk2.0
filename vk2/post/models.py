@@ -10,6 +10,7 @@ class Post(models.Model):
     pub_date = models.DateTimeField(blank=False, null=True, default=timezone.now)
     content = models.CharField(max_length=1500, blank=False, null=True)
     like_put = models.BooleanField(null=True, default=False)
+    who_liked = models.ManyToManyField(Account, related_name='post', blank=True)
 
     class Meta:
         ordering = ['-pub_date']

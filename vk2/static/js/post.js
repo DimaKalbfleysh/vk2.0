@@ -29,6 +29,21 @@ function delete_post(pk){
     });
 }
 
+function to_pin_post(pk) {
+    event.preventDefault();
+    let url = document.location.pathname;
+    public_pk = url.split('/public')[1].split('/')[0];
+    $.ajax({
+        type: 'GET',
+        url: '/post/pin/?id='+pk,
+        data: {'pk': pk, 'public_pk': public_pk},
+        dataType: 'json',
+        contentType: 'application/x-www-form-urlencoded',
+        cache: false,
+        success: function () {
+        }
+    });
+}
 function like_post(pk){
     event.preventDefault();
     $.ajax({

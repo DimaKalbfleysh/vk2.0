@@ -120,11 +120,6 @@
                                                                  aria-label="Действия" role="button">
                                                                 <span class="blind_label">Действия</span>
                                                             </div>
-                                                            <div class="ui_actions_menu _ui_menu">
-                                                                <a class="ui_actions_menu_item" id="{{ post.pk }}"
-                                                                   onclick="delete_post(this.id)" tabindex="0"
-                                                                   role="link">Удалить запись</a>
-                                                            </div>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -184,7 +179,7 @@
                                                         <div class="like_wrap _like_wall483686337_21 ">
                                                             <div class="like_cont ">
                                                                 <div class="like_btns">
-                                                                    {% if post.like_put %}
+                                                                    {% if main_user in post.who_liked.all %}
                                                                         <a class="like_btn like _like animate active"
                                                                            id="like_post{{ post.pk }}"
                                                                            data-count="0" href="#"

@@ -90,7 +90,7 @@
                             <div class="like_wrap _like_wall483686337_21 ">
                                 <div class="like_cont ">
                                     <div class="like_btns">
-                                        {% if post.like_put %}
+                                        {% if main_user in post.who_liked.all %}
                                         <a class="like_btn like _like animate active" id="like_post{{ post.pk }}"
                                            data-count="0" href="#" onclick="like_post({{ post.pk }})" title="Нравится">
                                             <div class="like_button_icon"></div>

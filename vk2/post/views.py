@@ -34,9 +34,9 @@ class PutLikePost(View):
         try:
             like = post.likes.get(user=main_user)
             like.delete()
+            post.who_liked.remove(main_user)
             count_likes = post.likes.count()
             likes_put = False
-            post.like_put = False
             post.save()
         except:
             like = Like.objects.create(user=main_user, post=post)
@@ -44,7 +44,16 @@ class PutLikePost(View):
             post.likes.add(like)
             count_likes = post.likes.count()
             likes_put = True
-            post.like_put = True
+            post.who_liked.add(main_user)
             post.save()
         return JsonResponse({'likes_put': likes_put,
                              'count_likes': count_likes})
+
+
+class PinPostView(View):
+    def get(self, request):
+        post = Post.objects.select_related().get(pk=request.GET['pk'])
+        group = Group.objects.select_related().get(pk=request.GET['public_pk'])
+        group.fixed_post = post
+        group.save()
+        return JsonResponse({})

@@ -17,6 +17,7 @@ $('#post_field').on('click', (function () {
     document.getElementById('placeholder1').setAttribute('style', 'display: none;');
     document.getElementById('submit_post_box').setAttribute('style', 'min-height: 400px; max-height: none;');
     document.getElementById('post_field').setAttribute('style', 'min-height: 100px; max-height: none; padding: 16px 20px 46px 12px;');
+    document.getElementById('send_post').setAttribute('style', 'display: block;')
 }));
 
 jQuery(function($){
@@ -28,6 +29,7 @@ jQuery(function($){
 			document.getElementById('submit_post_box').setAttribute('style', 'min-height: 52px; max-height: 52px;');
 			document.getElementById('post_field').textContent = '';
             document.getElementById('post_field').setAttribute('style', 'min-height: 52px; max-height: 52px;');
+            document.getElementById('send_post').setAttribute('style', 'display: none;')
 		}
 	});
 });
@@ -37,7 +39,6 @@ $('#send_post').on('click', (function () {
     let url = document.location.pathname;
     if(url.split('')[1] !== 'i'){
         public_pk = url.split('/public')[1].split('/')[0];
-        console.log(public_pk)
     }else {public_pk = 0}
     $.ajax({
         type: 'POST',
@@ -52,6 +53,7 @@ $('#send_post').on('click', (function () {
             document.getElementById('placeholder1').setAttribute('style', 'display: ;');
 			document.getElementById('submit_post_box').setAttribute('style', 'min-height: 52px; max-height: 52px;');
 			document.getElementById('post_field').setAttribute('style', 'min-height: 52px; max-height: 52px;');
+            document.getElementById('send_post').setAttribute('style', 'display: none;')
         }
     });
 }));

@@ -75,10 +75,10 @@ function like_photo(pk){
             let data = JSON.parse(json.content);
             if (data.likes_put){
                 document.getElementById(pk).setAttribute('class', 'like_btn like _like  like_photo active');
-                document.getElementById('count_like_post'+pk).textContent = data.count_likes
+                document.getElementsByClassName('like_button_count')[0].textContent = data.count_likes
             }else {
                 document.getElementById(pk).setAttribute('class', 'like_btn like _like  like_photo');
-                document.getElementById('count_like_post'+pk).textContent = data.count_likes
+                document.getElementsByClassName('like_button_count')[0].textContent = data.count_likes
             }
         }
     });
