@@ -1,6 +1,10 @@
 {% extends 'base_page.html' %}
 {% load static %}
 
+{% block title %}
+    {{ group.name }}
+{% endblock %}
+
 {% block content %}
     <div id="public" class="clear_fix ">
         <div class="wide_column_left">
@@ -67,23 +71,23 @@
                                             </div>
                                         </div>
                                     {% endfor %}
-                                <div class="people_row">
-                                    {% for subscriber in group.subscribers.all %}
-                                        <div class="people_cell">
-                                            <a class="people_cell_ava" href="/id{{ subscriber.pk }}" title="{{ subscriber.get_full_name }}">
-                                                <img class="people_cell_img"
-                                                     src="{{ subscriber.main_photo.url }}"
-                                                     alt="{{ subscriber.get_full_name }}">
-                                                <span class="blind_label">.</span>
-                                            </a>
-                                            <div class="people_cell_name">
-                                                <a href="/id{{ subscriber.pk }}" title="{{ subscriber.get_full_name }}">
-                                                    {{ subscriber.first_name }}
-                                                </a>
-                                            </div>
-                                        </div>
-                                    {% endfor %}
-                                </div>
+{#                                <div class="people_row">#}
+{#                                    {% for subscriber in group.subscribers.all %}#}
+{#                                        <div class="people_cell">#}
+{#                                            <a class="people_cell_ava" href="/id{{ subscriber.pk }}" title="{{ subscriber.get_full_name }}">#}
+{#                                                <img class="people_cell_img"#}
+{#                                                     src="{{ subscriber.main_photo.url }}"#}
+{#                                                     alt="{{ subscriber.get_full_name }}">#}
+{#                                                <span class="blind_label">.</span>#}
+{#                                            </a>#}
+{#                                            <div class="people_cell_name">#}
+{#                                                <a href="/id{{ subscriber.pk }}" title="{{ subscriber.get_full_name }}">#}
+{#                                                    {{ subscriber.first_name }}#}
+{#                                                </a>#}
+{#                                            </div>#}
+{#                                        </div>#}
+{#                                    {% endfor %}#}
+{#                                </div>#}
                             </div>
                         </aside>
                     </div>

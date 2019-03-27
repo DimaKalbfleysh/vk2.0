@@ -1310,7 +1310,7 @@ a {
 
 .im-page_classic.im-page .im-page--chat-input {
     display: block;
-    position: fixed;
+    position: absolute;
     bottom: 0;
     border-bottom: solid 15px #edeef0;
     width: 550px;

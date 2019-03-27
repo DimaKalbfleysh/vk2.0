@@ -12,10 +12,8 @@ function update_count_not_readed() {
                     document.getElementById('number_not_read_messages').innerHTML = data.number_not_read_messages;
                     if (document.location.pathname === '/di/'){
                         for(let i=0; i<data.dialogs_values.length; i++){
-                            if(data.dialogs_values[i].number_not_read_messages !==0) {
-                                document.getElementById('dialog' + data.dialogs_values[i].id).setAttribute('class', 'nim-dialog _im_dialog _im_dialog_512227035 nim-dialog_classic nim-dialog_unread ');
-                                document.getElementById('number' + data.dialogs_values[i].id).innerHTML = data.dialogs_values[i].number_not_read_messages;
-                            }
+                            document.getElementById('dialog' + data.dialogs_values[i].id).setAttribute('class', 'nim-dialog _im_dialog _im_dialog_512227035 nim-dialog_classic nim-dialog_unread ');
+                            document.getElementById('number' + data.dialogs_values[i].id).innerHTML = data.dialogs_values[i].count_messages;
                         }
                     }
                 }

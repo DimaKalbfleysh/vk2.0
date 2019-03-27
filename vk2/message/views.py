@@ -1,3 +1,4 @@
+from django.db.models import Count
 from django.http import JsonResponse
 from django.shortcuts import render
 from django.views import View
@@ -104,16 +105,11 @@ class UpdateMessagesView(View):
 class UpdateDialogsView(View):
     def get(self, request):
         main_user = Account.objects.select_related().get(pk=request.user.pk)
-        dialogs = main_user.dialogs.select_related()
+        dialogs = main_user.dialogs.filter(messages__is_read=False).exclude(messages__author=main_user).annotate(count_messages=Count('messages'))
         number_not_read_messages = 0
         for dialog in dialogs:
-            dialog.count_not_read_messages()
-            for user in dialog.users.all():
-                if user != main_user:
-                    messages = dialog.messages.filter(author=user)
-                    for message in messages:
-                        if not message.is_read:
-                            number_not_read_messages += 1
+            number_not_read_messages += dialog.count_messages
+
         main_user.number_not_read_messages = number_not_read_messages
         main_user.save()
         data = dict()
