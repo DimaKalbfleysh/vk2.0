@@ -2,12 +2,15 @@ from django.contrib.auth import authenticate, login, logout
 from django.shortcuts import render, redirect
 from django.views import View
 from login.forms import LoginUserForm
+from register.forms import InitRegisterUserForm
 
 
 class LoginUser(View):
     def get(self, request):
         form = LoginUserForm
-        return render(request, 'login/login_user.html', context={'form': form})
+        register_form = InitRegisterUserForm
+        return render(request, 'login/login_user.html', context={'form': form,
+                                                                 'register_form': register_form})
 
     def post(self, request):
         username = request.POST['username']

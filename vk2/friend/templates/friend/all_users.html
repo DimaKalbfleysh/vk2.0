@@ -1,7 +1,7 @@
 {% extends 'base_page.html' %}
 
 {% block title %}
-    Запросы
+    Все пользователи
 {% endblock %}
 
 {% block content %}
@@ -10,21 +10,22 @@
         <div id="friends_list" class="friends_list">
             <div id="list_content">
                 <div class="friends_list_bl">
-                    {% for request in unrejected_requests %}
+                    {% for user in all_users %}
                         <div class="friends_user_row clear_fix">
                             <div id="res213238245"></div>
                             <div class="friends_photo_wrap">
-                                <a class="friends_photo _online" href="{% url 'account' pk=request.from_user.pk %}">
-                                    <img class="friends_photo_img" alt="{{ request.from_user.get_full_name }}"
-                                         src="{{ request.from_user.main_photo.url }}">
+                                <a class="friends_photo _online" href="{% url 'account' pk=user.pk %}">
+                                    <img class="friends_photo_img" alt="{{ user.get_full_name }}"
+                                         src="{{ user.main_photo.url }}">
                                 </a>
                             </div>
                             <div class="friends_user_info">
                                 <div class="friends_field friends_field_title">
-                                    <a href="{% url 'account' pk=request.from_user.pk %}">{{ request.from_user.get_full_name }}</a>
+                                    <a href="{% url 'account' pk=user.pk %}">{{ user.get_full_name }}</a>
                                 </div>
-                                <div class="friends_field">{{ request.from_user.date_of_birth }}</div>
-                                <a href="/friendship{{ request.from_user.pk }}/accept" class="friends_field_act">Принять запрос</a>
+                                <div class="profile_info_row ">
+                                    <div class="labeled">{{ user.birth_day }} {{ user.month_birth|lower }} {{ user.year_birth }}</div>
+                                </div>
                             </div>
                         </div>
                     {% endfor %}

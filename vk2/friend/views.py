@@ -35,6 +35,18 @@ class FriendsAllRequest(View):
         return render(request, 'friend/all_request.html', context=context)
 
 
+class FriendsAllUsers(View):
+    def get(self, request, pk):
+        main_user = Account.objects.get(pk=request.user.pk)
+        user = Account.objects.get(pk=pk)
+        all_users = Account.objects.all()
+        context = dict()
+        context['user'] = user
+        context['main_user'] = main_user
+        context['all_users'] = all_users
+        return render(request, 'friend/all_users.html', context=context)
+
+
 class UpdateFriendshipRequest(View):
     def get(self, request):
         main_user = Account.objects.get(pk=request.user.pk)

@@ -11,6 +11,7 @@
         </h2>
     </div>
     <div id="page_wall_posts" class="wall_posts all mark_top ">
+
         {% for post in posts %}
             <div id="post{{ post.pk }}" class="_post post page_block all own deep_active">
                 <div class="_post_content">
@@ -113,6 +114,11 @@
                         </div>
                     </div>
                 </div>
+            </div>
+        {% empty %}
+            <div class="page_block no_posts">
+                <div class="no_posts_cover"></div>
+                На стене пока нет ни одной записи.
             </div>
         {% endfor %}
     </div>

@@ -1,5 +1,9 @@
 {% extends 'base_page.html' %}
 
+{% block title %}
+    Добро пожаловать | ВКонтакте
+{% endblock %}
+
 {% block login %}
 <div class="wrap3">
     <div class="wrap2">
@@ -12,8 +16,29 @@
                             {{form.username}}
                             {{form.password}}
                             <button type="submit" class="index_login_button flat_button">Войти</button>
-                            <a href="{% url 'init_register' %}">Зарегистрироваться</a>
                         </form>
+                    </div>
+                    <div id="ij_form" class="page_block ij_form">
+                        <h2 class="ij_header">Впервые ВКонтакте?</h2>
+                        <div class="ij_subheader">Моментальная регистрация</div>
+                        <div id="ij_msg"></div>
+                        <form action="/register/" method="post">
+                            {% csrf_token %}
+                            {{ register_form.username }}
+                            {{ register_form.password }}
+                            <button class="flat_button button_wide button_big_text ij_button" id="ij_submit">Продолжить регистрацию</button>
+                        </form>
+                    </div>
+                </div>
+                <div class="index_users_wrap page_block clear_fix">
+                    <div class="index_users_header">Недавно входили на сайт с этого компьютера</div>
+                    <div class="index_users_info">Чтобы войти снова, нажмите на фотографию или имя.</div>
+                    <div class="index_users">
+                        <a class="index_new_user_row index_user_row _row inl_bl" id="index_new_user_row"
+                           onclick="return Index.showLoginBox();">
+                            <div class="index_user_ph"></div>
+                            <div class="index_user_name">Войти в другой аккаунт</div>
+                        </a>
                     </div>
                 </div>
             </div>

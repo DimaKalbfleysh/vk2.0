@@ -1,0 +1,31 @@
+<div id="friends_tabs_wrap">
+    <h2 class="page_block_h2 ">
+        <ul class="ui_tabs clear_fix ui_tabs_header">
+            <li id="groups_groups_tab" style="float: left;">
+                <a href="/friends{{ user.pk }}" class="ui_tab ui_tab_sel" id="all_friends"
+                   onclick="set_border_buttom_all_friends()">
+                    Все друзья<span class="ui_tab_count" dir="auto">{{ user.number_friends }}</span>
+                </a>
+            </li>
+            {% if user == main_user %}
+                <li id="groups_admin_tab" style="float: left;">
+                    <a href="/friends{{ main_user.pk }}/all_requests/" class="ui_tab" id="friendship_request"
+                       onclick="set_border_buttom_friendship_request()">
+                        Запросы<span class="ui_tab_count" dir="auto">{{ main_user.unrejected_request_number }}</span>
+                    </a>
+                </li>
+                <li id="groups_admin_tab" style="float: left;">
+                    <a href="/friends{{ main_user.pk }}/all_users/" class="ui_tab" id="friendship_request">
+                        Все пользователи
+                    </a>
+                </li>
+            {% endif %}
+        </ul>
+    </h2>
+    <div id="friends_tab_list" class="_friends_header friend__header page_block_header unshown">
+        <div class="friends__header-title-wrapper">
+            <span id="friends_list_title" class="friends__header-title"></span>
+            <span id="friends_list_count" class="page_block_header_count friends__header-list-count"></span>
+        </div>
+    </div>
+</div>
